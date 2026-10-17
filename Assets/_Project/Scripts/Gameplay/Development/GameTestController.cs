@@ -1,15 +1,15 @@
+#if UNITY_EDITOR
 using JellyRiot.Core;
 using UnityEngine;
 
 namespace JellyRiot.Gameplay.Development
 {
-    /// <summary>Development-only playable view of the completed deterministic board work.</summary>
+    /// <summary>Editor-only input harness for the current deterministic Core implementation.</summary>
     public sealed class GameTestController : MonoBehaviour
     {
         private const ulong InitialSeed = 2002UL;
 
-        private BoardModel _board;
-        private JellyColour _nextColour;
+        private GameSession _session;
         private ulong _seed = InitialSeed;
         private string _status;
         private GUIStyle _titleStyle;
@@ -18,92 +18,117 @@ namespace JellyRiot.Gameplay.Development
 
         private void Awake()
         {
-            ResetBoard();
+            StartSession();
         }
 
         private void OnGUI()
         {
             EnsureStyles();
 
-            float scale = Mathf.Min(Screen.width / 520f, Screen.height / 860f);
-            scale = Mathf.Max(scale, 0.55f);
+            float scale = Mathf.Max(Mathf.Min(Screen.width / 520f, Screen.height / 940f), 0.5f);
             float cellSize = 54f * scale;
             float gap = 3f * scale;
             float boardWidth = (BoardModel.Width * cellSize) + ((BoardModel.Width - 1) * gap);
             float left = (Screen.width - boardWidth) * 0.5f;
-            float top = 104f * scale;
+            float top = 112f * scale;
 
-            GUI.Label(new Rect(0f, 18f * scale, Screen.width, 42f * scale), "JELLY RIOT — CORE PLAYGROUND", _titleStyle);
-            GUI.Label(new Rect(0f, 62f * scale, Screen.width, 30f * scale),
-                $"Seed {_seed}   •   Next: {_nextColour}   •   {_status}", _labelStyle);
+            GUI.Label(new Rect(0f, 14f * scale, Screen.width, 40f * scale),
+                "JELLY RIOT — CORE PLAYGROUND", _titleStyle);
+            GUI.Label(new Rect(0f, 54f * scale, Screen.width, 48f * scale),
+                $"Seed {_seed}   •   Score {_session.Score.CurrentScore}\n{_status}", _labelStyle);
 
             for (int row = 0; row < BoardModel.Height; row++)
             {
                 for (int column = 0; column < BoardModel.Width; column++)
                 {
-                    var rect = new Rect(
-                        left + (column * (cellSize + gap)),
-                        top + (row * (cellSize + gap)),
-                        cellSize,
-                        cellSize);
-                    DrawCell(rect, _board.GetCell(column, row));
+                    var rect = new Rect(left + (column * (cellSize + gap)),
+                        top + (row * (cellSize + gap)), cellSize, cellSize);
+                    DrawCell(rect, _session.Board.GetCell(column, row), false);
                 }
             }
 
-            float controlsTop = top + (BoardModel.Height * (cellSize + gap)) + (12f * scale);
+            float columnTop = top + (BoardModel.Height * (cellSize + gap)) + (10f * scale);
             for (int column = 0; column < BoardModel.Width; column++)
             {
-                var buttonRect = new Rect(left + (column * (cellSize + gap)), controlsTop, cellSize, 42f * scale);
-                GUI.enabled = !_board.IsColumnFull(column);
+                var buttonRect = new Rect(left + (column * (cellSize + gap)), columnTop,
+                    cellSize, 38f * scale);
+                GUI.enabled = _session.State == SessionState.Ready &&
+                              !_session.Board.IsColumnFull(column) && _session.SelectedSlot >= 0;
                 if (GUI.Button(buttonRect, (column + 1).ToString()))
                 {
-                    Drop(column);
+                    PlayTurn(column);
                 }
             }
 
             GUI.enabled = true;
-            float resetWidth = (boardWidth - gap) * 0.5f;
-            float resetTop = controlsTop + (54f * scale);
-            if (GUI.Button(new Rect(left, resetTop, resetWidth, 42f * scale), "Reset same seed"))
+            float rackTop = columnTop + (48f * scale);
+            float rackCell = 62f * scale;
+            float rackGap = 12f * scale;
+            float rackWidth = (GameSession.RackSize * rackCell) + ((GameSession.RackSize - 1) * rackGap);
+            float rackLeft = (Screen.width - rackWidth) * 0.5f;
+            for (int slot = 0; slot < GameSession.RackSize; slot++)
             {
-                ResetBoard();
+                var rect = new Rect(rackLeft + (slot * (rackCell + rackGap)), rackTop, rackCell, rackCell);
+                if (GUI.Button(rect, string.Empty))
+                {
+                    _session.SelectRackSlot(slot);
+                    _status = $"Selected slot {slot + 1}: {_session.Rack[slot]}";
+                }
+
+                DrawCell(rect, _session.Rack[slot], _session.SelectedSlot == slot);
             }
 
-            if (GUI.Button(new Rect(left + resetWidth + gap, resetTop, resetWidth, 42f * scale), "Next seed"))
+            float resetTop = rackTop + rackCell + (12f * scale);
+            float resetWidth = (boardWidth - gap) * 0.5f;
+            if (GUI.Button(new Rect(left, resetTop, resetWidth, 38f * scale), "Reset same seed"))
+            {
+                _session.ResetRun();
+                _status = "Run reset — select a rack slot";
+            }
+
+            if (GUI.Button(new Rect(left + resetWidth + gap, resetTop, resetWidth, 38f * scale), "Next seed"))
             {
                 _seed++;
-                ResetBoard();
+                StartSession();
             }
         }
 
-        private void Drop(int column)
+        private void PlayTurn(int column)
         {
-            MoveResult move = _board.PlaceJelly(column, _nextColour);
-            if (!move.Succeeded)
+            SessionActionResult started = _session.TryBeginTurn(column);
+            if (!started.Succeeded)
             {
-                _status = move.Failure.ToString();
+                _status = started.Failure.ToString();
                 return;
             }
 
-            BoardResolutionResult resolution = _board.ResolveMatches();
-            _status = resolution.WaveCount == 0
-                ? "Placed — no match"
-                : $"{resolution.WaveCount} wave(s), {resolution.TotalClearedCount} cleared";
-            _nextColour = _board.NextGeneratedColour();
+            SessionActionResult completed = _session.CompleteTurn();
+            _status = completed.Resolution.WaveCount == 0
+                ? "Placed — no match. Select another slot."
+                : $"{completed.Resolution.WaveCount} wave(s), " +
+                  $"{completed.Resolution.TotalClearedCount} cleared. Select another slot.";
         }
 
-        private void ResetBoard()
+        private void StartSession()
         {
-            _board = new BoardModel(_seed);
-            _nextColour = _board.NextGeneratedColour();
-            _status = "Choose a column";
+            _session = new GameSession();
+            _session.CompleteBoot();
+            _session.StartNewRun(_seed);
+            _status = "Select one of the three rack slots";
         }
 
-        private void DrawCell(Rect rect, JellyColour colour)
+        private void DrawCell(Rect rect, JellyColour colour, bool selected)
         {
             Color previous = GUI.color;
-            GUI.color = ColourFor(colour);
-            GUI.Box(rect, colour == JellyColour.Empty ? string.Empty : ShortName(colour), _cellStyle);
+            GUI.color = selected ? Color.white : ColourFor(colour);
+            GUI.Box(rect, selected ? "●" : ShortName(colour), _cellStyle);
+            if (selected)
+            {
+                var inner = new Rect(rect.x + 5f, rect.y + 5f, rect.width - 10f, rect.height - 10f);
+                GUI.color = ColourFor(colour);
+                GUI.Box(inner, ShortName(colour), _cellStyle);
+            }
+
             GUI.color = previous;
         }
 
@@ -167,3 +192,4 @@ namespace JellyRiot.Gameplay.Development
         }
     }
 }
+#endif

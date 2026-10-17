@@ -21,13 +21,15 @@ namespace JellyRiot.Core
             var queue = new int[BoardModel.CellCount];
             var component = new int[BoardModel.CellCount];
             var waves = new List<ResolutionWave>(4);
+            var groupSizes = new List<int>(4);
 
             for (int waveIndex = 0; waveIndex < MaximumWaveCount; waveIndex++)
             {
                 Array.Clear(visited, 0, visited.Length);
                 Array.Clear(cellsToClear, 0, cellsToClear.Length);
+                groupSizes.Clear();
 
-                if (!FindMatches(board, visited, cellsToClear, queue, component))
+                if (!FindMatches(board, visited, cellsToClear, queue, component, groupSizes))
                 {
                     return waves.Count == 0 ? BoardResolutionResult.Empty : new BoardResolutionResult(waves);
                 }
@@ -39,14 +41,14 @@ namespace JellyRiot.Core
                 }
 
                 List<FallingJelly> falls = ApplyGravity(board);
-                waves.Add(new ResolutionWave(waveIndex, cleared, falls));
+                waves.Add(new ResolutionWave(waveIndex, cleared, falls, groupSizes));
             }
 
             throw new InvalidOperationException("Board resolution exceeded its mathematical wave limit.");
         }
 
         private static bool FindMatches(BoardModel board, bool[] visited, bool[] cellsToClear,
-            int[] queue, int[] component)
+            int[] queue, int[] component, List<int> groupSizes)
         {
             bool foundMatch = false;
             for (int start = 0; start < BoardModel.CellCount; start++)
@@ -82,6 +84,7 @@ namespace JellyRiot.Core
                 }
 
                 foundMatch = true;
+                groupSizes.Add(componentCount);
                 for (int i = 0; i < componentCount; i++)
                 {
                     cellsToClear[component[i]] = true;

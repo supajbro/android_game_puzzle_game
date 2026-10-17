@@ -42,5 +42,31 @@ Status: COMPLETE
 - Files added/changed: Core board resolver and result types; `BoardModel.ResolveMatches`; EditMode resolver tests; development playground controller and scene; associated `.meta` files; this progress record, design notes and test matrix.
 - Verification: Core, EditMode test and Runtime assemblies compiled with zero C# errors against Unity 6000.3.11f1-generated project files. All 21 resolver NUnit test methods executed in a local deterministic runner and passed. The Unity Test Runner itself was not completed because the headless editor repeatedly lost its local Licensing Client connection before test execution; no Unity-run result is claimed for this work order.
 - Known limitations: the playground applies resolution immediately and presents final board state only; animation and full session flow intentionally belong to later work orders. The previously recorded Android API 36 release prerequisite remains unchanged.
-- Next task when authorised: Work Order 03.
+- Work Orders 03 and 04 were subsequently authorised and are recorded below.
+
+## 2026-10-17 — Work Order 03
+
+Status: COMPLETE
+
+- Added pure-Core `GameSession` orchestration with three deterministic visible rack slots, explicit selection, two-phase turn input and refill of only the consumed slot after resolution.
+- Added `Boot`, `Home`, `Ready`, `Resolving`, `PendingLoss`, `GameOver` and `Paused` states with guarded transitions for boot, new run, pause/resume, loss finalisation, replay, reset and return home.
+- Invalid slot/column/full-column actions do not consume a jelly or clear the current selection. Inputs received during `Resolving` are rejected, preventing rapid duplicate placements.
+- Added ordered, immutable semantic session events for state, rack, placement, rejection, waves, score, presentation cues, turn completion and run finalisation.
+- Converted `GameTestController` into an editor-only three-slot input harness; it remains isolated in the development scene and adds no production visual polish.
+- Added `GameSessionTests.cs`, including all three rack slots, illegal indices, invalid-column selection retention, full columns, duplicate input, state/event order, pause/resume, pending loss, replay, reset and immutable event data.
+- Files added/changed: `GameSession.cs`, `SessionTypes.cs`, `GameSessionTests.cs`, `GameTestController.cs` and associated `.meta` files.
+
+## 2026-10-17 — Work Order 04
+
+Status: COMPLETE
+
+- Added pure-Core one-based cascade scoring: `cleared cells × 10 × chain number`, while retaining zero-based resolution event indices.
+- Added `long` current score, longest chain, endless best and per-day Daily best records. New runs reset current values without mixing or erasing mode-specific records.
+- Added deterministic `Chain2`, `Riot3Plus`, `LargeGroup8Plus` and `PersonalBest` presentation metadata, with no TMPro, animation-speed or VFX dependency.
+- Extended resolution waves with deterministic component-size metadata so `LargeGroup8Plus` represents one actual group of at least eight rather than the sum of simultaneous smaller groups.
+- Added saturating score arithmetic for overflow safety and finalises score/best metadata before entering `GameOver`.
+- Added `ScoreModelTests.cs` covering 4-pop = 40, second-wave 5-pop = 100, mixed simultaneous groups, two- and three-wave chains, large groups, overflow, resets, personal bests, Daily/Endless isolation and session event order.
+- Verification: the explicit validation projects compiled every Core source and the editor-only controller with 0 warnings and 0 errors. The NUnit reflection runner executed 53 relevant tests: 21 resolver regressions, 20 expanded session cases and 12 score cases; all 53 passed. These tests did not run through Unity Test Runner, so no Unity-run result is claimed.
+- Files added/changed: `ScoreModel.cs`, `BoardResolver.cs`, `BoardResolutionResult.cs`, `BoardResolverTests.cs`, `ScoreModelTests.cs`, documentation and associated `.meta` files.
+- Next task when authorised: Work Order 05 — deterministic pressure rises and loss checks.
 

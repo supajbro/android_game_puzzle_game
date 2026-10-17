@@ -333,6 +333,8 @@ namespace JellyRiot.Tests.EditMode
                 ((IList<ClearedJelly>)result.Waves[0].Cleared).Clear());
             Assert.Throws<NotSupportedException>(() =>
                 ((IList<FallingJelly>)result.Waves[0].Falls).Clear());
+            Assert.Throws<NotSupportedException>(() =>
+                ((IList<int>)result.Waves[0].GroupSizes).Clear());
         }
 
         private static BoardModel CreateChainBoard()

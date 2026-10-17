@@ -52,11 +52,24 @@ namespace JellyRiot.Core
     [Serializable]
     public sealed class ResolutionWave
     {
-        internal ResolutionWave(int index, IList<ClearedJelly> cleared, IList<FallingJelly> falls)
+        internal ResolutionWave(int index, IList<ClearedJelly> cleared, IList<FallingJelly> falls,
+            IList<int> groupSizes)
         {
             Index = index;
             Cleared = new ReadOnlyCollection<ClearedJelly>(new List<ClearedJelly>(cleared));
             Falls = new ReadOnlyCollection<FallingJelly>(new List<FallingJelly>(falls));
+            GroupSizes = new ReadOnlyCollection<int>(new List<int>(groupSizes));
+
+            int largest = 0;
+            for (int i = 0; i < groupSizes.Count; i++)
+            {
+                if (groupSizes[i] > largest)
+                {
+                    largest = groupSizes[i];
+                }
+            }
+
+            LargestGroupSize = largest;
         }
 
         public int Index { get; }
@@ -66,6 +79,11 @@ namespace JellyRiot.Core
         public IReadOnlyList<ClearedJelly> Cleared { get; }
 
         public IReadOnlyList<FallingJelly> Falls { get; }
+
+        /// <summary>Qualifying component sizes in deterministic discovery order.</summary>
+        public IReadOnlyList<int> GroupSizes { get; }
+
+        public int LargestGroupSize { get; }
     }
 
     [Serializable]

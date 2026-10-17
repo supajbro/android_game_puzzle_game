@@ -44,13 +44,34 @@ Statuses are `PASS`, `FAIL`, `BLOCKED` or `NOT RUN`. Only executed checks may be
 | RES-020 | Termination | Dense board remains within mathematical wave bound | PASS |
 | RES-021 | Result immutability | Result lists reject mutation | PASS |
 | UNITY-003 | Work Order 02 Unity Test Runner pass | Run resolver suite inside Unity | NOT RUN |
+| SESSION-001 | Three-slot rack | All candidates are visible and non-empty | PASS |
+| SESSION-002 | Slot consumption | Only selected slot is consumed and refilled | PASS |
+| SESSION-003 | Invalid selection | Illegal indices preserve prior selection | PASS |
+| SESSION-004 | Invalid placement | Invalid/full column preserves selected jelly | PASS |
+| SESSION-005 | Duplicate input | Resolving state rejects a second placement | PASS |
+| SESSION-006 | State transitions | Boot, menu, ready, pause, loss and replay are guarded | PASS |
+| SESSION-007 | Semantic events | Placement, resolution and completion order is stable | PASS |
+| SESSION-008 | Replay/reset | Seeded board and rack reproduce exactly | PASS |
+| SCORE-001 | First wave | Four cells award 40 points | PASS |
+| SCORE-002 | Second wave | Five cells award 100 points | PASS |
+| SCORE-003 | Simultaneous groups | Combined cleared count scores once | PASS |
+| SCORE-004 | Chain records | Longest chain and Chain2 metadata are correct | PASS |
+| SCORE-005 | RIOT metadata | Third wave produces Riot3Plus | PASS |
+| SCORE-006 | Large component | Actual 8+ component produces LargeGroup8Plus | PASS |
+| SCORE-007 | Overflow | Arithmetic saturates safely in `long` | PASS |
+| SCORE-008 | Run reset | Current score resets while records remain | PASS |
+| SCORE-009 | Mode records | Daily and Endless results remain isolated | PASS |
+| SCORE-010 | Result ordering | Final score precedes GameOver state | PASS |
+| UNITY-004 | Work Orders 03/04 Unity Test Runner pass | Run session and score suites inside Unity | NOT RUN |
 | ANDROID-001 | Toolchain audit | SDK, NDK, OpenJDK and platform recorded | PASS |
 
 ## Future coverage
 
-Work Orders 03 onward extend this matrix for state transitions, pressure, scoring, persistence, accessibility, ads, consent, builds and device performance.
+Work Orders 05 onward extend this matrix for pressure, persistence, accessibility, ads, consent, builds and device performance.
 
 Evidence on 2026-10-17: Unity 6000.3.11f1 isolated validation copy, 24/24 EditMode tests and 1/1 PlayMode test passed. A separate pure .NET smoke harness checked 10,000 seeds. The isolated copy was used because the owner's editor already had the repository open; source and project settings were copied without modifying the live editor session.
 
 Work Order 02 evidence on 2026-10-17: all 21 `BoardResolverTests` executed and passed in a local reflection runner using the compiled NUnit test assembly. Core, tests and the playable Runtime controller compiled with zero C# errors against Unity-generated project files. A headless Unity Test Runner attempt did not reach test execution because the editor repeatedly lost its local Licensing Client connection, so `UNITY-003` remains `NOT RUN`.
+
+Work Orders 03/04 evidence on 2026-10-17: explicit projects compiled every Core source plus the editor-only test controller with 0 warnings and 0 errors. The local NUnit reflection runner executed 53 tests (21 resolver regression, 20 expanded session cases and 12 score cases), all passing. Unity Test Runner was not executed for this batch, so `UNITY-004` remains `NOT RUN`.
 

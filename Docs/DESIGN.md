@@ -44,6 +44,23 @@ Given the same seed, balance values and actions, Core must produce the same boar
 
 `GameTest.unity` is a development-only playable inspection scene and is intentionally excluded from build settings. It displays immediate Core state so current behaviour can be exercised before the production presentation and session layers are scheduled.
 
+## Session and input contract
+
+- A run exposes exactly three rack slots. Selecting a slot does not mutate the board.
+- A legal placement consumes only the selected slot and moves the session from `Ready` to an observable `Resolving` state.
+- Invalid columns and full columns preserve the selected slot and candidate. Inputs during `Resolving` cannot place another jelly.
+- Resolution and scoring complete in Core before the consumed slot is refilled and the session returns to `Ready`.
+- Semantic event ordering is deterministic and independent of presentation timing. Views, audio and analytics consume event data without calculating outcomes.
+- Supported states are `Boot`, `Home`, `Ready`, `Resolving`, `PendingLoss`, `GameOver` and `Paused`. Pressure behaviour that enters `PendingLoss` remains Work Order 05 scope.
+
+## Score contract
+
+- Resolution wave indices remain zero-based; their scoring chain number is `wave.Index + 1`.
+- Wave points are `cleared count × 10 × chain number` and accumulate in a saturating `long`.
+- `Chain2`, `Riot3Plus`, `LargeGroup8Plus` and `PersonalBest` are metadata only and never change gameplay or score.
+- Endless best and Daily best-by-key records are isolated. A new run resets current score and longest chain while retaining records.
+- Run score and best records are finalised before the session publishes its transition to `GameOver`.
+
 ## UI policy
 
 Future canvases use `Scale With Screen Size`, reference resolution 1080x1920, portrait orientation and safe-area containers. Layouts must remain usable at 16:9 and 19.5:9 without placing essential controls in gesture or cut-out areas.
