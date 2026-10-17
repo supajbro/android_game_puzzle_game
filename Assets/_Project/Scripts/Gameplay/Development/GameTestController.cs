@@ -37,6 +37,9 @@ namespace JellyRiot.Gameplay.Development
             GUI.Label(new Rect(0f, 54f * scale, Screen.width, 48f * scale),
                 $"Seed {_seed}   •   Score {_session.Score.CurrentScore}\n{_status}", _labelStyle);
 
+            GUI.Label(new Rect(0f, 88f * scale, Screen.width, 24f * scale),
+                $"Next pressure row in {_session.NextRowIn} turn(s)", _labelStyle);
+
             for (int row = 0; row < BoardModel.Height; row++)
             {
                 for (int column = 0; column < BoardModel.Width; column++)
@@ -69,6 +72,7 @@ namespace JellyRiot.Gameplay.Development
             for (int slot = 0; slot < GameSession.RackSize; slot++)
             {
                 var rect = new Rect(rackLeft + (slot * (rackCell + rackGap)), rackTop, rackCell, rackCell);
+                GUI.enabled = _session.State == SessionState.Ready;
                 if (GUI.Button(rect, string.Empty))
                 {
                     _session.SelectRackSlot(slot);
@@ -78,6 +82,7 @@ namespace JellyRiot.Gameplay.Development
                 DrawCell(rect, _session.Rack[slot], _session.SelectedSlot == slot);
             }
 
+            GUI.enabled = true;
             float resetTop = rackTop + rackCell + (12f * scale);
             float resetWidth = (boardWidth - gap) * 0.5f;
             if (GUI.Button(new Rect(left, resetTop, resetWidth, 38f * scale), "Reset same seed"))
@@ -91,6 +96,23 @@ namespace JellyRiot.Gameplay.Development
                 _seed++;
                 StartSession();
             }
+
+            if (_session.State == SessionState.PendingLoss)
+            {
+                float actionTop = resetTop + (46f * scale);
+                if (GUI.Button(new Rect(left, actionTop, resetWidth, 38f * scale), "Restore checkpoint"))
+                {
+                    _session.Restore(_session.ContinueCheckpoint);
+                    _status = "Checkpoint restored - choose a different move";
+                }
+
+                if (GUI.Button(new Rect(left + resetWidth + gap, actionTop, resetWidth, 38f * scale),
+                        "Confirm game over"))
+                {
+                    _session.ConfirmGameOver();
+                    _status = $"Game over - final score {_session.CurrentResult.FinalScore}";
+                }
+            }
         }
 
         private void PlayTurn(int column)
@@ -103,6 +125,12 @@ namespace JellyRiot.Gameplay.Development
             }
 
             SessionActionResult completed = _session.CompleteTurn();
+            if (_session.State == SessionState.PendingLoss)
+            {
+                _status = "Pressure blocked - restore checkpoint or confirm game over";
+                return;
+            }
+
             _status = completed.Resolution.WaveCount == 0
                 ? "Placed — no match. Select another slot."
                 : $"{completed.Resolution.WaveCount} wave(s), " +

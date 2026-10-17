@@ -19,6 +19,19 @@ namespace JellyRiot.Core
     }
 
     [Serializable]
+    public sealed class ScoreTrackerSnapshot
+    {
+        public long CurrentScore;
+        public int LongestChain;
+        public long BestEndlessScore;
+        public GameMode Mode;
+        public string DailyKey;
+        public bool RunActive;
+        public string[] DailyKeys;
+        public long[] DailyScores;
+    }
+
+    [Serializable]
     public readonly struct PresentationMetadata : IEquatable<PresentationMetadata>
     {
         public PresentationMetadata(PresentationCue cue, int waveIndex, long score)
@@ -257,6 +270,62 @@ namespace JellyRiot.Core
             }
 
             return _dailyBestScores.TryGetValue(dailyKey, out long score) ? score : 0L;
+        }
+
+        public ScoreTrackerSnapshot CreateSnapshot()
+        {
+            var keys = new string[_dailyBestScores.Count];
+            var scores = new long[_dailyBestScores.Count];
+            int index = 0;
+            foreach (KeyValuePair<string, long> pair in _dailyBestScores)
+            {
+                keys[index] = pair.Key;
+                scores[index] = pair.Value;
+                index++;
+            }
+
+            Array.Sort(keys, scores, StringComparer.Ordinal);
+            return new ScoreTrackerSnapshot
+            {
+                CurrentScore = CurrentScore,
+                LongestChain = LongestChain,
+                BestEndlessScore = BestEndlessScore,
+                Mode = _mode,
+                DailyKey = _dailyKey,
+                RunActive = _runActive,
+                DailyKeys = keys,
+                DailyScores = scores
+            };
+        }
+
+        public void Restore(ScoreTrackerSnapshot snapshot)
+        {
+            if (snapshot == null || snapshot.CurrentScore < 0L || snapshot.LongestChain < 0 ||
+                snapshot.BestEndlessScore < 0L || snapshot.DailyKeys == null ||
+                snapshot.DailyScores == null || snapshot.DailyKeys.Length != snapshot.DailyScores.Length ||
+                (snapshot.Mode != GameMode.Endless && snapshot.Mode != GameMode.Daily) ||
+                (snapshot.Mode == GameMode.Daily && string.IsNullOrWhiteSpace(snapshot.DailyKey)))
+            {
+                throw new ArgumentException("Score snapshot is invalid.", nameof(snapshot));
+            }
+
+            _dailyBestScores.Clear();
+            for (int i = 0; i < snapshot.DailyKeys.Length; i++)
+            {
+                if (string.IsNullOrWhiteSpace(snapshot.DailyKeys[i]) || snapshot.DailyScores[i] < 0L)
+                {
+                    throw new ArgumentException("Score snapshot contains an invalid daily record.", nameof(snapshot));
+                }
+
+                _dailyBestScores.Add(snapshot.DailyKeys[i], snapshot.DailyScores[i]);
+            }
+
+            CurrentScore = snapshot.CurrentScore;
+            LongestChain = snapshot.LongestChain;
+            BestEndlessScore = snapshot.BestEndlessScore;
+            _mode = snapshot.Mode;
+            _dailyKey = snapshot.DailyKey;
+            _runActive = snapshot.RunActive;
         }
     }
 }

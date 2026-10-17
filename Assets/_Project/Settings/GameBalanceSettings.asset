@@ -18,3 +18,11 @@ MonoBehaviour:
   earlyPressureInterval: 6
   middlePressureInterval: 5
   latePressureInterval: 4
+  middlePressureTurn: 20
+  latePressureTurn: 45
+  minimumPressureFilled: 3
+  maximumPressureFilled: 5
+  fourthColourTurn: 20
+  fifthColourTurn: 50
+  useWeightedGeneration: 1
+  initialGenerationAttemptLimit: 32

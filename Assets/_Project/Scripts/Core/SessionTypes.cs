@@ -39,7 +39,11 @@ namespace JellyRiot.Core
         PresentationCue = 9,
         RackSlotRefilled = 10,
         TurnCompleted = 11,
-        RunFinalised = 12
+        RunFinalised = 12,
+        PressurePending = 13,
+        PressureRowApplied = 14,
+        NoLegalMove = 15,
+        CheckpointCaptured = 16
     }
 
     [Serializable]
@@ -87,13 +91,20 @@ namespace JellyRiot.Core
     public sealed class SessionActionResult
     {
         internal SessionActionResult(bool succeeded, SessionFailure failure, IList<SessionEvent> events,
-            BoardResolutionResult resolution = null, ScoreResolutionResult scoring = null)
+            BoardResolutionResult resolution = null, ScoreResolutionResult scoring = null,
+            JellyColour[] pressureRow = null, BoardResolutionResult pressureResolution = null,
+            ScoreResolutionResult pressureScoring = null)
         {
             Succeeded = succeeded;
             Failure = failure;
             Events = new ReadOnlyCollection<SessionEvent>(new List<SessionEvent>(events));
             Resolution = resolution;
             Scoring = scoring;
+            PressureRow = pressureRow == null
+                ? null
+                : new ReadOnlyCollection<JellyColour>((JellyColour[])pressureRow.Clone());
+            PressureResolution = pressureResolution;
+            PressureScoring = pressureScoring;
         }
 
         public bool Succeeded { get; }
@@ -101,5 +112,8 @@ namespace JellyRiot.Core
         public IReadOnlyList<SessionEvent> Events { get; }
         public BoardResolutionResult Resolution { get; }
         public ScoreResolutionResult Scoring { get; }
+        public IReadOnlyList<JellyColour> PressureRow { get; }
+        public BoardResolutionResult PressureResolution { get; }
+        public ScoreResolutionResult PressureScoring { get; }
     }
 }

@@ -14,6 +14,10 @@ namespace JellyRiot.Core
         private readonly ReadOnlyCollection<JellyColour> _readOnlyRack;
         private int _eventSequence;
         private int _consumedSlot = -1;
+        private RunContentGenerator _generator;
+        private int _nextPressureTurn;
+        private int _lastPressureTurn;
+        private SessionSnapshot _continueCheckpoint;
 
         public GameSession() : this(GameBalance.Default)
         {
@@ -37,6 +41,8 @@ namespace JellyRiot.Core
         public string DailyKey { get; private set; }
         public ScoreTracker Score { get; }
         public RunScoreResult CurrentResult { get; private set; }
+        public int NextRowIn => Board == null ? 0 : Math.Max(0, _nextPressureTurn - Board.TurnCount);
+        public SessionSnapshot ContinueCheckpoint => _continueCheckpoint;
 
         public SessionActionResult CompleteBoot()
         {
@@ -142,16 +148,7 @@ namespace JellyRiot.Core
                 return Reject(SessionFailure.InvalidState, events);
             }
 
-            CurrentResult = Score.FinaliseRun();
-            events.Add(NewEvent(SessionEventType.RunFinalised, score: CurrentResult.FinalScore));
-            for (int i = 0; i < CurrentResult.Presentation.Count; i++)
-            {
-                PresentationMetadata metadata = CurrentResult.Presentation[i];
-                events.Add(NewEvent(SessionEventType.PresentationCue, waveIndex: metadata.WaveIndex,
-                    score: metadata.Score, cue: metadata.Cue));
-            }
-
-            TransitionTo(SessionState.GameOver, events);
+            FinaliseRun(events);
             return Success(events);
         }
 
@@ -229,36 +226,53 @@ namespace JellyRiot.Core
 
             BoardResolutionResult resolution = Board.ResolveMatches();
             ScoreResolutionResult scoring = Score.ApplyResolution(resolution);
-            for (int i = 0; i < resolution.Waves.Count; i++)
-            {
-                ResolutionWave wave = resolution.Waves[i];
-                WaveScore waveScore = scoring.Waves[i];
-                events.Add(NewEvent(SessionEventType.WaveResolved, waveIndex: wave.Index,
-                    clearedCount: wave.ClearedCount, points: waveScore.Points,
-                    score: waveScore.ScoreAfterWave));
-                events.Add(NewEvent(SessionEventType.ScoreChanged, waveIndex: wave.Index,
-                    points: waveScore.Points, score: waveScore.ScoreAfterWave));
-
-                for (int cueIndex = 0; cueIndex < scoring.Presentation.Count; cueIndex++)
-                {
-                    PresentationMetadata metadata = scoring.Presentation[cueIndex];
-                    if (metadata.WaveIndex == wave.Index)
-                    {
-                        events.Add(NewEvent(SessionEventType.PresentationCue,
-                            waveIndex: metadata.WaveIndex, score: metadata.Score, cue: metadata.Cue));
-                    }
-                }
-            }
+            AppendResolutionEvents(resolution, scoring, events);
 
             int refilledSlot = _consumedSlot;
-            JellyColour refilledColour = Board.NextGeneratedColour();
+            Board.UpdateActiveColourCount(_balance.GetActiveColourCount(Board.TurnCount));
+            JellyColour refilledColour = _generator.NextColour(
+                Board.ActiveColourCount, _balance.UseWeightedGeneration);
             _rack[refilledSlot] = refilledColour;
             _consumedSlot = -1;
             events.Add(NewEvent(SessionEventType.RackSlotRefilled, slotIndex: refilledSlot,
                 colour: refilledColour));
+
+            JellyColour[] pressureRow = null;
+            BoardResolutionResult pressureResolution = null;
+            ScoreResolutionResult pressureScoring = null;
+            if (Board.TurnCount >= _nextPressureTurn)
+            {
+                _continueCheckpoint = CreateSnapshotInternal(SessionState.Ready, false);
+                events.Add(NewEvent(SessionEventType.CheckpointCaptured));
+                if (!Board.CanApplyPressureRow())
+                {
+                    events.Add(NewEvent(SessionEventType.PressurePending));
+                    TransitionTo(SessionState.PendingLoss, events);
+                    return new SessionActionResult(true, SessionFailure.None, events, resolution, scoring);
+                }
+
+                pressureRow = _generator.NextPressureRow(_balance, Board.ActiveColourCount);
+                Board.ApplyPressureRow(pressureRow);
+                _lastPressureTurn = Board.TurnCount;
+                _nextPressureTurn = _lastPressureTurn + _balance.GetPressureIntervalAfter(_lastPressureTurn);
+                events.Add(NewEvent(SessionEventType.PressureRowApplied));
+                pressureResolution = Board.ResolveMatches();
+                pressureScoring = Score.ApplyResolution(pressureResolution);
+                AppendResolutionEvents(pressureResolution, pressureScoring, events);
+            }
+
+            if (!Board.HasLegalColumn())
+            {
+                events.Add(NewEvent(SessionEventType.NoLegalMove));
+                FinaliseRun(events);
+                return new SessionActionResult(true, SessionFailure.None, events, resolution, scoring,
+                    pressureRow, pressureResolution, pressureScoring);
+            }
+
             events.Add(NewEvent(SessionEventType.TurnCompleted, score: Score.CurrentScore));
             TransitionTo(SessionState.Ready, events);
-            return new SessionActionResult(true, SessionFailure.None, events, resolution, scoring);
+            return new SessionActionResult(true, SessionFailure.None, events, resolution, scoring,
+                pressureRow, pressureResolution, pressureScoring);
         }
 
         private SessionActionResult StartRun(ulong seed, GameMode mode, string dailyKey,
@@ -267,6 +281,7 @@ namespace JellyRiot.Core
             SessionState previousState = State;
             Score.StartRun(mode, dailyKey);
             Board = new BoardModel(seed, _balance);
+            _generator = new RunContentGenerator(seed);
             Seed = seed;
             Mode = mode;
             DailyKey = mode == GameMode.Daily ? dailyKey : null;
@@ -274,10 +289,14 @@ namespace JellyRiot.Core
             SelectedSlot = -1;
             _consumedSlot = -1;
             _eventSequence = 0;
+            _lastPressureTurn = 0;
+            _nextPressureTurn = _balance.FirstPressureTurn;
+            _continueCheckpoint = null;
 
             for (int i = 0; i < RackSize; i++)
             {
-                _rack[i] = Board.NextGeneratedColour();
+                _rack[i] = _generator.NextColour(
+                    Board.ActiveColourCount, _balance.UseWeightedGeneration);
             }
 
             events.Add(NewEvent(SessionEventType.RunStarted));
@@ -290,6 +309,116 @@ namespace JellyRiot.Core
             State = SessionState.Ready;
             events.Add(NewEvent(SessionEventType.StateChanged, previousState: previousState));
             return Success(events);
+        }
+
+        public SessionSnapshot CreateSnapshot() => CreateSnapshotInternal(null, true);
+
+        public void Restore(SessionSnapshot snapshot)
+        {
+            if (snapshot == null || snapshot.Board == null || snapshot.Rack == null ||
+                snapshot.Rack.Length != RackSize || snapshot.Generator == null || snapshot.Score == null ||
+                snapshot.SelectedSlot < -1 || snapshot.SelectedSlot >= RackSize ||
+                snapshot.ConsumedSlot < -1 || snapshot.ConsumedSlot >= RackSize ||
+                snapshot.NextPressureTurn < 1 || snapshot.LastPressureTurn < 0)
+            {
+                throw new ArgumentException("Session snapshot is invalid.", nameof(snapshot));
+            }
+
+            var board = new BoardModel(snapshot.Seed, _balance);
+            board.Restore(snapshot.Board);
+            var generator = new RunContentGenerator(snapshot.Seed);
+            generator.Restore(snapshot.Generator);
+            Score.Restore(snapshot.Score);
+
+            Board = board;
+            _generator = generator;
+            Array.Copy(snapshot.Rack, _rack, RackSize);
+            Seed = snapshot.Seed;
+            Mode = snapshot.Mode;
+            DailyKey = snapshot.DailyKey;
+            State = snapshot.State;
+            SelectedSlot = snapshot.SelectedSlot;
+            _consumedSlot = snapshot.ConsumedSlot;
+            _nextPressureTurn = snapshot.NextPressureTurn;
+            _lastPressureTurn = snapshot.LastPressureTurn;
+            _eventSequence = snapshot.EventSequence;
+            _continueCheckpoint = snapshot.ContinueCheckpoint;
+            CurrentResult = snapshot.HasCurrentResult
+                ? new RunScoreResult(snapshot.Mode, snapshot.DailyKey, snapshot.ResultFinalScore,
+                    snapshot.ResultLongestChain, snapshot.ResultPersonalBest,
+                    snapshot.ResultPersonalBest
+                        ? new[] { new PresentationMetadata(PresentationCue.PersonalBest, -1,
+                            snapshot.ResultFinalScore) }
+                        : Array.Empty<PresentationMetadata>())
+                : null;
+        }
+
+        private SessionSnapshot CreateSnapshotInternal(SessionState? stateOverride, bool includeCheckpoint)
+        {
+            if (Board == null || _generator == null)
+            {
+                throw new InvalidOperationException("A run must exist before it can be snapshotted.");
+            }
+
+            return new SessionSnapshot
+            {
+                Seed = Seed,
+                Mode = Mode,
+                DailyKey = DailyKey,
+                State = stateOverride ?? State,
+                Board = Board.CreateSnapshot(),
+                Rack = (JellyColour[])_rack.Clone(),
+                SelectedSlot = SelectedSlot,
+                ConsumedSlot = _consumedSlot,
+                Generator = _generator.CreateSnapshot(),
+                Score = Score.CreateSnapshot(),
+                NextPressureTurn = _nextPressureTurn,
+                LastPressureTurn = _lastPressureTurn,
+                EventSequence = _eventSequence,
+                HasCurrentResult = CurrentResult != null,
+                ResultFinalScore = CurrentResult?.FinalScore ?? 0L,
+                ResultLongestChain = CurrentResult?.LongestChain ?? 0,
+                ResultPersonalBest = CurrentResult?.IsPersonalBest ?? false,
+                ContinueCheckpoint = includeCheckpoint ? _continueCheckpoint : null
+            };
+        }
+
+        private void AppendResolutionEvents(BoardResolutionResult resolution,
+            ScoreResolutionResult scoring, List<SessionEvent> events)
+        {
+            for (int i = 0; i < resolution.Waves.Count; i++)
+            {
+                ResolutionWave wave = resolution.Waves[i];
+                WaveScore waveScore = scoring.Waves[i];
+                events.Add(NewEvent(SessionEventType.WaveResolved, waveIndex: wave.Index,
+                    clearedCount: wave.ClearedCount, points: waveScore.Points,
+                    score: waveScore.ScoreAfterWave));
+                events.Add(NewEvent(SessionEventType.ScoreChanged, waveIndex: wave.Index,
+                    points: waveScore.Points, score: waveScore.ScoreAfterWave));
+                for (int cueIndex = 0; cueIndex < scoring.Presentation.Count; cueIndex++)
+                {
+                    PresentationMetadata metadata = scoring.Presentation[cueIndex];
+                    if (metadata.WaveIndex == wave.Index)
+                    {
+                        events.Add(NewEvent(SessionEventType.PresentationCue,
+                            waveIndex: metadata.WaveIndex, score: metadata.Score, cue: metadata.Cue));
+                    }
+                }
+            }
+        }
+
+        private void FinaliseRun(List<SessionEvent> events)
+        {
+            CurrentResult = Score.FinaliseRun();
+            events.Add(NewEvent(SessionEventType.RunFinalised, score: CurrentResult.FinalScore));
+            for (int i = 0; i < CurrentResult.Presentation.Count; i++)
+            {
+                PresentationMetadata metadata = CurrentResult.Presentation[i];
+                events.Add(NewEvent(SessionEventType.PresentationCue, waveIndex: metadata.WaveIndex,
+                    score: metadata.Score, cue: metadata.Cue));
+            }
+
+            TransitionTo(SessionState.GameOver, events);
         }
 
         private void TransitionTo(SessionState next, List<SessionEvent> events)

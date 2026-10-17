@@ -32,7 +32,7 @@ namespace JellyRiot.Core
 
         public int TurnCount { get; private set; }
 
-        public int ActiveColourCount => Balance.InitialActiveColours;
+        public int ActiveColourCount { get; private set; }
 
         public IReadOnlyList<JellyColour> Cells => _readOnlyCells;
 
@@ -89,9 +89,18 @@ namespace JellyRiot.Core
         {
             Seed = seed;
             TurnCount = 0;
-            Array.Clear(_cells, 0, _cells.Length);
+            ActiveColourCount = Balance.InitialActiveColours;
             _random = new DeterministicRandom(seed);
-            GenerateInitialBoard();
+            for (int attempt = 0; attempt < Balance.InitialGenerationAttemptLimit; attempt++)
+            {
+                Array.Clear(_cells, 0, _cells.Length);
+                if (TryGenerateInitialBoard())
+                {
+                    return;
+                }
+            }
+
+            throw new InvalidOperationException("Could not generate a safe initial board within the configured attempt limit.");
         }
 
         public RunSnapshot CreateSnapshot() =>
@@ -107,7 +116,8 @@ namespace JellyRiot.Core
                 throw new ArgumentNullException(nameof(snapshot));
             }
 
-            if (snapshot.ActiveColourCount != ActiveColourCount)
+            if (snapshot.ActiveColourCount < Balance.InitialActiveColours ||
+                snapshot.ActiveColourCount > GameBalance.MaximumActiveColours)
             {
                 throw new ArgumentException("Snapshot balance does not match this board.", nameof(snapshot));
             }
@@ -120,7 +130,7 @@ namespace JellyRiot.Core
 
             for (int i = 0; i < cells.Length; i++)
             {
-                if (cells[i] < JellyColour.Empty || (int)cells[i] > ActiveColourCount)
+                if (cells[i] < JellyColour.Empty || (int)cells[i] > snapshot.ActiveColourCount)
                 {
                     throw new ArgumentException("Snapshot contains an invalid jelly colour.", nameof(snapshot));
                 }
@@ -130,6 +140,7 @@ namespace JellyRiot.Core
             Seed = snapshot.Seed;
             TurnCount = snapshot.TurnCount;
             _random = new DeterministicRandom(snapshot.RandomState);
+            ActiveColourCount = snapshot.ActiveColourCount;
         }
 
         public bool HasConnectedGroup(int minimumSize)
@@ -187,7 +198,7 @@ namespace JellyRiot.Core
             return false;
         }
 
-        private void GenerateInitialBoard()
+        private bool TryGenerateInitialBoard()
         {
             int openingColumn = _random.NextInt(Width);
             JellyColour openingColour = (JellyColour)(1 + _random.NextInt(ActiveColourCount));
@@ -239,13 +250,10 @@ namespace JellyRiot.Core
 
             if (positionCount != positions.Length || !FillGeneratedCells(0, positions, colourStarts))
             {
-                throw new InvalidOperationException("Could not generate a safe initial board.");
+                return false;
             }
 
-            if (HasConnectedGroup(4) || !TryFindSensibleOpening(out _, out _))
-            {
-                throw new InvalidOperationException("Initial board generation violated its deterministic safety contract.");
-            }
+            return !HasConnectedGroup(4) && TryFindSensibleOpening(out _, out _);
         }
 
         private bool FillGeneratedCells(int position, int[] positions, int[] colourStarts)
@@ -341,6 +349,77 @@ namespace JellyRiot.Core
         }
 
         private static int ToIndex(int column, int row) => (row * Width) + column;
+
+        internal void UpdateActiveColourCount(int activeColourCount)
+        {
+            if (activeColourCount < Balance.InitialActiveColours ||
+                activeColourCount > GameBalance.MaximumActiveColours)
+            {
+                throw new ArgumentOutOfRangeException(nameof(activeColourCount));
+            }
+
+            ActiveColourCount = activeColourCount;
+        }
+
+        internal bool HasLegalColumn()
+        {
+            for (int column = 0; column < Width; column++)
+            {
+                if (_cells[ToIndex(column, 0)] == JellyColour.Empty)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        internal bool CanApplyPressureRow()
+        {
+            for (int column = 0; column < Width; column++)
+            {
+                if (_cells[ToIndex(column, 0)] != JellyColour.Empty)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        internal void ApplyPressureRow(JellyColour[] row)
+        {
+            if (row == null || row.Length != Width)
+            {
+                throw new ArgumentException("Pressure row must contain exactly seven cells.", nameof(row));
+            }
+
+            if (!CanApplyPressureRow())
+            {
+                throw new InvalidOperationException("Pressure cannot displace an occupied top cell.");
+            }
+
+            for (int i = 0; i < row.Length; i++)
+            {
+                if (row[i] < JellyColour.Empty || (int)row[i] > ActiveColourCount)
+                {
+                    throw new ArgumentException("Pressure row contains an invalid colour.", nameof(row));
+                }
+            }
+
+            for (int boardRow = 0; boardRow < Height - 1; boardRow++)
+            {
+                for (int column = 0; column < Width; column++)
+                {
+                    _cells[ToIndex(column, boardRow)] = _cells[ToIndex(column, boardRow + 1)];
+                }
+            }
+
+            for (int column = 0; column < Width; column++)
+            {
+                _cells[ToIndex(column, Height - 1)] = row[column];
+            }
+        }
 
         internal JellyColour GetCellUnchecked(int index) => _cells[index];
 
