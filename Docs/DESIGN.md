@@ -33,6 +33,17 @@ Given the same seed, balance values and actions, Core must produce the same boar
 - Empty is an explicit `JellyColour.Empty` value.
 - Initial boards contain 20 occupied cells (31.7%), use three active colours, remain in the bottom four rows, contain no connected group of four, and guarantee a one-drop opening match opportunity.
 
+## Resolution contract
+
+- Match connectivity is orthogonal only and is found with an iterative flood fill.
+- Every qualifying connected component is recorded before any cell in that wave is removed.
+- Gravity is vertical and stable: occupied cells compact toward row 8 without changing their relative order.
+- Resolution repeats synchronously until stable. Each successful wave removes at least four cells, so a 63-cell board must terminate in at most 15 waves.
+- `BoardResolutionResult` exposes ordered, read-only waves. Each wave records its zero-based index, cleared cells with colours, and every fall with source, destination and colour.
+- Core owns the entire calculation and does not use Unity objects, transforms, time, coroutines or presentation state.
+
+`GameTest.unity` is a development-only playable inspection scene and is intentionally excluded from build settings. It displays immediate Core state so current behaviour can be exercised before the production presentation and session layers are scheduled.
+
 ## UI policy
 
 Future canvases use `Scale With Screen Size`, reference resolution 1080x1920, portrait orientation and safe-area containers. Layouts must remain usable at 16:9 and 19.5:9 without placing essential controls in gesture or cut-out areas.

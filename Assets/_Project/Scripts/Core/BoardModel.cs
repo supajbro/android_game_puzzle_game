@@ -97,6 +97,9 @@ namespace JellyRiot.Core
         public RunSnapshot CreateSnapshot() =>
             new RunSnapshot(Seed, TurnCount, ActiveColourCount, _random.State, _cells);
 
+        /// <summary>Clears every current and cascading match, then settles the board.</summary>
+        public BoardResolutionResult ResolveMatches() => BoardResolver.Resolve(this);
+
         public void Restore(RunSnapshot snapshot)
         {
             if (snapshot == null)
@@ -338,6 +341,10 @@ namespace JellyRiot.Core
         }
 
         private static int ToIndex(int column, int row) => (row * Width) + column;
+
+        internal JellyColour GetCellUnchecked(int index) => _cells[index];
+
+        internal void SetCellUnchecked(int index, JellyColour colour) => _cells[index] = colour;
 
         private static void ValidateCoordinates(int column, int row)
         {

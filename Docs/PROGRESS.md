@@ -27,5 +27,20 @@ Status: COMPLETE
 - Files added/changed: `Assets/_Project/Scripts/Core/*`; `Assets/_Project/Scripts/Gameplay/Configuration/GameBalanceSettings.cs`; `Assets/_Project/Settings/GameBalanceSettings.asset`; `Assets/_Project/Tests/EditMode/BoardModelTests.cs`; associated assembly definitions and `.meta` files.
 - Verification: 24/24 Unity EditMode tests passed in 0.268 seconds; deterministic standalone smoke validation passed across 10,000 seeds; compilation succeeded with no C# errors.
 - No match clearing, gravity, scoring, pressure rows, rack/session state or other Work Order 02+ behaviour was implemented.
-- Next task when authorised: Work Order 02 — simultaneous match detection and stable gravity.
+- Work Order 02 was subsequently authorised and is recorded below.
+
+## 2026-10-17 — Work Order 02
+
+Status: COMPLETE
+
+- Implemented iterative orthogonal flood-fill match detection for every connected shape of four or more jellies. Diagonal cells do not connect and each component is visited once.
+- Implemented simultaneous per-wave clearing followed by deterministic, stable vertical gravity. Jellies retain their order, never move horizontally and cannot remain floating.
+- Implemented repeated resolution waves until stable, with a mathematical termination guard based on the 63-cell board and the four-cell minimum clear.
+- Added immutable structured results for wave indices, cleared positions/colours/counts and falling source/destination/colour records. Empty and already-stable boards return a valid zero-wave result.
+- Added 21 focused `BoardResolverTests` covering every Work Order 02 scenario, deterministic ordering and read-only result collections while preserving all Work Order 00/01 tests.
+- Added `Assets/_Project/Scenes/GameTest.unity`, an excluded-from-build development playground for the currently implemented placement and resolution flow. It deliberately contains no scoring, pressure, rack, animation, VFX, audio, ads or production UI work.
+- Files added/changed: Core board resolver and result types; `BoardModel.ResolveMatches`; EditMode resolver tests; development playground controller and scene; associated `.meta` files; this progress record, design notes and test matrix.
+- Verification: Core, EditMode test and Runtime assemblies compiled with zero C# errors against Unity 6000.3.11f1-generated project files. All 21 resolver NUnit test methods executed in a local deterministic runner and passed. The Unity Test Runner itself was not completed because the headless editor repeatedly lost its local Licensing Client connection before test execution; no Unity-run result is claimed for this work order.
+- Known limitations: the playground applies resolution immediately and presents final board state only; animation and full session flow intentionally belong to later work orders. The previously recorded Android API 36 release prerequisite remains unchanged.
+- Next task when authorised: Work Order 03.
 
