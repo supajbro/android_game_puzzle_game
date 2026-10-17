@@ -1,0 +1,19 @@
+{
+  "name": "JellyRiot.Editor",
+  "rootNamespace": "JellyRiot.Editor",
+  "references": [
+    "JellyRiot.Core",
+    "JellyRiot.Runtime"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

@@ -1,0 +1,16 @@
+{
+  "name": "JellyRiot.Runtime",
+  "rootNamespace": "JellyRiot",
+  "references": [
+    "JellyRiot.Core"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

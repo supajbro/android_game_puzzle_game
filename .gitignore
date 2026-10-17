@@ -15,6 +15,23 @@
 /[Uu]ser[Ss]ettings/
 *.log
 
+# Local credentials, signing material and machine configuration
+.env
+.env.*
+!.env.example
+*.keystore
+*.jks
+*.p12
+*.pem
+*.key
+keystore.properties
+local.properties
+service-account*.json
+google-services.json
+GoogleService-Info.plist
+**/[Ss]ecrets/**
+**/[Cc]redentials/**
+
 # By default unity supports Blender asset imports, *.blend1 blender files do not need to be commited to version control.
 *.blend1
 *.blend1.meta
@@ -104,6 +121,11 @@ InitTestScene*.unity*
 
 # UI Toolkit auto generated files
 /UIElementsSchema/
+
+# Local profiling and IDE state
+/[Pp]rofilerCaptures/
+/.idea/
+/.vscode/*.user
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
