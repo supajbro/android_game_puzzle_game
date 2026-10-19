@@ -70,3 +70,20 @@ Status: COMPLETE
 - Files added/changed: `ScoreModel.cs`, `BoardResolver.cs`, `BoardResolutionResult.cs`, `BoardResolverTests.cs`, `ScoreModelTests.cs`, documentation and associated `.meta` files.
 - Next task when authorised: Work Order 05 — deterministic pressure rises and loss checks.
 
+## 2026-10-19 — Work Orders 09 and 10 supplied-art integration
+
+Status: IMPLEMENTED; UNITY VISUAL/PLAYMODE VALIDATION BLOCKED
+
+- Integrated the supplied original `background`, logo, mascot, board overlay, panel/button sheet and icon sheet into a new static production `Main` presentation. No replacement artwork was generated.
+- Added a repeatable Editor workflow at `Jelly Riot/Visuals/Configure Artwork` and `Jelly Riot/Visuals/Build Main Scene`. It applies RGBA Sprite import, 100 PPU, bilinear filtering, disabled mipmaps/read-write, ASTC 6x6 Android overrides and explicit named rectangles so neighbouring sprites are not included accidentally.
+- Mapped Core colours exactly: `Coral`, `Lemon`, `Aqua`, `Lilac`, `Mint`. Occupied board cells and all three rack candidates use the same mapping, with `Jelly_Shadow` below each jelly.
+- Added the 7-column × 9-row static board view, 63 empty-cell holes, separate seven-column hit targets and exactly three reconstructed rack slots. The supplied five-cavity rack art is retained as an available slice but is deliberately not used as the live rack.
+- Added supplied-art Home, Gameplay, Pause, Settings, Results and Daily Challenge presentation with working Play/Daily/navigation, rack selection, column drop, pause/resume, Replay/Home, sound/haptics toggles and Android Back behaviour. Views issue Core commands and redraw from authoritative settled state; no Work Order 11+ animation or gameplay mutation was added.
+- Added a 1080×1920 Canvas Scaler and runtime safe-area anchors. Layout uses centred fixed logical dimensions sized to remain within the 1080-wide safe area and scale through the Canvas Scaler.
+- Added `VisualIntegrationPlayModeTests` covering scene creation, the 63-cell board, three rack slots, five distinct supplied colour sprites and Play navigation.
+- Files changed: `Assets/_Project/Scenes/Main.unity`; `Assets/_Project/Scripts/JellyRiot.Runtime.asmdef`; `Assets/_Project/Scripts/UI/JellyRiotMainUI.cs`; `Assets/_Project/Scripts/UI/SafeAreaFitter.cs`; `Assets/_Project/Scripts/Editor/JellyRiotVisualSetup.cs`; `Assets/_Project/Tests/PlayMode/VisualIntegrationPlayModeTests.cs`; generated `.meta` files; `Docs/ART_BIBLE.md`; `Docs/PROGRESS.md`.
+- Verification actually completed: `dotnet build JellyRiot.Runtime.csproj --no-restore`, `dotnet build JellyRiot.Editor.csproj --no-restore` and `dotnet build JellyRiot.PlayModeTests.csproj --no-restore` each passed with 0 warnings and 0 errors. A scene-reference audit found 13 unique serialised GUIDs and 0 missing asset GUIDs.
+- NOT RUN: Unity PlayMode tests, Console inspection, interactive navigation, visual checks at 360×800 / 1080×1920 / 1080×2400, and screenshots. The project is locked by another background Unity instance, and two isolated Unity 6000.3.11f1 attempts lost the local Licensing Client connection before asset import/test execution. No visual or device result is claimed.
+- Artwork issue: the source rack depicts five cavities, so using it directly would contradict the three-slot Core contract. The live rack is reconstructed with three supplied cell holes on the supplied score-panel styling. All requested art otherwise has a usable transparent source.
+- Next work order: do not begin Work Order 11 without owner approval. First open the project in a licensed Unity Editor, run `Jelly Riot/Visuals/Build Main Scene`, execute the PlayMode suite, then inspect/capture Home and Gameplay at the three target resolutions.
+

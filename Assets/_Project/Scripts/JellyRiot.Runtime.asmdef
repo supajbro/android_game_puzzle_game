@@ -2,7 +2,8 @@
   "name": "JellyRiot.Runtime",
   "rootNamespace": "JellyRiot",
   "references": [
-    "JellyRiot.Core"
+    "JellyRiot.Core",
+    "Unity.InputSystem"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],

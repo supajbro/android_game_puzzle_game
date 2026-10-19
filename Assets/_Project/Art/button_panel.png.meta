@@ -1,0 +1,505 @@
+fileFormatVersion: 2
+guid: 0d22107642a10db49b9bc3b780c171f5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5215499550592882317
+    second: button_panel_0
+  - first:
+      213: 8557929503449746835
+    second: button_panel_1
+  - first:
+      213: -1129478321907098563
+    second: button_panel_2
+  - first:
+      213: 1835952544309394017
+    second: button_panel_3
+  - first:
+      213: -7629731517509776648
+    second: button_panel_4
+  - first:
+      213: -7403618359214437850
+    second: button_panel_5
+  - first:
+      213: -4310177025632192282
+    second: button_panel_6
+  - first:
+      213: -3398219867815490384
+    second: button_panel_7
+  - first:
+      213: 2212793129650926717
+    second: button_panel_8
+  - first:
+      213: -892719216436257675
+    second: button_panel_9
+  - first:
+      213: 5795521238701256500
+    second: button_panel_10
+  - first:
+      213: 8093647195059701883
+    second: button_panel_11
+  - first:
+      213: 9080901566745280274
+    second: button_panel_12
+  - first:
+      213: 3454801268759030575
+    second: button_panel_13
+  - first:
+      213: 576820828419800524
+    second: button_panel_14
+  - first:
+      213: -2754342728395443185
+    second: button_panel_15
+  - first:
+      213: 5790214064644457708
+    second: button_panel_16
+  - first:
+      213: 5272590334736775166
+    second: button_panel_17
+  - first:
+      213: -581956886851212089
+    second: button_panel_18
+  - first:
+      213: -9107273814853384363
+    second: button_panel_19
+  - first:
+      213: 1978117775322815583
+    second: button_panel_20
+  - first:
+      213: -3641756365808757523
+    second: button_panel_21
+  - first:
+      213: -1761506267764561149
+    second: button_panel_22
+  - first:
+      213: -6263081566721885772
+    second: button_panel_23
+  - first:
+      213: -2634695179922968329
+    second: button_panel_24
+  - first:
+      213: 1561505265532360709
+    second: button_panel_25
+  - first:
+      213: -6573350866862896848
+    second: button_panel_26
+  - first:
+      213: -485780298294710483
+    second: button_panel_27
+  - first:
+      213: -6014569610520506595
+    second: button_panel_28
+  - first:
+      213: -6202963962559172231
+    second: button_panel_29
+  - first:
+      213: 1496579527293286418
+    second: button_panel_30
+  - first:
+      213: 6714471182042273325
+    second: button_panel_31
+  - first:
+      213: 2374153536849291588
+    second: button_panel_32
+  - first:
+      213: 5213374558567560787
+    second: button_panel_33
+  - first:
+      213: -6150728514048017911
+    second: button_panel_34
+  - first:
+      213: -7009490354206163694
+    second: button_panel_35
+  - first:
+      213: 7568296666156319913
+    second: button_panel_36
+  - first:
+      213: -7219747259727150201
+    second: button_panel_37
+  - first:
+      213: -5094950043378881668
+    second: button_panel_38
+  - first:
+      213: 616156474890371897
+    second: button_panel_39
+  - first:
+      213: 2814739831673360137
+    second: button_panel_40
+  - first:
+      213: -2195192355191675248
+    second: button_panel_41
+  - first:
+      213: -6420715778058309748
+    second: button_panel_42
+  - first:
+      213: -5307134433107679660
+    second: button_panel_43
+  - first:
+      213: -2180078391206274933
+    second: button_panel_44
+  - first:
+      213: -9004390889294764354
+    second: button_panel_45
+  - first:
+      213: -9175938688729920648
+    second: button_panel_46
+  - first:
+      213: -6633286852007796298
+    second: button_panel_47
+  - first:
+      213: 2666039735896691798
+    second: button_panel_48
+  - first:
+      213: 2710294916510212089
+    second: button_panel_49
+  - first:
+      213: 9115207564734326143
+    second: button_panel_50
+  - first:
+      213: 433700246174656264
+    second: button_panel_51
+  - first:
+      213: -2845132513579385279
+    second: button_panel_52
+  - first:
+      213: 705937836630570580
+    second: button_panel_53
+  - first:
+      213: 6808082722976214465
+    second: button_panel_54
+  - first:
+      213: -9136293804669907422
+    second: button_panel_55
+  - first:
+      213: -2212324520429227912
+    second: button_panel_56
+  - first:
+      213: -7632597723081086840
+    second: button_panel_57
+  - first:
+      213: -3045271822993776125
+    second: CellHole
+  - first:
+      213: -55636065226516076
+    second: RackFive
+  - first:
+      213: -7921110506549354751
+    second: PillButton
+  - first:
+      213: -716445542542296265
+    second: ScorePanel
+  - first:
+      213: -4757055541519024708
+    second: InformationPanel
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 70
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 50
+    textureCompression: 1
+    compressionQuality: 70
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CellHole
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 715
+        width: 300
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 55, y: 55, z: 55, w: 55}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30223f959650db5d0800000000000000
+      internalID: -3045271822993776125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RackFive
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 710
+        width: 645
+        height: 292
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 499197f1b475a3ff0800000000000000
+      internalID: -55636065226516076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PillButton
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 716
+        width: 445
+        height: 277
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 105, y: 105, z: 105, w: 105}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10fd28e46ff821290800000000000000
+      internalID: -7921110506549354751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScorePanel
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 188
+        width: 665
+        height: 324
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 120, y: 120, z: 120, w: 120}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73bbadf239cae06f0800000000000000
+      internalID: -716445542542296265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InformationPanel
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 104
+        width: 765
+        height: 570
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 145, y: 145, z: 145, w: 145}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbd74fe503b8bfdb0800000000000000
+      internalID: -4757055541519024708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CellHole: -3045271822993776125
+      InformationPanel: -4757055541519024708
+      PillButton: -7921110506549354751
+      RackFive: -55636065226516076
+      ScorePanel: -716445542542296265
+      button_panel_0: 5215499550592882317
+      button_panel_1: 8557929503449746835
+      button_panel_10: 5795521238701256500
+      button_panel_11: 8093647195059701883
+      button_panel_12: 9080901566745280274
+      button_panel_13: 3454801268759030575
+      button_panel_14: 576820828419800524
+      button_panel_15: -2754342728395443185
+      button_panel_16: 5790214064644457708
+      button_panel_17: 5272590334736775166
+      button_panel_18: -581956886851212089
+      button_panel_19: -9107273814853384363
+      button_panel_2: -1129478321907098563
+      button_panel_20: 1978117775322815583
+      button_panel_21: -3641756365808757523
+      button_panel_22: -1761506267764561149
+      button_panel_23: -6263081566721885772
+      button_panel_24: -2634695179922968329
+      button_panel_25: 1561505265532360709
+      button_panel_26: -6573350866862896848
+      button_panel_27: -485780298294710483
+      button_panel_28: -6014569610520506595
+      button_panel_29: -6202963962559172231
+      button_panel_3: 1835952544309394017
+      button_panel_30: 1496579527293286418
+      button_panel_31: 6714471182042273325
+      button_panel_32: 2374153536849291588
+      button_panel_33: 5213374558567560787
+      button_panel_34: -6150728514048017911
+      button_panel_35: -7009490354206163694
+      button_panel_36: 7568296666156319913
+      button_panel_37: -7219747259727150201
+      button_panel_38: -5094950043378881668
+      button_panel_39: 616156474890371897
+      button_panel_4: -7629731517509776648
+      button_panel_40: 2814739831673360137
+      button_panel_41: -2195192355191675248
+      button_panel_42: -6420715778058309748
+      button_panel_43: -5307134433107679660
+      button_panel_44: -2180078391206274933
+      button_panel_45: -9004390889294764354
+      button_panel_46: -9175938688729920648
+      button_panel_47: -6633286852007796298
+      button_panel_48: 2666039735896691798
+      button_panel_49: 2710294916510212089
+      button_panel_5: -7403618359214437850
+      button_panel_50: 9115207564734326143
+      button_panel_51: 433700246174656264
+      button_panel_52: -2845132513579385279
+      button_panel_53: 705937836630570580
+      button_panel_54: 6808082722976214465
+      button_panel_55: -9136293804669907422
+      button_panel_56: -2212324520429227912
+      button_panel_57: -7632597723081086840
+      button_panel_6: -4310177025632192282
+      button_panel_7: -3398219867815490384
+      button_panel_8: 2212793129650926717
+      button_panel_9: -892719216436257675
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
