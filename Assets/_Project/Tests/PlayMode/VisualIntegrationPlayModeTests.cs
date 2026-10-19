@@ -46,6 +46,7 @@ namespace JellyRiot.Tests.PlayMode
             Assert.That(GameObject.Find("Rack Button 1"), Is.Not.Null);
             Assert.That(GameObject.Find("Rack Button 2"), Is.Not.Null);
             Assert.That(ui.GridPresenter, Is.Not.Null);
+            Assert.That(ui.GridPresenter.HasCompleteAnimationLibrary(), Is.True);
             Assert.That(ui.GridPresenter.RenderedBoardMatchesModel(), Is.True);
         }
 
@@ -82,24 +83,97 @@ namespace JellyRiot.Tests.PlayMode
                 presenter.Present(session.SelectRackSlot(move % GameSession.RackSize));
                 int column = FirstLegalColumn(session.Board);
                 SessionActionResult begin = session.TryBeginTurn(column);
-                presenter.Present(begin);
                 Assert.That(begin.Succeeded, Is.True);
 
                 SessionActionResult rapidDuplicate = session.TryBeginTurn(column);
-                presenter.Present(rapidDuplicate);
                 Assert.That(rapidDuplicate.Succeeded, Is.False);
 
-                presenter.Present(session.CompleteTurn());
+                SessionActionResult complete = session.CompleteTurn();
+                SessionActionResult terminal = null;
                 if (session.State == SessionState.PendingLoss)
                 {
-                    presenter.Present(session.ConfirmGameOver());
+                    terminal = session.ConfirmGameOver();
                 }
+
+                presenter.PresentTurn(begin, complete, terminal);
+                presenter.CancelPendingAndSynchronise();
 
                 Assert.That(presenter.QueuedActionCount, Is.Zero);
                 Assert.That(presenter.RenderedBoardMatchesModel(), Is.True, $"Visual mismatch after move {move + 1}.");
             }
 
             yield return null;
+        }
+
+        [UnityTest]
+        public IEnumerator ThirtyAnimatedTurnsSettleAndPauseFreezesActiveDrop()
+        {
+            SceneManager.LoadScene("Main");
+            yield return null;
+            JellyRiotMainUI ui = Object.FindFirstObjectByType<JellyRiotMainUI>();
+            GameObject.Find("Play Button").GetComponent<Button>().onClick.Invoke();
+            yield return null;
+
+            GameSession session = ui.Session;
+            GridViewPresenter presenter = ui.GridPresenter;
+            Assert.That(presenter.HasCompleteAnimationLibrary(), Is.True);
+
+            for (int move = 0; move < 30; move++)
+            {
+                if (session.State == SessionState.GameOver) presenter.Present(session.Replay());
+                presenter.Present(session.SelectRackSlot(move % GameSession.RackSize));
+                int column = FirstLegalColumn(session.Board);
+                SessionActionResult begin = session.TryBeginTurn(column);
+                SessionActionResult duplicate = session.TryBeginTurn(column);
+                Assert.That(duplicate.Succeeded, Is.False);
+                SessionActionResult complete = session.CompleteTurn();
+                SessionActionResult terminal = session.State == SessionState.PendingLoss
+                    ? session.ConfirmGameOver()
+                    : null;
+                presenter.PresentTurn(begin, complete, terminal);
+                Assert.That(presenter.ActiveFallDuration, Is.InRange(0.14f, 0.24f));
+
+                if (move == 4)
+                {
+                    presenter.Present(session.Pause());
+                    yield return null;
+                    yield return null;
+                    Assert.That(presenter.IsPresenting, Is.True, "A paused drop must not complete behind the pause screen.");
+                    presenter.Present(session.Resume());
+                }
+
+                float timeout = Time.realtimeSinceStartup + 1.5f;
+                while (presenter.IsPresenting && Time.realtimeSinceStartup < timeout) yield return null;
+                Assert.That(presenter.IsPresenting, Is.False, $"Animation did not settle after move {move + 1}.");
+                Assert.That(presenter.RenderedBoardMatchesModel(), Is.True, $"Visual mismatch after animated move {move + 1}.");
+            }
+        }
+
+        [UnityTest]
+        public IEnumerator ReducedMotionUsesMinimalDropAndDevelopmentSlowMotionDoesNotChangeCore()
+        {
+            SceneManager.LoadScene("Main");
+            yield return null;
+            JellyRiotMainUI ui = Object.FindFirstObjectByType<JellyRiotMainUI>();
+            GameObject.Find("Play Button").GetComponent<Button>().onClick.Invoke();
+            yield return null;
+
+            GameSession session = ui.Session;
+            GridViewPresenter presenter = ui.GridPresenter;
+            DeterministicRandomState randomBeforeVisualSettings = session.CreateSnapshot().Generator.RandomState;
+            presenter.SetReducedMotion(true);
+            presenter.ToggleSlowMotion();
+            Assert.That(session.CreateSnapshot().Generator.RandomState, Is.EqualTo(randomBeforeVisualSettings),
+                "Visual speed controls must not consume gameplay randomness.");
+            presenter.Present(session.SelectRackSlot(0));
+            SessionActionResult begin = session.TryBeginTurn(FirstLegalColumn(session.Board));
+            SessionActionResult complete = session.CompleteTurn();
+            presenter.PresentTurn(begin, complete);
+            Assert.That(presenter.ActiveFallDuration, Is.EqualTo(0.08f).Within(0.001f));
+
+            float timeout = Time.realtimeSinceStartup + 1.5f;
+            while (presenter.IsPresenting && Time.realtimeSinceStartup < timeout) yield return null;
+            Assert.That(presenter.RenderedBoardMatchesModel(), Is.True);
         }
 
         private static int FirstLegalColumn(BoardModel board)

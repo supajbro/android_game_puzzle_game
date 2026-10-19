@@ -26,9 +26,9 @@
 | Day | Codex work orders | Required deliverable | Non-negotiable gate |
 |---|---|---|---|
 | **1** | 00–07 | Deterministic, playable, testable game simulation | Player can complete full run, fail, restart, with no errors |
-| **2** | 08–12 | Functional portrait UI + complete reusable jelly art | Readable and appealing on phone, no placeholder rectangles |
+| **2** | 08–11 | Functional portrait UI + complete reusable jelly art | Readable and appealing on phone, no placeholder rectangles |
 | **3** | 13–17 | Juice: animations, cascades, VFX, sound, music | Looks and sounds marketable in a 10-second capture |
-| **4** | 18–21 | Onboarding, daily challenge, saves, settings/accessibility | Never loses data or traps a player |
+| **4** | 18, deferred 12, 19–21 | Onboarding, daily challenge, saves, settings/accessibility | Never loses data or traps a player |
 | **5** | 22–25 | Analytics instrumentation, ads abstraction, consent, Android build | Test ads only; no consent or ad-related crashes |
 | **6** | 26–29 | Privacy/store materials, automated and phone QA, performance, screenshots | QA sign-off and working test AAB |
 | **7** | 30–32 | Creative marketing kit, launch configuration, closed test, final audit | Uploaded/ready for test track, with all blockers declared |
@@ -385,14 +385,6 @@ Read AGENTS.md and plan. Replace placeholder board elements with pooled SpriteRe
 
 **Accept when:** No wrong jelly colour/position after 100 rapid moves; source of truth remains BoardModel.
 
-## Work Order 12 — First-time onboarding and microcopy (Day 2) — GATE G2
-
-```text
-Read AGENTS.md and plan. Implement a genuine play-through tutorial with maximum three short callouts, timed by player action rather than modal wall of text: (1) Select a jelly, (2) Tap a column to drop, (3) Match 4+ and trigger chains. For the very first run only, use a stable fixed approachable seed so the player's first valid guided move creates an obvious match within 1–2 moves (if practical); never simulate success or fake input. After success, release tutorial constraints and begin normal endless play. Persist tutorial completion; allow Skip and Replay Tutorial from Settings. Add understated help tooltip explaining pressure row. Use friendly concise Australian English; no lengthy paragraphs. Add optional manual screenshot sequence for reviewers. Verify new install first 15 seconds, replay tutorial, skip, and restore. Do not spam popups.
-```
-
-**Accept when:** A non-gamer can identify what to tap and clear a group, no ads or account screens block first play. **Human gate:** Ask someone unfamiliar to play without verbal help.
-
 ## Work Order 13 — Jelly feel: drop/land/squash animations (Day 3)
 
 ```text
@@ -440,6 +432,18 @@ Read AGENTS.md and product bible. Polish Home, Pause, Settings, Result and Daily
 ```
 
 **Accept when:** All screens navigable, no accidental ads/taps, accessibility settings work instantly.
+
+## Work Order 12 — First-time onboarding and microcopy (owner-deferred until after Work Order 18) — GATE G2
+
+> **Owner scheduling decision — 19 October 2026:** Work Order 12 was explicitly deferred so visual
+> animation work could proceed first. Execute this work order immediately after Work Order 18 and
+> before Work Order 19. The tutorial scope and acceptance gate remain unchanged.
+
+```text
+Read AGENTS.md and plan. Implement a genuine play-through tutorial with maximum three short callouts, timed by player action rather than modal wall of text: (1) Select a jelly, (2) Tap a column to drop, (3) Match 4+ and trigger chains. For the very first run only, use a stable fixed approachable seed so the player's first valid guided move creates an obvious match within 1–2 moves (if practical); never simulate success or fake input. After success, release tutorial constraints and begin normal endless play. Persist tutorial completion; allow Skip and Replay Tutorial from Settings. Add understated help tooltip explaining pressure row. Use friendly concise Australian English; no lengthy paragraphs. Add optional manual screenshot sequence for reviewers. Verify new install first 15 seconds, replay tutorial, skip, and restore. Do not spam popups.
+```
+
+**Accept when:** A non-gamer can identify what to tap and clear a group, no ads or account screens block first play. **Human gate:** Ask someone unfamiliar to play without verbal help.
 
 ## Work Order 19 — Daily Challenge implementation (Day 4)
 

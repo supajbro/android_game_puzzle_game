@@ -141,3 +141,47 @@ Status: IMPLEMENTED; UNITY PLAYMODE/VISUAL VALIDATION NOT RUN
   run `Jelly Riot/Visuals/Configure Animation Frames`, run the PlayMode suite, inspect the five
   contact sheets and capture Gameplay at the target phone resolutions.
 
+## 2026-10-19 — Work Order 13: jelly drop, landing and squash animations
+
+Status: COMPLETE
+
+- The owner explicitly deferred Work Order 12 (first-time onboarding and microcopy) until after
+  Work Order 18. The master-plan schedule and work-order sequence now record that decision; no
+  onboarding implementation was included in this work order.
+- Added a single, frame-independent presentation state machine for placement: each jelly spawns
+  above the grid, accelerates into its authoritative Core destination, lands with a restrained
+  squash, rebounds by 10 logical pixels and settles without changing simulation results.
+- Fall time is row-sensitive and clamped to 140–240 ms. Landing squash is 70 ms, rebound is 85 ms
+  and final settling is 70 ms. Falling, Landing and Squash/Stretch use the five ordered frames for
+  the placed jelly's Core colour; incomplete libraries fall back safely to the static colour sprite.
+- Shadows remain separate visual elements. They contract and lighten while the jelly is airborne,
+  widen and darken on contact, then return to their baseline state after settling or cancellation.
+- Added cosmetic idle blinks using an isolated `System.Random` stream, varied 1.8–4.5 second
+  intervals and one jelly at a time. Blink scheduling neither reads nor advances deterministic Core
+  random state, and action animation pre-empts any active blink.
+- Turn input remains locked until visual settling. Pause freezes the active animation without
+  advancing time; home/replay/restart/focus-loss cancellation snaps pooled views to the current
+  authoritative snapshot and cannot leave stale transforms, sprites or shadows.
+- Added a reduced-motion setting with a minimal 80 ms placement and no bounce, squash or idle blink.
+  Added an Editor/development-only `ANIM 1x` / `ANIM 0.25x` control; it scales presentation time only.
+- Files changed: `Assets/Jelly_Riot_Codex_Master_Plan.md`;
+  `Assets/_Project/Scenes/Main.unity`; `Assets/_Project/Scripts/Visuals/GridViewPresenter.cs`;
+  `Assets/_Project/Scripts/UI/JellyRiotMainUI.cs`;
+  `Assets/_Project/Scripts/Editor/JellyRiotVisualSetup.cs`;
+  `Assets/_Project/Tests/PlayMode/VisualIntegrationPlayModeTests.cs`; `Docs/PROGRESS.md`.
+- Imported assets completed during validation: all 100 animation frame `.meta` files and
+  `Assets/_Project/Settings/JellyAnimationLibrary.asset` plus its `.meta`. The library contains all
+  five colours, all four categories and five ordered frames per category.
+- Verification: `dotnet build JellyRiot.Runtime.csproj --no-restore`,
+  `dotnet build JellyRiot.Editor.csproj --no-restore` and
+  `dotnet build JellyRiot.PlayModeTests.csproj --no-restore` each passed with 0 warnings and
+  0 errors. An isolated Unity 6000.3.11f1 PlayMode run passed 5/5 tests in 16.661 seconds. Coverage
+  includes scene/library integrity, 30 animated turns and settled-model equality, pause freezing,
+  reduced motion, 0.25x development timing, unchanged Core RNG state, and 100 rapid
+  cancel/interruption recoveries with no duplicate or stale pooled views.
+- Manual device profiling, screenshots and perceptual comparison at forced 30 FPS versus 60 FPS
+  were not run. Animation timing is delta-time based, and the automated Unity suite completed at
+  the editor's configured 60 FPS target, but no claim is made for device-specific visual quality.
+- Next work order: do not begin Work Order 14 without owner approval. Work Order 12 remains
+  explicitly deferred until after Work Order 18.
+

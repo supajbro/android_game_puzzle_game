@@ -46,6 +46,7 @@ namespace JellyRiot.UI
         [Header("Jellies: Coral, Lemon, Aqua, Lilac, Mint")]
         [SerializeField] private Sprite[] jellySprites = new Sprite[5];
         [SerializeField] private Sprite jellyShadow;
+        [SerializeField] private JellyAnimationLibrary animationLibrary;
 
         private readonly Image[] _boardJellies = new Image[BoardModel.CellCount];
         private readonly Image[] _boardShadows = new Image[BoardModel.CellCount];
@@ -68,8 +69,11 @@ namespace JellyRiot.UI
         private Text _resultText;
         private Text _soundText;
         private Text _hapticsText;
+        private Text _reducedMotionText;
+        private Text _slowMotionText;
         private bool _soundEnabled = true;
         private bool _hapticsEnabled = true;
+        private bool _reducedMotion;
         private bool _settingsFromPause;
         private Font _font;
 
@@ -83,7 +87,8 @@ namespace JellyRiot.UI
             Sprite overlaySprite, Sprite cellSprite, Sprite pillSprite, Sprite scoreSprite,
             Sprite infoPanelSprite, Sprite pauseSprite, Sprite replaySprite, Sprite soundSprite,
             Sprite hapticsSprite, Sprite homeSprite, Sprite dailySprite, Sprite infoSprite,
-            Sprite arrowSprite, Sprite highlightSprite, Sprite[] colours, Sprite shadowSprite)
+            Sprite arrowSprite, Sprite highlightSprite, Sprite[] colours, Sprite shadowSprite,
+            JellyAnimationLibrary animations)
         {
             background = backgroundSprite;
             logo = logoSprite;
@@ -104,6 +109,7 @@ namespace JellyRiot.UI
             selectionHighlight = highlightSprite;
             jellySprites = colours;
             jellyShadow = shadowSprite;
+            animationLibrary = animations;
         }
 
         private void Awake()
@@ -313,8 +319,13 @@ namespace JellyRiot.UI
             debugText.gameObject.SetActive(false);
 #endif
             _gridPresenter = gameObject.AddComponent<GridViewPresenter>();
-            _gridPresenter.Initialise(_session, jellySprites, _boardJellies, _boardShadows,
+            _gridPresenter.Initialise(_session, jellySprites, animationLibrary, _boardJellies, _boardShadows,
                 _rackJellies, _rackShadows, _rackSelections, _columnFeedback, _columnButtons, debugText);
+#if DEVELOPMENT_BUILD || UNITY_EDITOR
+            Button slowMotion = CreateLabelledButton("Animation Slow Motion", parent, "ANIM 1x",
+                new Vector2(220f, 72f), new Vector2(380f, 585f), ToggleSlowMotion);
+            _slowMotionText = slowMotion.transform.Find("Label").GetComponent<Text>();
+#endif
         }
 
         private void BuildPause(Transform parent)
@@ -343,8 +354,10 @@ namespace JellyRiot.UI
                 new Vector2(0f, 140f), ToggleSound);
             _hapticsText = CreateToggleButton("Haptics Toggle", panel.transform, hapticsIcon,
                 new Vector2(0f, -55f), ToggleHaptics);
+            _reducedMotionText = CreateToggleButton("Reduced Motion Toggle", panel.transform, infoIcon,
+                new Vector2(0f, -250f), ToggleReducedMotion);
             CreateLabelledButton("Close", panel.transform, "DONE", new Vector2(480f, 140f),
-                new Vector2(0f, -300f), CloseSettings);
+                new Vector2(0f, -430f), CloseSettings);
             RefreshSettingsLabels();
         }
 
@@ -396,6 +409,7 @@ namespace JellyRiot.UI
 
         private void SelectRack(int slot)
         {
+            if (_gridPresenter.IsPresenting) return;
             SessionActionResult result = _session.SelectRackSlot(slot);
             _gridPresenter.Present(result);
             if (result.Succeeded)
@@ -406,26 +420,28 @@ namespace JellyRiot.UI
 
         private void DropInColumn(int column)
         {
+            if (_gridPresenter.IsPresenting) return;
             SessionActionResult begin = _session.TryBeginTurn(column);
-            _gridPresenter.Present(begin);
             if (!begin.Succeeded)
             {
+                _gridPresenter.Present(begin);
                 _gridPresenter.ShowInvalidColumn(column);
                 return;
             }
 
             SessionActionResult complete = _session.CompleteTurn();
-            _gridPresenter.Present(complete);
+            SessionActionResult terminal = null;
             if (_session.State == SessionState.PendingLoss)
             {
-                _gridPresenter.Present(_session.ConfirmGameOver());
+                terminal = _session.ConfirmGameOver();
             }
+            _gridPresenter.PresentTurn(begin, complete, terminal, FinishTurnPresentation);
+        }
 
+        private void FinishTurnPresentation()
+        {
             RefreshGame();
-            if (_session.State == SessionState.GameOver)
-            {
-                ShowResults();
-            }
+            if (_session.State == SessionState.GameOver) ShowResults();
         }
 
         private void PauseGame()
@@ -460,6 +476,7 @@ namespace JellyRiot.UI
 
         private void ReturnHome()
         {
+            _gridPresenter.CancelPendingAndSynchronise();
             if (_session.State == SessionState.Paused)
             {
                 _gridPresenter.Present(_session.Resume());
@@ -527,10 +544,27 @@ namespace JellyRiot.UI
             RefreshSettingsLabels();
         }
 
+        private void ToggleReducedMotion()
+        {
+            _reducedMotion = !_reducedMotion;
+            _gridPresenter.SetReducedMotion(_reducedMotion);
+            RefreshSettingsLabels();
+        }
+
+        private void ToggleSlowMotion()
+        {
+#if DEVELOPMENT_BUILD || UNITY_EDITOR
+            _gridPresenter.ToggleSlowMotion();
+            if (_slowMotionText != null)
+                _slowMotionText.text = _gridPresenter.SlowMotionEnabled ? "ANIM 0.25x" : "ANIM 1x";
+#endif
+        }
+
         private void RefreshSettingsLabels()
         {
             _soundText.text = _soundEnabled ? "SOUND  ON" : "SOUND  OFF";
             _hapticsText.text = _hapticsEnabled ? "HAPTICS  ON" : "HAPTICS  OFF";
+            _reducedMotionText.text = _reducedMotion ? "REDUCED MOTION  ON" : "REDUCED MOTION  OFF";
         }
 
         private void RefreshGame()
@@ -540,7 +574,7 @@ namespace JellyRiot.UI
                 return;
             }
 
-            _gridPresenter.SynchroniseSnapshot();
+            if (!_gridPresenter.IsPresenting) _gridPresenter.SynchroniseSnapshot();
 
             _scoreText.text = _session.Score.CurrentScore.ToString("N0");
             long best = _session.Mode == GameMode.Daily

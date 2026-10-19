@@ -166,7 +166,8 @@ namespace JellyRiot.Editor
                     LoadSingle(Sprites + "Jelly_Coral.png"), LoadSingle(Sprites + "Jelly_Lemon.png"),
                     LoadSingle(Sprites + "Jelly_Aqua.png"), LoadSingle(Sprites + "Jelly_Lilac.png"),
                     LoadSingle(Sprites + "Jelly_Mint.png")
-                }, LoadSingle(Sprites + "Jelly_Shadow.png"));
+                }, LoadSingle(Sprites + "Jelly_Shadow.png"),
+                AssetDatabase.LoadAssetAtPath<JellyAnimationLibrary>(AnimationLibrary));
             EditorUtility.SetDirty(ui);
             EditorSceneManager.MarkSceneDirty(scene);
             EditorSceneManager.SaveScene(scene, MainScene);

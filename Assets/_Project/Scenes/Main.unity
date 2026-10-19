@@ -309,6 +309,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9cf5160b58f65ab468c6e33c6d908521, type: 3}
   - {fileID: 21300000, guid: cc95cf50927572f43b078a06ff574367, type: 3}
   jellyShadow: {fileID: 21300000, guid: 64cdb92f1cc09aa4aab10a684b476e25, type: 3}
+  animationLibrary: {fileID: 11400000, guid: 915aff1dbbf54334db85f7cb64f66f17, type: 2}
 --- !u!4 &1811703738
 Transform:
   m_ObjectHideFlags: 0
