@@ -185,3 +185,45 @@ Status: COMPLETE
 - Next work order: do not begin Work Order 14 without owner approval. Work Order 12 remains
   explicitly deferred until after Work Order 18.
 
+## 2026-10-19 — Work Order 16: complete audio integration
+
+Status: IMPLEMENTED; AUTOMATED PLAYMODE PASS; DEVICE LISTENING/HAPTICS NOT RUN
+
+- Added a central `AudioManager` with a fixed ten-voice 2D SFX pool, dormant functional music
+  channel, persisted Master/SFX/Music/mute controls, cosmetic-only variant/pitch randomness,
+  bounded voice stealing, short major-cue ducking and delayed-score/wave throttling.
+- Wired Core event sequences exactly once: rack/UI taps, invalid actions, authoritative drop start,
+  animation-timed landing, per-cleared-group pop batches, ascending cascades, one RIOT stinger per
+  qualifying action, score ticks, pressure rise, game over, personal best and Daily completion.
+  Invalid placements cannot emit drop or landing cues.
+- Added presentation callbacks at first contact and settled turn boundaries. Pause, focus loss,
+  Android backgrounding and the public advertisement-interruption hook clear delayed sounds and
+  pooled voices; resume restores the optional music channel without retaining a duck.
+- Added `AndroidHapticsService` with persisted opt-out, safe Android/device checks and restrained
+  landing, match and RIOT durations. Unsupported platforms do nothing.
+- Added `JellyRiotAudioSettings.asset`, referencing all 26 supplied WAVs. All 26 `.wav.meta` files
+  under `Audio/SFX/{UI,Jelly,Cascades,Game}` now use mono, preloaded, decompress-on-load,
+  optimised-rate Vorbis quality 0.76 settings for default and Android. Source WAV data, names and
+  locations were not changed.
+- Added `Jelly Riot/Audio/Configure SFX` and a Play-Mode SFX preview window with an individual
+  button for every clip. Expanded `Docs/AUDIO_BIBLE.md` with mapping, mix and manual checks.
+- Exact code/assets changed: `Assets/_Project/Scripts/Audio/{IAudioService.cs,AudioManager.cs,
+  JellyRiotAudioSettings.cs}`; `Assets/_Project/Scripts/Platform/{IHapticsService.cs,
+  AndroidHapticsService.cs}`; `Assets/_Project/Scripts/UI/JellyRiotMainUI.cs`;
+  `Assets/_Project/Scripts/Visuals/GridViewPresenter.cs`;
+  `Assets/_Project/Scripts/Editor/JellyRiotAudioSetup.cs`;
+  `Assets/_Project/Resources/JellyRiotAudioSettings.asset`;
+  `Assets/_Project/Tests/PlayMode/AudioIntegrationPlayModeTests.cs`; all associated new `.meta`
+  files; all 26 existing `Assets/_Project/Audio/SFX/**/*.wav.meta` files;
+  `Docs/AUDIO_BIBLE.md`; `Docs/PROGRESS.md`.
+- Verification actually run in an isolated Unity 6000.3.11f1 project copy: audio configuration
+  completed and logged exactly 26 WAVs; the final full PlayMode suite passed **9/9** in 17.452 seconds
+  (new audio tests 4/4, foundation 1/1, visual regression tests 4/4). Unity exited code 0 with no
+  test failures and no leaked weak pointers. Tests cover all clip references, bounded 2D pool,
+  duplicate-event suppression, persistent settings, interruption clearing and silent gameplay.
+- NOT RUN: subjective listening on phone/headphones, Android vibration feel/capability variants,
+  real Android background/focus, real advertisement lifecycle, device clipping capture and Unity
+  Console inspection in the owner's currently open project. These remain explicit manual gates.
+- Next work order: do not begin Work Order 17 without owner approval. Work Order 12 remains deferred
+  until after Work Order 18.
+

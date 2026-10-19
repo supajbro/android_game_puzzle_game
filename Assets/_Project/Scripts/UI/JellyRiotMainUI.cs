@@ -1,5 +1,7 @@
 using System;
+using JellyRiot.Audio;
 using JellyRiot.Core;
+using JellyRiot.Platform;
 using JellyRiot.Visuals;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -71,8 +73,9 @@ namespace JellyRiot.UI
         private Text _hapticsText;
         private Text _reducedMotionText;
         private Text _slowMotionText;
-        private bool _soundEnabled = true;
-        private bool _hapticsEnabled = true;
+        private AudioManager _audio;
+        private SessionActionResult _pendingAudioComplete;
+        private SessionActionResult _pendingAudioTerminal;
         private bool _reducedMotion;
         private bool _settingsFromPause;
         private Font _font;
@@ -81,6 +84,7 @@ namespace JellyRiot.UI
         public int RackSlotCount => _rackJellies.Length;
         public GameSession Session => _session;
         public GridViewPresenter GridPresenter => _gridPresenter;
+        public AudioManager AudioManager => _audio;
         public Sprite GetJellySprite(JellyColour colour) => SpriteFor(colour);
 
         public void Configure(Sprite backgroundSprite, Sprite logoSprite, Sprite mascotSprite,
@@ -115,6 +119,9 @@ namespace JellyRiot.UI
         private void Awake()
         {
             ValidateArtwork();
+            _audio = GetComponent<AudioManager>();
+            if (_audio == null) _audio = gameObject.AddComponent<AudioManager>();
+            _audio.ResetEventTracking();
             _font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
             _session = new GameSession();
             _session.CompleteBoot();
@@ -321,6 +328,8 @@ namespace JellyRiot.UI
             _gridPresenter = gameObject.AddComponent<GridViewPresenter>();
             _gridPresenter.Initialise(_session, jellySprites, animationLibrary, _boardJellies, _boardShadows,
                 _rackJellies, _rackShadows, _rackSelections, _columnFeedback, _columnButtons, debugText);
+            _gridPresenter.JellyLanded += OnJellyLanded;
+            _gridPresenter.TurnPresentationCompleted += OnTurnPresentationCompleted;
 #if DEVELOPMENT_BUILD || UNITY_EDITOR
             Button slowMotion = CreateLabelledButton("Animation Slow Motion", parent, "ANIM 1x",
                 new Vector2(220f, 72f), new Vector2(380f, 585f), ToggleSlowMotion);
@@ -411,6 +420,7 @@ namespace JellyRiot.UI
         {
             if (_gridPresenter.IsPresenting) return;
             SessionActionResult result = _session.SelectRackSlot(slot);
+            _audio.ProcessAction(result);
             _gridPresenter.Present(result);
             if (result.Succeeded)
             {
@@ -424,10 +434,13 @@ namespace JellyRiot.UI
             SessionActionResult begin = _session.TryBeginTurn(column);
             if (!begin.Succeeded)
             {
+                _audio.ProcessAction(begin);
                 _gridPresenter.Present(begin);
                 _gridPresenter.ShowInvalidColumn(column);
                 return;
             }
+
+            _audio.ProcessAction(begin);
 
             SessionActionResult complete = _session.CompleteTurn();
             SessionActionResult terminal = null;
@@ -435,7 +448,26 @@ namespace JellyRiot.UI
             {
                 terminal = _session.ConfirmGameOver();
             }
+            _pendingAudioComplete = complete;
+            _pendingAudioTerminal = terminal;
             _gridPresenter.PresentTurn(begin, complete, terminal, FinishTurnPresentation);
+        }
+
+        private void OnJellyLanded(int placementSequence)
+        {
+            _audio.PlayLandingOnce(placementSequence);
+        }
+
+        private void OnTurnPresentationCompleted()
+        {
+            if (_pendingAudioComplete != null) _audio.ProcessAction(_pendingAudioComplete);
+            if (_pendingAudioTerminal != null)
+            {
+                _audio.ProcessAction(_pendingAudioTerminal);
+                if (_session.Mode == GameMode.Daily) _audio.PlayDailyComplete();
+            }
+            _pendingAudioComplete = null;
+            _pendingAudioTerminal = null;
         }
 
         private void FinishTurnPresentation()
@@ -450,12 +482,16 @@ namespace JellyRiot.UI
             _gridPresenter.Present(result);
             if (result.Succeeded)
             {
+                _audio.SetPaused(true);
                 _pauseScreen.SetActive(true);
             }
         }
 
         private void ResumeGame()
         {
+            bool needsResumeTap = _audio.IsPlaybackPaused;
+            _audio.SetPaused(false);
+            if (needsResumeTap) _audio.PlayUiTap();
             SessionActionResult result = _session.Resume();
             _gridPresenter.Present(result);
             if (result.Succeeded)
@@ -466,6 +502,7 @@ namespace JellyRiot.UI
 
         private void Replay()
         {
+            _audio.StopPendingGameplayAudio();
             SessionActionResult result = _session.Replay();
             _gridPresenter.Present(result);
             if (result.Succeeded)
@@ -476,6 +513,9 @@ namespace JellyRiot.UI
 
         private void ReturnHome()
         {
+            _audio.StopPendingGameplayAudio();
+            _pendingAudioComplete = null;
+            _pendingAudioTerminal = null;
             _gridPresenter.CancelPendingAndSynchronise();
             if (_session.State == SessionState.Paused)
             {
@@ -534,13 +574,14 @@ namespace JellyRiot.UI
 
         private void ToggleSound()
         {
-            _soundEnabled = !_soundEnabled;
+            _audio.IsMuted = !_audio.IsMuted;
+            if (!_audio.IsMuted) _audio.PlayUiTap();
             RefreshSettingsLabels();
         }
 
         private void ToggleHaptics()
         {
-            _hapticsEnabled = !_hapticsEnabled;
+            _audio.Haptics.IsEnabled = !_audio.Haptics.IsEnabled;
             RefreshSettingsLabels();
         }
 
@@ -562,8 +603,8 @@ namespace JellyRiot.UI
 
         private void RefreshSettingsLabels()
         {
-            _soundText.text = _soundEnabled ? "SOUND  ON" : "SOUND  OFF";
-            _hapticsText.text = _hapticsEnabled ? "HAPTICS  ON" : "HAPTICS  OFF";
+            _soundText.text = _audio != null && !_audio.IsMuted ? "SOUND  ON" : "SOUND  OFF";
+            _hapticsText.text = _audio != null && _audio.Haptics.IsEnabled ? "HAPTICS  ON" : "HAPTICS  OFF";
             _reducedMotionText.text = _reducedMotion ? "REDUCED MOTION  ON" : "REDUCED MOTION  OFF";
         }
 
@@ -586,7 +627,10 @@ namespace JellyRiot.UI
 
         private void OnApplicationFocus(bool hasFocus)
         {
+            _audio?.SetExternalInterruption(!hasFocus);
             if (hasFocus || _session == null || _gridPresenter == null) return;
+            _pendingAudioComplete = null;
+            _pendingAudioTerminal = null;
             _gridPresenter.CancelPendingAndSynchronise();
             if (_session.State == SessionState.Ready && _gameScreen.activeSelf)
             {
@@ -599,7 +643,22 @@ namespace JellyRiot.UI
         private void OnApplicationPause(bool paused)
         {
             if (paused) OnApplicationFocus(false);
-            else _gridPresenter?.CancelPendingAndSynchronise();
+            else
+            {
+                _audio?.SetExternalInterruption(false);
+                _gridPresenter?.CancelPendingAndSynchronise();
+            }
+        }
+
+        public void SetAdvertisementInterruption(bool interrupted)
+        {
+            _audio?.SetExternalInterruption(interrupted);
+            if (interrupted)
+            {
+                _pendingAudioComplete = null;
+                _pendingAudioTerminal = null;
+                _gridPresenter?.CancelPendingAndSynchronise();
+            }
         }
 
         private Sprite SpriteFor(JellyColour colour)
@@ -650,7 +709,11 @@ namespace JellyRiot.UI
             button.targetGraphic = image;
             button.transition = Selectable.Transition.ColorTint;
             button.colors = CreateButtonColours();
-            button.onClick.AddListener(action);
+            button.onClick.AddListener(() =>
+            {
+                _audio?.PlayUiTap();
+                action?.Invoke();
+            });
             if (icon != null)
             {
                 CreateImage("Icon", image.transform, icon, true, new Vector2(size.y * 0.7f, size.y * 0.7f),
@@ -671,7 +734,11 @@ namespace JellyRiot.UI
             Button button = image.gameObject.AddComponent<Button>();
             button.targetGraphic = image;
             button.colors = CreateButtonColours();
-            button.onClick.AddListener(action);
+            button.onClick.AddListener(() =>
+            {
+                _audio?.PlayUiTap();
+                action?.Invoke();
+            });
             return button;
         }
 

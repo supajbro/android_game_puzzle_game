@@ -173,6 +173,10 @@ namespace JellyRiot.Visuals
         private int _lastBlinkCell = -1;
         private float _blinkElapsed;
         private Sprite[] _blinkFrames;
+        private int _activePlacementSequence;
+
+        public event Action<int> JellyLanded;
+        public event Action TurnPresentationCompleted;
 
         public int QueuedActionCount => _eventQueue.Count + (_activeRequest == null ? 0 : 1);
         public int LastProcessedSequence => _lastProcessedSequence;
@@ -350,6 +354,7 @@ namespace JellyRiot.Visuals
             _activeRequest = request;
             _activeDrop = _board[index];
             _dropColour = placement.Colour;
+            _activePlacementSequence = placement.Sequence;
             _activeDrop.Show(SpriteFor(_dropColour));
             _renderedColours[index] = _dropColour;
             _spawnY = _board[0].RestPosition.y + (_activeDrop.Size.y * 1.35f);
@@ -379,6 +384,7 @@ namespace JellyRiot.Visuals
                     ApplyFallPose(progress);
                     if (progress >= 1f)
                     {
+                        JellyLanded?.Invoke(_activePlacementSequence);
                         if (_reducedMotion) FinishDrop();
                         else BeginPhase(DropPhase.Landing);
                     }
@@ -449,6 +455,7 @@ namespace JellyRiot.Visuals
             SynchroniseSnapshot();
             ScheduleNextBlink();
             completed.Finished?.Invoke();
+            TurnPresentationCompleted?.Invoke();
             PumpQueue();
         }
 
@@ -459,6 +466,7 @@ namespace JellyRiot.Visuals
             RecordAndReplay(request.Terminal);
             SynchroniseSnapshot();
             request.Finished?.Invoke();
+            if (request.AnimateDrop) TurnPresentationCompleted?.Invoke();
         }
 
         private void RecordAndReplay(SessionActionResult action)

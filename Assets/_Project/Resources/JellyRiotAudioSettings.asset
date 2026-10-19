@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a592388f3bf65114785210677444bf68, type: 3}
+  m_Name: JellyRiotAudioSettings
+  m_EditorClassIdentifier: JellyRiot.Runtime::JellyRiot.Audio.JellyRiotAudioSettings
+  uiTaps:
+  - {fileID: 8300000, guid: e3386ed916f84594c961b48833154d56, type: 3}
+  - {fileID: 8300000, guid: 790ac42f2e9abea48b4fece05f2a56c5, type: 3}
+  - {fileID: 8300000, guid: 4c1570fb0002a034ab1322ac76c35fbe, type: 3}
+  uiInvalid: {fileID: 8300000, guid: 98fbedb0d7a39af40b6f3574c6f5e4ef, type: 3}
+  scoreTick: {fileID: 8300000, guid: bbbe32aac7efeb443b7aca9064b77e2e, type: 3}
+  drops:
+  - {fileID: 8300000, guid: 9cd428e9292c92c4f801cab9da6b9725, type: 3}
+  - {fileID: 8300000, guid: 1e965d33d8cdaa248880fe6cb8e0392e, type: 3}
+  - {fileID: 8300000, guid: 10615cc68c752f54ead0bd2e472fa1e5, type: 3}
+  - {fileID: 8300000, guid: f005118d448a4ce40b4250130f5957f6, type: 3}
+  landings:
+  - {fileID: 8300000, guid: 0ca23d50e30b1f149a39fd2eec4b2a40, type: 3}
+  - {fileID: 8300000, guid: 6a5d03626dec2b144b4e62e132dca468, type: 3}
+  - {fileID: 8300000, guid: 2322f7476e315d94581977e8fe369717, type: 3}
+  pops:
+  - {fileID: 8300000, guid: ef41b2cd83dd80e4fbcc17ebb4fe31f1, type: 3}
+  - {fileID: 8300000, guid: a3dc6a5acd8fd4745a003a3a4fe24abf, type: 3}
+  - {fileID: 8300000, guid: d22f4e7d198a12349b0714ab5f04a7b2, type: 3}
+  - {fileID: 8300000, guid: c8f05bfb5aaf7fc46aaa291fa2700d85, type: 3}
+  - {fileID: 8300000, guid: 0d2685e25e9c6b84ea90499aad00c214, type: 3}
+  cascades:
+  - {fileID: 8300000, guid: 9b10fa90145c94b488a70a9ae9ef789f, type: 3}
+  - {fileID: 8300000, guid: 8b7534b30719d9347802fac8b8733387, type: 3}
+  - {fileID: 8300000, guid: 5999025b74e805749bc2edf152b702d7, type: 3}
+  - {fileID: 8300000, guid: dbb400197c783f94db16d8cb6dedb35d, type: 3}
+  riotStinger: {fileID: 8300000, guid: 9f2c8c44f8b9af441a27cb0682646f9f, type: 3}
+  rowRise: {fileID: 8300000, guid: 6435d91de952c0f489791940652bde6f, type: 3}
+  gameOver: {fileID: 8300000, guid: 7b8779387b50f9843927593f79326521, type: 3}
+  bestScore: {fileID: 8300000, guid: 729adbec5db04554490ba87f319acb25, type: 3}
+  dailyComplete: {fileID: 8300000, guid: 21b047fd6e7776d46afc45a3c5261e6c, type: 3}
+  voiceLimit: 10
+  uiVolume: 0.34
+  dropVolume: 0.56
+  landingVolume: 0.62
+  popVolume: 0.74
+  cascadeVolume: 0.7
+  riotVolume: 0.82
+  resultVolume: 0.68
+  variantPitchRange: 0.035
