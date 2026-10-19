@@ -1,6 +1,8 @@
 using System;
 using System.IO;
 using JellyRiot.UI;
+using JellyRiot.Core;
+using JellyRiot.Visuals;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -13,6 +15,8 @@ namespace JellyRiot.Editor
     {
         private const string Art = "Assets/_Project/Art/";
         private const string Sprites = Art + "Sprites/";
+        private const string AnimationFrames = Art + "Animations/Frames/";
+        private const string AnimationLibrary = "Assets/_Project/Settings/JellyAnimationLibrary.asset";
         private const string MainScene = "Assets/_Project/Scenes/Main.unity";
         private const string SetupMarker = "Library/JellyRiotVisualSetup.v1";
 
@@ -33,6 +37,11 @@ namespace JellyRiot.Editor
             {
                 BuildMainScene();
             }
+            else if (AssetDatabase.LoadAssetAtPath<JellyAnimationLibrary>(AnimationLibrary) == null &&
+                     Directory.Exists(AnimationFrames))
+            {
+                ConfigureAnimationFrames();
+            }
         }
 
         [MenuItem("Jelly Riot/Visuals/Configure Artwork")]
@@ -49,6 +58,8 @@ namespace JellyRiot.Editor
                 string path = jellyFiles[i].Replace('\\', '/');
                 ConfigureSingle(path, path.EndsWith("GalleryPreview.png", StringComparison.Ordinal) ? 2048 : 512);
             }
+
+            ConfigureAnimationFrames();
 
 #pragma warning disable CS0618
             ConfigureSheet(Art + "button_panel.png", new[]
@@ -75,6 +86,60 @@ namespace JellyRiot.Editor
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
             Debug.Log("Jelly Riot artwork configured: RGBA sprites, bilinear filtering, no mipmaps and named sheet slices.");
+        }
+
+        [MenuItem("Jelly Riot/Visuals/Configure Animation Frames")]
+        public static void ConfigureAnimationFrames()
+        {
+            if (!Directory.Exists(AnimationFrames))
+            {
+                throw new DirectoryNotFoundException(
+                    $"Animation frames are missing. Run Tools/Art/prepare_jelly_animation_sheets.py first: {AnimationFrames}");
+            }
+
+            string[] frameFiles = Directory.GetFiles(AnimationFrames, "*.png", SearchOption.AllDirectories);
+            if (frameFiles.Length != 100)
+            {
+                throw new InvalidOperationException($"Expected exactly 100 animation frames, found {frameFiles.Length}.");
+            }
+
+            string[] colourNames = { "Coral", "Lemon", "Aqua", "Lilac", "Mint" };
+            for (int i = 0; i < colourNames.Length; i++)
+            {
+                ConfigureSingle(Art + $"Animations/Jelly_{colourNames[i]}_Sheet.png", 2048);
+            }
+
+            for (int i = 0; i < frameFiles.Length; i++)
+            {
+                ConfigureSingle(frameFiles[i].Replace('\\', '/'), 256);
+            }
+
+            AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
+            JellyAnimationLibrary library = AssetDatabase.LoadAssetAtPath<JellyAnimationLibrary>(AnimationLibrary);
+            if (library == null)
+            {
+                library = ScriptableObject.CreateInstance<JellyAnimationLibrary>();
+                AssetDatabase.CreateAsset(library, AnimationLibrary);
+            }
+
+            var sets = new JellyAnimationSet[5];
+            for (int colourIndex = 0; colourIndex < sets.Length; colourIndex++)
+            {
+                JellyColour colour = (JellyColour)(colourIndex + 1);
+                string colourName = colour.ToString();
+                var set = new JellyAnimationSet();
+                set.Configure(colour, LoadSingle(Sprites + $"Jelly_{colourName}.png"),
+                    LoadAnimationCategory(colourName, "Falling"),
+                    LoadAnimationCategory(colourName, "Landing"),
+                    LoadAnimationCategory(colourName, "SquashStretch"),
+                    LoadAnimationCategory(colourName, "Blink"));
+                sets[colourIndex] = set;
+            }
+
+            library.Configure(sets);
+            EditorUtility.SetDirty(library);
+            AssetDatabase.SaveAssets();
+            Debug.Log("Jelly Riot animation library configured with 100 ordered RGBA frames.");
         }
 
         [MenuItem("Jelly Riot/Visuals/Build Main Scene")]
@@ -189,6 +254,17 @@ namespace JellyRiot.Editor
                 if (assets[i] is Sprite sprite && sprite.name == name) return sprite;
             }
             throw new InvalidOperationException($"Named sprite '{name}' was not imported from {path}.");
+        }
+
+        private static Sprite[] LoadAnimationCategory(string colour, string category)
+        {
+            var frames = new Sprite[5];
+            for (int frame = 0; frame < frames.Length; frame++)
+            {
+                string path = AnimationFrames + $"{colour}/{category}/Jelly_{colour}_{category}_{frame + 1:00}.png";
+                frames[frame] = LoadSingle(path);
+            }
+            return frames;
         }
     }
 }

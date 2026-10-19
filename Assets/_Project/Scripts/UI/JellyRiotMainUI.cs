@@ -1,5 +1,6 @@
 using System;
 using JellyRiot.Core;
+using JellyRiot.Visuals;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -9,8 +10,8 @@ using UnityEngine.UI;
 namespace JellyRiot.UI
 {
     /// <summary>
-    /// Static Work Order 08-10 presentation. The Core session remains authoritative and this view
-    /// only sends commands, then redraws from its settled snapshot.
+    /// Production shell for the menu and gameplay screens. Gameplay commands go to Core and the
+    /// GridViewPresenter reconciles every visual against the resulting authoritative snapshot.
     /// </summary>
     public sealed class JellyRiotMainUI : MonoBehaviour
     {
@@ -49,8 +50,11 @@ namespace JellyRiot.UI
         private readonly Image[] _boardJellies = new Image[BoardModel.CellCount];
         private readonly Image[] _boardShadows = new Image[BoardModel.CellCount];
         private readonly Button[] _columnButtons = new Button[BoardModel.Width];
+        private readonly Image[] _columnFeedback = new Image[BoardModel.Width];
         private readonly Image[] _rackJellies = new Image[GameSession.RackSize];
+        private readonly Image[] _rackShadows = new Image[GameSession.RackSize];
         private readonly Image[] _rackSelections = new Image[GameSession.RackSize];
+        private GridViewPresenter _gridPresenter;
         private GameSession _session;
         private GameObject _homeScreen;
         private GameObject _gameScreen;
@@ -72,6 +76,7 @@ namespace JellyRiot.UI
         public int BoardCellCount => _boardJellies.Length;
         public int RackSlotCount => _rackJellies.Length;
         public GameSession Session => _session;
+        public GridViewPresenter GridPresenter => _gridPresenter;
         public Sprite GetJellySprite(JellyColour colour) => SpriteFor(colour);
 
         public void Configure(Sprite backgroundSprite, Sprite logoSprite, Sprite mascotSprite,
@@ -225,6 +230,7 @@ namespace JellyRiot.UI
             grid.sizeDelta = new Vector2(574f, 738f);
             grid.anchoredPosition = new Vector2(0f, -4f);
             const float cellSize = 82f;
+            // Keep each rendering layer contiguous so later cell holes never cover earlier jellies.
             for (int row = 0; row < BoardModel.Height; row++)
             {
                 for (int column = 0; column < BoardModel.Width; column++)
@@ -233,8 +239,35 @@ namespace JellyRiot.UI
                     Vector2 position = new Vector2((column - 3) * cellSize, (4 - row) * cellSize);
                     CreateImage($"Cell {column},{row}", grid, cellHole, true,
                         new Vector2(78f, 78f), position);
+                }
+            }
+
+            for (int column = 0; column < BoardModel.Width; column++)
+            {
+                _columnFeedback[column] = CreateImage($"Column Feedback {column}", grid,
+                    selectionHighlight, true, new Vector2(86f, 86f),
+                    new Vector2((column - 3) * cellSize, 4 * cellSize));
+                _columnFeedback[column].raycastTarget = false;
+                _columnFeedback[column].gameObject.SetActive(false);
+            }
+
+            for (int row = 0; row < BoardModel.Height; row++)
+            {
+                for (int column = 0; column < BoardModel.Width; column++)
+                {
+                    int index = (row * BoardModel.Width) + column;
+                    Vector2 position = new Vector2((column - 3) * cellSize, (4 - row) * cellSize);
                     _boardShadows[index] = CreateImage($"Shadow {column},{row}", grid, jellyShadow, true,
                         new Vector2(72f, 72f), position + new Vector2(0f, -5f));
+                }
+            }
+
+            for (int row = 0; row < BoardModel.Height; row++)
+            {
+                for (int column = 0; column < BoardModel.Width; column++)
+                {
+                    int index = (row * BoardModel.Width) + column;
+                    Vector2 position = new Vector2((column - 3) * cellSize, (4 - row) * cellSize);
                     _boardJellies[index] = CreateImage($"Jelly {column},{row}", grid, jellySprites[0], true,
                         new Vector2(75f, 75f), position + new Vector2(0f, 2f));
                 }
@@ -260,7 +293,7 @@ namespace JellyRiot.UI
                     new Vector2(165f, 165f), slotPosition);
                 _rackSelections[slot] = CreateImage($"Selection {slot}", rackBacking.transform,
                     selectionHighlight, true, new Vector2(185f, 185f), slotPosition);
-                CreateImage($"Rack Shadow {slot}", rackBacking.transform, jellyShadow, true,
+                _rackShadows[slot] = CreateImage($"Rack Shadow {slot}", rackBacking.transform, jellyShadow, true,
                     new Vector2(130f, 130f), slotPosition + new Vector2(0f, -7f));
                 _rackJellies[slot] = CreateImage($"Rack Jelly {slot}", rackBacking.transform,
                     jellySprites[slot], true, new Vector2(135f, 135f), slotPosition + new Vector2(0f, 3f));
@@ -271,6 +304,17 @@ namespace JellyRiot.UI
 
             CreateImage("Selection Arrow", parent, selectionArrow, true,
                 new Vector2(105f, 90f), new Vector2(0f, -850f));
+
+            Text debugText = null;
+#if DEVELOPMENT_BUILD || UNITY_EDITOR
+            debugText = CreateText("Visual State Debug", parent, string.Empty, 20,
+                TextAnchor.UpperLeft, Cream, new Vector2(420f, 100f), new Vector2(-300f, 560f));
+            debugText.raycastTarget = false;
+            debugText.gameObject.SetActive(false);
+#endif
+            _gridPresenter = gameObject.AddComponent<GridViewPresenter>();
+            _gridPresenter.Initialise(_session, jellySprites, _boardJellies, _boardShadows,
+                _rackJellies, _rackShadows, _rackSelections, _columnFeedback, _columnButtons, debugText);
         }
 
         private void BuildPause(Transform parent)
@@ -338,7 +382,7 @@ namespace JellyRiot.UI
 
         private void StartEndless()
         {
-            _session.StartNewRun((ulong)DateTime.UtcNow.Ticks, GameMode.Endless);
+            _gridPresenter.Present(_session.StartNewRun((ulong)DateTime.UtcNow.Ticks, GameMode.Endless));
             ShowGame();
         }
 
@@ -346,13 +390,15 @@ namespace JellyRiot.UI
         {
             string key = DateTime.UtcNow.ToString("yyyy-MM-dd");
             ulong seed = DailySeed.Derive(key, 1, "jelly-riot-v1");
-            _session.StartNewRun(seed, GameMode.Daily, key);
+            _gridPresenter.Present(_session.StartNewRun(seed, GameMode.Daily, key));
             ShowGame();
         }
 
         private void SelectRack(int slot)
         {
-            if (_session.SelectRackSlot(slot).Succeeded)
+            SessionActionResult result = _session.SelectRackSlot(slot);
+            _gridPresenter.Present(result);
+            if (result.Succeeded)
             {
                 RefreshGame();
             }
@@ -361,15 +407,18 @@ namespace JellyRiot.UI
         private void DropInColumn(int column)
         {
             SessionActionResult begin = _session.TryBeginTurn(column);
+            _gridPresenter.Present(begin);
             if (!begin.Succeeded)
             {
+                _gridPresenter.ShowInvalidColumn(column);
                 return;
             }
 
             SessionActionResult complete = _session.CompleteTurn();
+            _gridPresenter.Present(complete);
             if (_session.State == SessionState.PendingLoss)
             {
-                _session.ConfirmGameOver();
+                _gridPresenter.Present(_session.ConfirmGameOver());
             }
 
             RefreshGame();
@@ -381,7 +430,9 @@ namespace JellyRiot.UI
 
         private void PauseGame()
         {
-            if (_session.Pause().Succeeded)
+            SessionActionResult result = _session.Pause();
+            _gridPresenter.Present(result);
+            if (result.Succeeded)
             {
                 _pauseScreen.SetActive(true);
             }
@@ -389,7 +440,9 @@ namespace JellyRiot.UI
 
         private void ResumeGame()
         {
-            if (_session.Resume().Succeeded)
+            SessionActionResult result = _session.Resume();
+            _gridPresenter.Present(result);
+            if (result.Succeeded)
             {
                 _pauseScreen.SetActive(false);
             }
@@ -397,7 +450,9 @@ namespace JellyRiot.UI
 
         private void Replay()
         {
-            if (_session.Replay().Succeeded)
+            SessionActionResult result = _session.Replay();
+            _gridPresenter.Present(result);
+            if (result.Succeeded)
             {
                 ShowGame();
             }
@@ -407,10 +462,10 @@ namespace JellyRiot.UI
         {
             if (_session.State == SessionState.Paused)
             {
-                _session.Resume();
+                _gridPresenter.Present(_session.Resume());
             }
 
-            _session.ReturnHome();
+            _gridPresenter.Present(_session.ReturnHome());
             ShowHome();
         }
 
@@ -485,29 +540,7 @@ namespace JellyRiot.UI
                 return;
             }
 
-            for (int row = 0; row < BoardModel.Height; row++)
-            {
-                for (int column = 0; column < BoardModel.Width; column++)
-                {
-                    int index = (row * BoardModel.Width) + column;
-                    JellyColour colour = _session.Board.GetCell(column, row);
-                    bool occupied = colour != JellyColour.Empty;
-                    _boardJellies[index].gameObject.SetActive(occupied);
-                    _boardShadows[index].gameObject.SetActive(occupied);
-                    if (occupied)
-                    {
-                        _boardJellies[index].sprite = SpriteFor(colour);
-                    }
-                }
-            }
-
-            for (int slot = 0; slot < GameSession.RackSize; slot++)
-            {
-                JellyColour colour = _session.Rack[slot];
-                _rackJellies[slot].sprite = SpriteFor(colour);
-                _rackJellies[slot].gameObject.SetActive(colour != JellyColour.Empty);
-                _rackSelections[slot].gameObject.SetActive(_session.SelectedSlot == slot);
-            }
+            _gridPresenter.SynchroniseSnapshot();
 
             _scoreText.text = _session.Score.CurrentScore.ToString("N0");
             long best = _session.Mode == GameMode.Daily
@@ -515,11 +548,24 @@ namespace JellyRiot.UI
                 : _session.Score.BestEndlessScore;
             _bestText.text = _session.Mode == GameMode.Daily ? $"DAILY BEST {best:N0}" : $"BEST {best:N0}";
             _pressureText.text = $"NEXT ROW IN {_session.NextRowIn}";
-            for (int column = 0; column < _columnButtons.Length; column++)
+        }
+
+        private void OnApplicationFocus(bool hasFocus)
+        {
+            if (hasFocus || _session == null || _gridPresenter == null) return;
+            _gridPresenter.CancelPendingAndSynchronise();
+            if (_session.State == SessionState.Ready && _gameScreen.activeSelf)
             {
-                _columnButtons[column].interactable = _session.State == SessionState.Ready &&
-                    !_session.Board.IsColumnFull(column);
+                SessionActionResult result = _session.Pause();
+                _gridPresenter.Present(result);
+                if (result.Succeeded) _pauseScreen.SetActive(true);
             }
+        }
+
+        private void OnApplicationPause(bool paused)
+        {
+            if (paused) OnApplicationFocus(false);
+            else _gridPresenter?.CancelPendingAndSynchronise();
         }
 
         private Sprite SpriteFor(JellyColour colour)

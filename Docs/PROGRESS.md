@@ -87,3 +87,57 @@ Status: IMPLEMENTED; UNITY VISUAL/PLAYMODE VALIDATION BLOCKED
 - Artwork issue: the source rack depicts five cavities, so using it directly would contradict the three-slot Core contract. The live rack is reconstructed with three supplied cell holes on the supplied score-panel styling. All requested art otherwise has a usable transparent source.
 - Next work order: do not begin Work Order 11 without owner approval. First open the project in a licensed Unity Editor, run `Jelly Riot/Visuals/Build Main Scene`, execute the PlayMode suite, then inspect/capture Home and Gameplay at the three target resolutions.
 
+## 2026-10-19 — Work Order 11 + animation sprite-sheet preparation
+
+Status: IMPLEMENTED; UNITY PLAYMODE/VISUAL VALIDATION NOT RUN
+
+- Added `GridViewPresenter` as the motion-safe presentation boundary. It consumes ordered
+  `SessionActionResult` events plus placement/clear/fall/pressure data, uses fixed reusable UI
+  jelly views, then reconciles every board/rack visual to an authoritative Core snapshot.
+- Board rendering remains 7x9 and rack rendering remains three slots. Static colour mapping stays
+  Coral/Lemon/Aqua/Lilac/Mint. Valid target feedback, short invalid-column feedback, corrected
+  contiguous draw layers and independent `Jelly_Shadow` views were added.
+- Pool return clears the jelly sprite and resets anchored position, size, rotation, scale, colour
+  and alpha; shadow position, size, sprite and active state are restored. Focus loss, pause/resume,
+  replay, restart, game over and home transitions cancel or reconcile presentation state.
+- Added a development/editor-only visual-state overlay reporting snapshot sync, active views,
+  duplicate references, queued actions and the last processed event sequence.
+- Renamed the five supplied sources from `_animations` to `_Sheet` without touching Work Order 09
+  sprites. `Tools/Art/prepare_jelly_animation_sheets.py` proportionally divides each 1402x1122
+  sheet, conservatively removes alpha debris without colour keying, and exports exactly 100
+  transparent 256x256 RGBA frames beneath
+  `Assets/_Project/Art/Animations/Frames/<Colour>/<Category>/`.
+- Added five checkerboard contact sheets in `Tools/Art/Previews`, a complete crop/fallback record in
+  `Tools/Art/animation_cleanup_report.json`, and usage notes in `Tools/Art/README.md`. Visual review
+  found no debris, clipping, neighbouring frames or baked shadows; the automated audit reported
+  100/100 RGBA frames with 0..255 alpha and zero fallbacks.
+- Added `JellyAnimationLibrary`, four animation categories and an Editor rebuild command. The
+  command enforces 100 single centred sprites with 100 PPU, bilinear/clamp, no mipmaps or read/write,
+  256 max size and ASTC 6x6 Android import, then creates the ordered five-colour library. Timing,
+  tweening and the full Work Order 13 animation remain deliberately unimplemented.
+- Added a PlayMode stress test for 100 rapid moves with duplicate input, periodic pause/resume,
+  cancellation, restart, pressure and game-over/replay reconciliation.
+- Exact code/document files changed: `Assets/_Project/Scripts/Visuals/GridViewPresenter.cs`,
+  `Assets/_Project/Scripts/Visuals/JellyAnimationLibrary.cs`, their `.meta` files,
+  `Assets/_Project/Scripts/UI/JellyRiotMainUI.cs`,
+  `Assets/_Project/Scripts/Editor/JellyRiotVisualSetup.cs`,
+  `Assets/_Project/Tests/PlayMode/VisualIntegrationPlayModeTests.cs`, `Docs/ART_BIBLE.md`,
+  `Docs/PROGRESS.md`, `Tools/Art/prepare_jelly_animation_sheets.py`, `Tools/Art/README.md`,
+  `Tools/Art/animation_cleanup_report.json`, all five `Tools/Art/Previews/*.png` contact sheets,
+  the five renamed `Assets/_Project/Art/Animations/Jelly_*_Sheet.png` sources and their retained
+  `.meta` files, plus all 100 PNGs enumerated exactly by the cleanup JSON report.
+- Verification run: Pillow 12.0.0 export completed; PNG audit confirmed `validated=100 rgba=100
+  alpha_range=0..255 fallbacks=0`. `dotnet build JellyRiot.Runtime.csproj --no-restore`,
+  `dotnet build JellyRiot.Editor.csproj --no-restore` and
+  `dotnet build JellyRiot.PlayModeTests.csproj --no-restore` each passed with 0 warnings/errors.
+- Tool dependency review: Pillow 12.0.0 is source-art tooling only, requires Python 3.10+, and its
+  installed package metadata declares the MIT-CMU licence; it is not included in the Unity player.
+- NOT RUN: Unity PlayMode tests (including the 100-move visual stress test), Unity Console review,
+  device/profile allocation measurement, gameplay screenshots and interactive focus-loss review.
+  The repository is locked by an existing Unity process, and repeated attempts to launch an
+  isolated Unity 6000.3.11f1 batch copy were stopped by the environment approval service before
+  Unity started. No Unity/device result is claimed.
+- Next work order: do not begin Work Order 12 or 13 without owner approval. First let Unity import,
+  run `Jelly Riot/Visuals/Configure Animation Frames`, run the PlayMode suite, inspect the five
+  contact sheets and capture Gameplay at the target phone resolutions.
+
