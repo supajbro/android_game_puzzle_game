@@ -152,6 +152,126 @@ TextureImporter:
   - first:
       213: -8085254155395101518
     second: Jelly_Coral_animations_49
+  - first:
+      213: 3271501030476697163
+    second: Jelly_Coral_Frame_00
+  - first:
+      213: -1971682686727193762
+    second: Jelly_Coral_Frame_01
+  - first:
+      213: -2456461276040145224
+    second: Jelly_Coral_Frame_02
+  - first:
+      213: -2667301813452087797
+    second: Jelly_Coral_Frame_03
+  - first:
+      213: 2300271863084617996
+    second: Jelly_Coral_Frame_04
+  - first:
+      213: 3604799601352827843
+    second: Jelly_Coral_Frame_05
+  - first:
+      213: 754669083073625052
+    second: Jelly_Coral_Frame_06
+  - first:
+      213: -5580827255902798668
+    second: Jelly_Coral_Frame_07
+  - first:
+      213: 1564639275284332437
+    second: Jelly_Coral_Frame_08
+  - first:
+      213: 5844742574241135072
+    second: Jelly_Coral_Frame_09
+  - first:
+      213: 3374309824181804199
+    second: Jelly_Coral_Frame_10
+  - first:
+      213: -1081349696338802438
+    second: Jelly_Coral_Frame_11
+  - first:
+      213: -3089164967090494707
+    second: Jelly_Coral_Frame_12
+  - first:
+      213: -7871093514462948980
+    second: Jelly_Coral_Frame_13
+  - first:
+      213: 2409124493513845630
+    second: Jelly_Coral_Frame_14
+  - first:
+      213: -3508083783094070050
+    second: Jelly_Coral_Frame_15
+  - first:
+      213: 3862556966788422286
+    second: Jelly_Coral_Frame_16
+  - first:
+      213: 3998232890486716274
+    second: Jelly_Coral_Frame_17
+  - first:
+      213: 7534699298426449927
+    second: Jelly_Coral_Frame_18
+  - first:
+      213: 1717315192821327503
+    second: Jelly_Coral_Frame_19
+  - first:
+      213: 6345993009763364032
+    second: Jelly_Coral_Frame_20
+  - first:
+      213: -1601270125347838696
+    second: Jelly_Coral_Frame_21
+  - first:
+      213: 826294820251369782
+    second: Jelly_Coral_Frame_22
+  - first:
+      213: -8455699962459962322
+    second: Jelly_Coral_Frame_23
+  - first:
+      213: 3844186537773589871
+    second: Jelly_Coral_Frame_24
+  - first:
+      213: 3600605114313344452
+    second: Jelly_Coral_Frame_25
+  - first:
+      213: 3206154938069260031
+    second: Jelly_Coral_Frame_26
+  - first:
+      213: -1983383047631539848
+    second: Jelly_Coral_Frame_27
+  - first:
+      213: 2845082723462849218
+    second: Jelly_Coral_Frame_28
+  - first:
+      213: -6104661092835585524
+    second: Jelly_Coral_Frame_29
+  - first:
+      213: -161153062416670828
+    second: Jelly_Coral_Frame_30
+  - first:
+      213: 3934594217130155029
+    second: Jelly_Coral_Frame_31
+  - first:
+      213: -3180429714564236724
+    second: Jelly_Coral_Frame_32
+  - first:
+      213: -7068342074766813270
+    second: Jelly_Coral_Frame_33
+  - first:
+      213: 4516995444416996672
+    second: Jelly_Coral_Frame_34
+  - first:
+      213: 4131438147934527354
+    second: Jelly_Coral_Frame_35
+  - first:
+      213: -4102745268925138097
+    second: Jelly_Coral_Frame_36
+  - first:
+      213: 4688090573965907049
+    second: Jelly_Coral_Frame_37
+  - first:
+      213: 4569802388134029266
+    second: Jelly_Coral_Frame_38
+  - first:
+      213: -8211260482226565506
+    second: Jelly_Coral_Frame_39
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -193,7 +313,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -273,1101 +393,881 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jelly_Coral_animations_0
+      name: Jelly_Coral_Frame_00
       rect:
         serializedVersion: 2
-        x: 76
-        y: 1075
-        width: 82
-        height: 43
+        x: 0
+        y: 595
+        width: 198
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7e03f8d1214e6f3c0800000000000000
-      internalID: -4326019625586315033
+      spriteID: b4e43e3aad4b66d20800000000000000
+      internalID: 3271501030476697163
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Coral_animations_1
+      name: Jelly_Coral_Frame_01
       rect:
         serializedVersion: 2
-        x: 352
-        y: 1091
-        width: 30
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a2bb65ff221a7f420800000000000000
-      internalID: 2663774876297771818
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelly_Coral_animations_2
-      rect:
-        serializedVersion: 2
-        x: 375
-        y: 1077
-        width: 71
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 61aad174508bc20c0800000000000000
-      internalID: -4599098786644645354
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelly_Coral_animations_3
-      rect:
-        serializedVersion: 2
-        x: 504
-        y: 1111
-        width: 31
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7863b004811d24190800000000000000
-      internalID: -7979585687663200633
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelly_Coral_animations_4
-      rect:
-        serializedVersion: 2
-        x: 574
-        y: 784
-        width: 259
-        height: 330
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f99396745b0953ce0800000000000000
-      internalID: -1426074598731335265
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelly_Coral_animations_5
-      rect:
-        serializedVersion: 2
-        x: 830
-        y: 747
-        width: 269
-        height: 373
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 172d61afb42fec470800000000000000
-      internalID: 8416931161734304369
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelly_Coral_animations_6
-      rect:
-        serializedVersion: 2
-        x: 1096
-        y: 1057
-        width: 50
-        height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bb14281c49456b710800000000000000
-      internalID: 1708646106512114107
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelly_Coral_animations_7
-      rect:
-        serializedVersion: 2
-        x: 1164
-        y: 1045
+        x: 198
+        y: 595
         width: 199
-        height: 69
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cf158c2f1170a9650800000000000000
-      internalID: 6240308007344296444
+      spriteID: e5b76d7fa0d23a4e0800000000000000
+      internalID: -1971682686727193762
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Coral_animations_8
+      name: Jelly_Coral_Frame_02
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 595
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b6df1dfb75e8edd0800000000000000
+      internalID: -2456461276040145224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Coral_Frame_03
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 595
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0ede64f127dbfad0800000000000000
+      internalID: -2667301813452087797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Coral_Frame_04
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 595
+        width: 199
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c011cf572153cef10800000000000000
+      internalID: 2300271863084617996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Coral_Frame_05
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 595
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c3ea1d6322d60230800000000000000
+      internalID: 3604799601352827843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Coral_Frame_06
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 595
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdbb29b588f197a00800000000000000
+      internalID: 754669083073625052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Coral_Frame_07
+      rect:
+        serializedVersion: 2
+        x: 1388
+        y: 595
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bc7813ed2bec82b0800000000000000
+      internalID: -5580827255902798668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Coral_Frame_08
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 595
+        width: 199
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59f72fc8127b6b510800000000000000
+      internalID: 1564639275284332437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Coral_Frame_09
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 595
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e9be3d8762bc1150800000000000000
+      internalID: 5844742574241135072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Coral_Frame_10
       rect:
         serializedVersion: 2
         x: 0
-        y: 785
-        width: 307
-        height: 318
+        y: 397
+        width: 198
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b0ad5dac4a745d240800000000000000
-      internalID: 4815834149645834763
+      spriteID: 7ac977048e4f3de20800000000000000
+      internalID: 3374309824181804199
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Coral_animations_9
+      name: Jelly_Coral_Frame_11
       rect:
         serializedVersion: 2
-        x: 52
-        y: 1076
-        width: 18
-        height: 30
+        x: 198
+        y: 397
+        width: 199
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9936db7e4b77a69d0800000000000000
-      internalID: -2780278201082092647
+      spriteID: af8cfbf2e264ef0f0800000000000000
+      internalID: -1081349696338802438
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Coral_animations_10
+      name: Jelly_Coral_Frame_12
       rect:
         serializedVersion: 2
-        x: 70
-        y: 1077
-        width: 7
-        height: 6
+        x: 397
+        y: 397
+        width: 198
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 43678c8a7ede738e0800000000000000
-      internalID: -1713639553966246348
+      spriteID: d036dfb54d41125d0800000000000000
+      internalID: -3089164967090494707
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Coral_animations_11
+      name: Jelly_Coral_Frame_13
       rect:
         serializedVersion: 2
-        x: 316
-        y: 1081
-        width: 34
-        height: 27
+        x: 595
+        y: 397
+        width: 198
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d1a00cafa35257570800000000000000
-      internalID: 8463712009957935645
+      spriteID: c811e84c62244c290800000000000000
+      internalID: -7871093514462948980
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Coral_animations_12
+      name: Jelly_Coral_Frame_14
       rect:
         serializedVersion: 2
-        x: 381
-        y: 1092
-        width: 13
-        height: 8
+        x: 793
+        y: 397
+        width: 199
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a39acdf06706d6370800000000000000
-      internalID: 8317410147011701050
+      spriteID: e7be59776fdee6120800000000000000
+      internalID: 2409124493513845630
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Coral_animations_13
+      name: Jelly_Coral_Frame_15
       rect:
         serializedVersion: 2
-        x: 506
-        y: 1043
-        width: 59
-        height: 64
+        x: 992
+        y: 397
+        width: 198
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 88a1b4326da55e4b0800000000000000
-      internalID: -5411819501454157176
+      spriteID: ed49e5ac268c05fc0800000000000000
+      internalID: -3508083783094070050
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Coral_animations_14
+      name: Jelly_Coral_Frame_16
       rect:
         serializedVersion: 2
-        x: 562
-        y: 1072
-        width: 13
-        height: 13
+        x: 1190
+        y: 397
+        width: 198
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 480a94b405a98dca0800000000000000
-      internalID: -5991869634565267324
+      spriteID: e8a522ab81f8a9530800000000000000
+      internalID: 3862556966788422286
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Coral_animations_15
+      name: Jelly_Coral_Frame_17
       rect:
         serializedVersion: 2
-        x: 1359
-        y: 1071
-        width: 18
-        height: 33
+        x: 1388
+        y: 397
+        width: 198
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d3dcae8b91973d160800000000000000
-      internalID: 7049110993148497213
+      spriteID: 2777ebe51a39c7730800000000000000
+      internalID: 3998232890486716274
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Coral_animations_16
+      name: Jelly_Coral_Frame_18
       rect:
         serializedVersion: 2
-        x: 314
-        y: 795
-        width: 267
-        height: 267
+        x: 1586
+        y: 397
+        width: 199
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d7f2adfcd0e4f6550800000000000000
-      internalID: 6156225036867481469
+      spriteID: 700f7146711a09860800000000000000
+      internalID: 7534699298426449927
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Coral_animations_17
+      name: Jelly_Coral_Frame_19
       rect:
         serializedVersion: 2
-        x: 820
-        y: 1025
-        width: 33
-        height: 25
+        x: 1785
+        y: 397
+        width: 198
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 02593dc53c82d6010800000000000000
-      internalID: 1183647096609412384
+      spriteID: f862f73b11125d710800000000000000
+      internalID: 1717315192821327503
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Coral_animations_18
-      rect:
-        serializedVersion: 2
-        x: 1100
-        y: 764
-        width: 277
-        height: 278
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7e3fdab853361bab0800000000000000
-      internalID: -4994101430149319705
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelly_Coral_animations_19
-      rect:
-        serializedVersion: 2
-        x: 1356
-        y: 993
-        width: 35
-        height: 74
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 31c2caf3266c7b9d0800000000000000
-      internalID: -2758518121463796717
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelly_Coral_animations_20
-      rect:
-        serializedVersion: 2
-        x: 578
-        y: 979
-        width: 7
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 23abc1a56412004a0800000000000000
-      internalID: -6629262065446110670
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelly_Coral_animations_21
-      rect:
-        serializedVersion: 2
-        x: 577
-        y: 943
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 27b50859050dfa920800000000000000
-      internalID: 3003848521003588466
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelly_Coral_animations_22
-      rect:
-        serializedVersion: 2
-        x: 840
-        y: 949
-        width: 7
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 468b0f1836793cf00800000000000000
-      internalID: 1135917984665090148
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelly_Coral_animations_23
-      rect:
-        serializedVersion: 2
-        x: 1386
-        y: 913
-        width: 16
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bb999321f44db7380800000000000000
-      internalID: -8972344396532311621
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelly_Coral_animations_24
-      rect:
-        serializedVersion: 2
-        x: 840
-        y: 891
-        width: 11
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6ede73bc0d8ba75e0800000000000000
-      internalID: -1911011884963205658
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelly_Coral_animations_25
-      rect:
-        serializedVersion: 2
-        x: 850
-        y: 903
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dee7d594aeb8a8c30800000000000000
-      internalID: 4362453027431218925
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelly_Coral_animations_26
-      rect:
-        serializedVersion: 2
-        x: 298
-        y: 803
-        width: 11
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 923f037cf682fc1c0800000000000000
-      internalID: -4481318643661999319
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelly_Coral_animations_27
-      rect:
-        serializedVersion: 2
-        x: 298
-        y: 799
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5907fe376973acb00800000000000000
-      internalID: 849552599042453653
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelly_Coral_animations_28
-      rect:
-        serializedVersion: 2
-        x: 306
-        y: 800
-        width: 9
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5ceee2ef49ed4cba0800000000000000
-      internalID: -6069481666287571259
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelly_Coral_animations_29
-      rect:
-        serializedVersion: 2
-        x: 854
-        y: 798
-        width: 7
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 95b280c21ddead150800000000000000
-      internalID: 5898288144637766489
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelly_Coral_animations_30
-      rect:
-        serializedVersion: 2
-        x: 856
-        y: 776
-        width: 13
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9cbe5448f801a2810800000000000000
-      internalID: 1741222414517660617
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelly_Coral_animations_31
+      name: Jelly_Coral_Frame_20
       rect:
         serializedVersion: 2
         x: 0
-        y: 455
-        width: 835
-        height: 331
+        y: 198
+        width: 198
+        height: 199
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5ccae3d93fad51390800000000000000
-      internalID: -7848126035773182779
+      spriteID: 0ccae06150f711850800000000000000
+      internalID: 6345993009763364032
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Coral_animations_32
+      name: Jelly_Coral_Frame_21
       rect:
         serializedVersion: 2
-        x: 385
-        y: 734
-        width: 46
-        height: 50
+        x: 198
+        y: 198
+        width: 199
+        height: 199
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bc75d91d741422cf0800000000000000
-      internalID: -278588450228316213
+      spriteID: 815623d0e4527c9e0800000000000000
+      internalID: -1601270125347838696
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Coral_animations_33
+      name: Jelly_Coral_Frame_22
       rect:
         serializedVersion: 2
-        x: 393
-        y: 782
-        width: 9
-        height: 9
+        x: 397
+        y: 198
+        width: 198
+        height: 199
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9b0dae2f1cb143420800000000000000
-      internalID: 2608740603972473017
+      spriteID: 63104d8d2c6977b00800000000000000
+      internalID: 826294820251369782
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Coral_animations_34
+      name: Jelly_Coral_Frame_23
       rect:
         serializedVersion: 2
-        x: 530
-        y: 776
-        width: 9
-        height: 10
+        x: 595
+        y: 198
+        width: 198
+        height: 199
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b73453b5794c9d920800000000000000
-      internalID: 3015657579850580859
+      spriteID: e244a423fa157aa80800000000000000
+      internalID: -8455699962459962322
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Coral_animations_35
+      name: Jelly_Coral_Frame_24
       rect:
         serializedVersion: 2
-        x: 773
-        y: 775
-        width: 22
-        height: 19
+        x: 793
+        y: 198
+        width: 199
+        height: 199
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9f772abacc92544c0800000000000000
-      internalID: -4303987909853022215
+      spriteID: f65655ae94b495530800000000000000
+      internalID: 3844186537773589871
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Coral_animations_36
+      name: Jelly_Coral_Frame_25
       rect:
         serializedVersion: 2
-        x: 812
-        y: 784
-        width: 9
-        height: 11
+        x: 992
+        y: 198
+        width: 198
+        height: 199
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a54a58270d0d2e350800000000000000
-      internalID: 6044623243577762906
+      spriteID: 4c50a1f464be7f130800000000000000
+      internalID: 3600605114313344452
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Coral_animations_37
+      name: Jelly_Coral_Frame_26
       rect:
         serializedVersion: 2
-        x: 1066
-        y: 718
-        width: 35
-        height: 69
+        x: 1190
+        y: 198
+        width: 198
+        height: 199
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 301b2bc1e185188c0800000000000000
-      internalID: -3998818107774553853
+      spriteID: ff69b72edec8e7c20800000000000000
+      internalID: 3206154938069260031
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Coral_animations_38
+      name: Jelly_Coral_Frame_27
       rect:
         serializedVersion: 2
-        x: 834
-        y: 496
-        width: 543
-        height: 270
+        x: 1388
+        y: 198
+        width: 198
+        height: 199
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 15155b01acae33ee0800000000000000
-      internalID: -1282423315285847727
+      spriteID: 871f36860ab9974e0800000000000000
+      internalID: -1983383047631539848
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Coral_animations_39
+      name: Jelly_Coral_Frame_28
       rect:
         serializedVersion: 2
-        x: 1039
-        y: 736
-        width: 28
-        height: 39
+        x: 1586
+        y: 198
+        width: 199
+        height: 199
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 37a66de7746c430c0800000000000000
-      internalID: -4596831309265474957
+      spriteID: 2c2aa90c9a3cb7720800000000000000
+      internalID: 2845082723462849218
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Coral_animations_40
+      name: Jelly_Coral_Frame_29
       rect:
         serializedVersion: 2
-        x: 1368
-        y: 734
-        width: 33
-        height: 27
+        x: 1785
+        y: 198
+        width: 198
+        height: 199
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ca55ece836ed09890800000000000000
-      internalID: -7453212864119155284
+      spriteID: c0213677413e74ba0800000000000000
+      internalID: -6104661092835585524
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Coral_animations_41
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 646
-        width: 5
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 01fc046631173d350800000000000000
-      internalID: 6040295853367807760
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelly_Coral_animations_42
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 257
-        width: 825
-        height: 277
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1e49788a68df08670800000000000000
-      internalID: 8539103648289363169
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelly_Coral_animations_43
-      rect:
-        serializedVersion: 2
-        x: 802
-        y: 516
-        width: 31
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: df4d1eb265cf83ca0800000000000000
-      internalID: -6036797853456542467
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelly_Coral_animations_44
-      rect:
-        serializedVersion: 2
-        x: 937
-        y: 478
-        width: 37
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 30ee92a74c1fff0f0800000000000000
-      internalID: -1080879559380177405
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelly_Coral_animations_45
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 455
-        width: 5
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 979653c2cd3207540800000000000000
-      internalID: 5003538614550096249
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelly_Coral_animations_46
-      rect:
-        serializedVersion: 2
-        x: 298
-        y: 0
-        width: 1099
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ed917fa9fde4869e0800000000000000
-      internalID: -1627964543009875490
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelly_Coral_animations_47
-      rect:
-        serializedVersion: 2
-        x: 973
-        y: 477
-        width: 27
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: daedab1df0cd94380800000000000000
-      internalID: -8986409620939809107
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelly_Coral_animations_48
+      name: Jelly_Coral_Frame_30
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 295
-        height: 250
+        width: 198
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6dc7d87ad60fbae00800000000000000
-      internalID: 1057202891301682390
+      spriteID: 49f1030c42873cdf0800000000000000
+      internalID: -161153062416670828
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Coral_animations_49
+      name: Jelly_Coral_Frame_31
       rect:
         serializedVersion: 2
-        x: 254
-        y: 226
-        width: 45
-        height: 48
+        x: 198
+        y: 0
+        width: 199
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2bc8ce4ee286bcf80800000000000000
-      internalID: -8085254155395101518
+      spriteID: 51c5957189c7a9630800000000000000
+      internalID: 3934594217130155029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Coral_Frame_32
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 0
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4a3d467608dcd3d0800000000000000
+      internalID: -3180429714564236724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Coral_Frame_33
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 0
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa7939a255438ed90800000000000000
+      internalID: -7068342074766813270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Coral_Frame_34
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 0
+        width: 199
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0456884bc679fae30800000000000000
+      internalID: 4516995444416996672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Coral_Frame_35
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 0
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7f92233b11d55930800000000000000
+      internalID: 4131438147934527354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Coral_Frame_36
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 0
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4b7dc94aee1017c0800000000000000
+      internalID: -4102745268925138097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Coral_Frame_37
+      rect:
+        serializedVersion: 2
+        x: 1388
+        y: 0
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9645818d9817f0140800000000000000
+      internalID: 4688090573965907049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Coral_Frame_38
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 0
+        width: 199
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d7e5766f033b6f30800000000000000
+      internalID: 4569802388134029266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Coral_Frame_39
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 0
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7ecea6b81ebb0e80800000000000000
+      internalID: -8211260482226565506
       vertices: []
       indices: 
       edges: []
@@ -1386,6 +1286,46 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      Jelly_Coral_Frame_00: 3271501030476697163
+      Jelly_Coral_Frame_01: -1971682686727193762
+      Jelly_Coral_Frame_02: -2456461276040145224
+      Jelly_Coral_Frame_03: -2667301813452087797
+      Jelly_Coral_Frame_04: 2300271863084617996
+      Jelly_Coral_Frame_05: 3604799601352827843
+      Jelly_Coral_Frame_06: 754669083073625052
+      Jelly_Coral_Frame_07: -5580827255902798668
+      Jelly_Coral_Frame_08: 1564639275284332437
+      Jelly_Coral_Frame_09: 5844742574241135072
+      Jelly_Coral_Frame_10: 3374309824181804199
+      Jelly_Coral_Frame_11: -1081349696338802438
+      Jelly_Coral_Frame_12: -3089164967090494707
+      Jelly_Coral_Frame_13: -7871093514462948980
+      Jelly_Coral_Frame_14: 2409124493513845630
+      Jelly_Coral_Frame_15: -3508083783094070050
+      Jelly_Coral_Frame_16: 3862556966788422286
+      Jelly_Coral_Frame_17: 3998232890486716274
+      Jelly_Coral_Frame_18: 7534699298426449927
+      Jelly_Coral_Frame_19: 1717315192821327503
+      Jelly_Coral_Frame_20: 6345993009763364032
+      Jelly_Coral_Frame_21: -1601270125347838696
+      Jelly_Coral_Frame_22: 826294820251369782
+      Jelly_Coral_Frame_23: -8455699962459962322
+      Jelly_Coral_Frame_24: 3844186537773589871
+      Jelly_Coral_Frame_25: 3600605114313344452
+      Jelly_Coral_Frame_26: 3206154938069260031
+      Jelly_Coral_Frame_27: -1983383047631539848
+      Jelly_Coral_Frame_28: 2845082723462849218
+      Jelly_Coral_Frame_29: -6104661092835585524
+      Jelly_Coral_Frame_30: -161153062416670828
+      Jelly_Coral_Frame_31: 3934594217130155029
+      Jelly_Coral_Frame_32: -3180429714564236724
+      Jelly_Coral_Frame_33: -7068342074766813270
+      Jelly_Coral_Frame_34: 4516995444416996672
+      Jelly_Coral_Frame_35: 4131438147934527354
+      Jelly_Coral_Frame_36: -4102745268925138097
+      Jelly_Coral_Frame_37: 4688090573965907049
+      Jelly_Coral_Frame_38: 4569802388134029266
+      Jelly_Coral_Frame_39: -8211260482226565506
       Jelly_Coral_animations_0: -4326019625586315033
       Jelly_Coral_animations_1: 2663774876297771818
       Jelly_Coral_animations_10: -1713639553966246348

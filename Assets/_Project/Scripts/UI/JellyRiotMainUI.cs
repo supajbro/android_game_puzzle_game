@@ -18,6 +18,8 @@ namespace JellyRiot.UI
     public sealed class JellyRiotMainUI : MonoBehaviour
     {
         private const float ReferenceWidth = 1080f;
+        private const float BoardJellyFill = 0.92f;
+        private const float RackJellyFill = 0.96f;
         private static readonly Color Cream = new Color32(255, 245, 232, 255);
         private static readonly Color Plum = new Color32(20, 20, 43, 255);
         private static readonly Color Indigo = new Color32(41, 42, 86, 255);
@@ -45,8 +47,7 @@ namespace JellyRiot.UI
         [SerializeField] private Sprite selectionArrow;
         [SerializeField] private Sprite selectionHighlight;
 
-        [Header("Jellies: Coral, Lemon, Aqua, Lilac, Mint")]
-        [SerializeField] private Sprite[] jellySprites = new Sprite[5];
+        [Header("Expressive jellies")]
         [SerializeField] private Sprite jellyShadow;
         [SerializeField] private JellyAnimationLibrary animationLibrary;
 
@@ -85,14 +86,15 @@ namespace JellyRiot.UI
         public GameSession Session => _session;
         public GridViewPresenter GridPresenter => _gridPresenter;
         public AudioManager AudioManager => _audio;
-        public Sprite GetJellySprite(JellyColour colour) => SpriteFor(colour);
+        public Sprite GetJellySettledFrame(JellyColour colour) => animationLibrary.GetSettledFrame(colour);
+        public Sprite[] GetJellyAnimationFrames(JellyColour colour, JellyAnimationType type) =>
+            animationLibrary.GetFrames(colour, type);
 
         public void Configure(Sprite backgroundSprite, Sprite logoSprite, Sprite mascotSprite,
             Sprite overlaySprite, Sprite cellSprite, Sprite pillSprite, Sprite scoreSprite,
             Sprite infoPanelSprite, Sprite pauseSprite, Sprite replaySprite, Sprite soundSprite,
             Sprite hapticsSprite, Sprite homeSprite, Sprite dailySprite, Sprite infoSprite,
-            Sprite arrowSprite, Sprite highlightSprite, Sprite[] colours, Sprite shadowSprite,
-            JellyAnimationLibrary animations)
+            Sprite arrowSprite, Sprite highlightSprite, Sprite shadowSprite, JellyAnimationLibrary animations)
         {
             background = backgroundSprite;
             logo = logoSprite;
@@ -111,7 +113,6 @@ namespace JellyRiot.UI
             infoIcon = infoSprite;
             selectionArrow = arrowSprite;
             selectionHighlight = highlightSprite;
-            jellySprites = colours;
             jellyShadow = shadowSprite;
             animationLibrary = animations;
         }
@@ -158,17 +159,9 @@ namespace JellyRiot.UI
         {
             if (background == null || logo == null || mascot == null || boardOverlay == null ||
                 cellHole == null || pillButton == null || scorePanel == null || informationPanel == null ||
-                jellyShadow == null || jellySprites == null || jellySprites.Length != 5)
+                jellyShadow == null || animationLibrary == null || !animationLibrary.IsComplete())
             {
                 throw new InvalidOperationException("Jelly Riot artwork references are incomplete. Run Jelly Riot/Visuals/Build Main Scene.");
-            }
-
-            for (int i = 0; i < jellySprites.Length; i++)
-            {
-                if (jellySprites[i] == null)
-                {
-                    throw new InvalidOperationException("Every JellyColour must have a gameplay sprite.");
-                }
             }
         }
 
@@ -270,19 +263,9 @@ namespace JellyRiot.UI
                 {
                     int index = (row * BoardModel.Width) + column;
                     Vector2 position = new Vector2((column - 3) * cellSize, (4 - row) * cellSize);
-                    _boardShadows[index] = CreateImage($"Shadow {column},{row}", grid, jellyShadow, true,
-                        new Vector2(72f, 72f), position + new Vector2(0f, -5f));
-                }
-            }
-
-            for (int row = 0; row < BoardModel.Height; row++)
-            {
-                for (int column = 0; column < BoardModel.Width; column++)
-                {
-                    int index = (row * BoardModel.Width) + column;
-                    Vector2 position = new Vector2((column - 3) * cellSize, (4 - row) * cellSize);
-                    _boardJellies[index] = CreateImage($"Jelly {column},{row}", grid, jellySprites[0], true,
-                        new Vector2(75f, 75f), position + new Vector2(0f, 2f));
+                    _boardJellies[index] = CreateJellyView($"Jelly {column},{row}", grid,
+                        animationLibrary.GetSettledFrame(JellyColour.Coral), position,
+                        cellSize, cellSize * BoardJellyFill, out _boardShadows[index]);
                 }
             }
 
@@ -306,10 +289,9 @@ namespace JellyRiot.UI
                     new Vector2(165f, 165f), slotPosition);
                 _rackSelections[slot] = CreateImage($"Selection {slot}", rackBacking.transform,
                     selectionHighlight, true, new Vector2(185f, 185f), slotPosition);
-                _rackShadows[slot] = CreateImage($"Rack Shadow {slot}", rackBacking.transform, jellyShadow, true,
-                    new Vector2(130f, 130f), slotPosition + new Vector2(0f, -7f));
-                _rackJellies[slot] = CreateImage($"Rack Jelly {slot}", rackBacking.transform,
-                    jellySprites[slot], true, new Vector2(135f, 135f), slotPosition + new Vector2(0f, 3f));
+                _rackJellies[slot] = CreateJellyView($"Rack Jelly {slot}", rackBacking.transform,
+                    animationLibrary.GetSettledFrame((JellyColour)(slot + 1)), slotPosition,
+                    165f, 165f * RackJellyFill, out _rackShadows[slot]);
                 Button button = CreateTransparentButton($"Rack Button {slot}", rackBacking.transform,
                     new Vector2(190f, 190f), slotPosition);
                 button.onClick.AddListener(() => SelectRack(capturedSlot));
@@ -326,7 +308,7 @@ namespace JellyRiot.UI
             debugText.gameObject.SetActive(false);
 #endif
             _gridPresenter = gameObject.AddComponent<GridViewPresenter>();
-            _gridPresenter.Initialise(_session, jellySprites, animationLibrary, _boardJellies, _boardShadows,
+            _gridPresenter.Initialise(_session, animationLibrary, _boardJellies, _boardShadows,
                 _rackJellies, _rackShadows, _rackSelections, _columnFeedback, _columnButtons, debugText);
             _gridPresenter.JellyLanded += OnJellyLanded;
             _gridPresenter.TurnPresentationCompleted += OnTurnPresentationCompleted;
@@ -661,12 +643,6 @@ namespace JellyRiot.UI
             }
         }
 
-        private Sprite SpriteFor(JellyColour colour)
-        {
-            int index = (int)colour - 1;
-            return index >= 0 && index < jellySprites.Length ? jellySprites[index] : jellySprites[0];
-        }
-
         private void SetOnly(GameObject screen)
         {
             _homeScreen.SetActive(screen == _homeScreen);
@@ -776,6 +752,24 @@ namespace JellyRiot.UI
             rect.sizeDelta = size ?? Vector2.zero;
             rect.anchoredPosition = position ?? Vector2.zero;
             return image;
+        }
+
+        private Image CreateJellyView(string name, Transform parent, Sprite sprite, Vector2 position,
+            float rootSize, float visualSize, out Image shadow)
+        {
+            GameObject root = CreateRect(name, parent);
+            RectTransform rootRect = (RectTransform)root.transform;
+            rootRect.sizeDelta = new Vector2(rootSize, rootSize);
+            rootRect.anchoredPosition = position;
+
+            shadow = CreateImage("Shadow", root.transform, jellyShadow, true,
+                new Vector2(visualSize, visualSize), new Vector2(0f, -rootSize * 0.065f));
+            Image artwork = CreateImage("Artwork", root.transform, sprite, true,
+                new Vector2(visualSize, visualSize), Vector2.zero);
+            artwork.rectTransform.anchorMin = new Vector2(0.5f, 0.5f);
+            artwork.rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+            artwork.rectTransform.pivot = new Vector2(0.5f, 0.5f);
+            return artwork;
         }
 
         private Text CreateText(string name, Transform parent, string value, int size,

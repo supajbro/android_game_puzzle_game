@@ -53,6 +53,126 @@ TextureImporter:
   - first:
       213: -475397030100497903
     second: Jelly_Lilac_animations_16
+  - first:
+      213: 1482952033534120451
+    second: Jelly_Lilac_Frame_00
+  - first:
+      213: -5559273359910178833
+    second: Jelly_Lilac_Frame_01
+  - first:
+      213: 2643775564576508111
+    second: Jelly_Lilac_Frame_02
+  - first:
+      213: 2938565218284325863
+    second: Jelly_Lilac_Frame_03
+  - first:
+      213: -7490691924071882514
+    second: Jelly_Lilac_Frame_04
+  - first:
+      213: -6849364770312537563
+    second: Jelly_Lilac_Frame_05
+  - first:
+      213: -7945134700385512820
+    second: Jelly_Lilac_Frame_06
+  - first:
+      213: -1770684675271021041
+    second: Jelly_Lilac_Frame_07
+  - first:
+      213: -5739123024546171316
+    second: Jelly_Lilac_Frame_08
+  - first:
+      213: 2188955544916698017
+    second: Jelly_Lilac_Frame_09
+  - first:
+      213: 7226807109361545996
+    second: Jelly_Lilac_Frame_10
+  - first:
+      213: 8016930589709894696
+    second: Jelly_Lilac_Frame_11
+  - first:
+      213: 7918742346403893495
+    second: Jelly_Lilac_Frame_12
+  - first:
+      213: -1068115400634354423
+    second: Jelly_Lilac_Frame_13
+  - first:
+      213: -647113050154228588
+    second: Jelly_Lilac_Frame_14
+  - first:
+      213: 1520064950568985423
+    second: Jelly_Lilac_Frame_15
+  - first:
+      213: 8799070559085018240
+    second: Jelly_Lilac_Frame_16
+  - first:
+      213: -7107604774034427985
+    second: Jelly_Lilac_Frame_17
+  - first:
+      213: 685924302725554661
+    second: Jelly_Lilac_Frame_18
+  - first:
+      213: -3169768066764309221
+    second: Jelly_Lilac_Frame_19
+  - first:
+      213: -3946209166507551498
+    second: Jelly_Lilac_Frame_20
+  - first:
+      213: 1698856651721102083
+    second: Jelly_Lilac_Frame_21
+  - first:
+      213: 8534994660474522942
+    second: Jelly_Lilac_Frame_22
+  - first:
+      213: 6890593799528785785
+    second: Jelly_Lilac_Frame_23
+  - first:
+      213: 3682418086902819455
+    second: Jelly_Lilac_Frame_24
+  - first:
+      213: -8430967394128057595
+    second: Jelly_Lilac_Frame_25
+  - first:
+      213: 5595242910161674831
+    second: Jelly_Lilac_Frame_26
+  - first:
+      213: 8692087822439344837
+    second: Jelly_Lilac_Frame_27
+  - first:
+      213: 6822345807456792389
+    second: Jelly_Lilac_Frame_28
+  - first:
+      213: 3294830655029791116
+    second: Jelly_Lilac_Frame_29
+  - first:
+      213: 3009069924348166537
+    second: Jelly_Lilac_Frame_30
+  - first:
+      213: -4175132968436939804
+    second: Jelly_Lilac_Frame_31
+  - first:
+      213: -257212395722682828
+    second: Jelly_Lilac_Frame_32
+  - first:
+      213: -2939297091395991371
+    second: Jelly_Lilac_Frame_33
+  - first:
+      213: 5341681610321202282
+    second: Jelly_Lilac_Frame_34
+  - first:
+      213: -2313329723347422361
+    second: Jelly_Lilac_Frame_35
+  - first:
+      213: 5589179813552844709
+    second: Jelly_Lilac_Frame_36
+  - first:
+      213: -7123565673046953457
+    second: Jelly_Lilac_Frame_37
+  - first:
+      213: 1317654561750903201
+    second: Jelly_Lilac_Frame_38
+  - first:
+      213: 9062222577462500822
+    second: Jelly_Lilac_Frame_39
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -94,7 +214,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -174,375 +294,881 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jelly_Lilac_animations_0
-      rect:
-        serializedVersion: 2
-        x: 423
-        y: 1111
-        width: 17
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 03047427689ff8b70800000000000000
-      internalID: 8903609344172965936
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelly_Lilac_animations_1
-      rect:
-        serializedVersion: 2
-        x: 832
-        y: 784
-        width: 568
-        height: 334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2cdc1ea33e8c4eca0800000000000000
-      internalID: -5988440726224908862
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelly_Lilac_animations_2
+      name: Jelly_Lilac_Frame_00
       rect:
         serializedVersion: 2
         x: 0
-        y: 743
-        width: 299
-        height: 340
+        y: 595
+        width: 198
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3f4974ed018ed4000800000000000000
-      internalID: 21928732353074419
+      spriteID: 3029eb97401849410800000000000000
+      internalID: 1482952033534120451
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Lilac_animations_3
+      name: Jelly_Lilac_Frame_01
       rect:
         serializedVersion: 2
-        x: 300
-        y: 785
-        width: 537
-        height: 325
+        x: 198
+        y: 595
+        width: 199
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fb6036e9cbfb26800800000000000000
-      internalID: 604256116853114559
+      spriteID: fefe24d555e79d2b0800000000000000
+      internalID: -5559273359910178833
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Lilac_animations_4
+      name: Jelly_Lilac_Frame_02
       rect:
         serializedVersion: 2
-        x: 820
-        y: 1079
-        width: 25
-        height: 27
+        x: 397
+        y: 595
+        width: 198
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8c788b584f432f630800000000000000
-      internalID: 3959285247232214984
+      spriteID: fc8c0706ed390b420800000000000000
+      internalID: 2643775564576508111
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Lilac_animations_5
+      name: Jelly_Lilac_Frame_03
       rect:
         serializedVersion: 2
-        x: 45
-        y: 1045
-        width: 21
-        height: 16
+        x: 595
+        y: 595
+        width: 198
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5f46f5ae9ecb3eb40800000000000000
-      internalID: 5468422085403436277
+      spriteID: 7ebc7213f71e7c820800000000000000
+      internalID: 2938565218284325863
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Lilac_animations_6
+      name: Jelly_Lilac_Frame_04
       rect:
         serializedVersion: 2
-        x: 207
-        y: 792
-        width: 10
-        height: 7
+        x: 793
+        y: 595
+        width: 199
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ac56ab6e4a7b74000800000000000000
-      internalID: 20186642219951562
+      spriteID: ee0eec7e167bb0890800000000000000
+      internalID: -7490691924071882514
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Lilac_animations_7
+      name: Jelly_Lilac_Frame_05
       rect:
         serializedVersion: 2
-        x: 220
-        y: 788
-        width: 13
-        height: 9
+        x: 992
+        y: 595
+        width: 198
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cef4e09452be46280800000000000000
-      internalID: -9050850805735862292
+      spriteID: 52a3278e70b22f0a0800000000000000
+      internalID: -6849364770312537563
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Lilac_animations_8
+      name: Jelly_Lilac_Frame_06
       rect:
         serializedVersion: 2
-        x: 806
-        y: 781
-        width: 15
-        height: 22
+        x: 1190
+        y: 595
+        width: 198
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5af704bedbf93f860800000000000000
-      internalID: 7562563837329702821
+      spriteID: c8254eac5163db190800000000000000
+      internalID: -7945134700385512820
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Lilac_animations_9
+      name: Jelly_Lilac_Frame_07
       rect:
         serializedVersion: 2
-        x: 820
-        y: 784
-        width: 8
-        height: 14
+        x: 1388
+        y: 595
+        width: 198
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 719f7682be7d35ba0800000000000000
-      internalID: -6101295665161701097
+      spriteID: f0e2e395ba34d67e0800000000000000
+      internalID: -1770684675271021041
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Lilac_animations_10
+      name: Jelly_Lilac_Frame_08
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 595
+        width: 199
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c46f8af240a8a50b0800000000000000
+      internalID: -5739123024546171316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lilac_Frame_09
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 595
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a3a1e3787bb06e10800000000000000
+      internalID: 2188955544916698017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lilac_Frame_10
       rect:
         serializedVersion: 2
         x: 0
-        y: 526
-        width: 828
-        height: 261
+        y: 397
+        width: 198
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c7fbe430f94d82410800000000000000
-      internalID: 1452644659247366012
+      spriteID: c0333c5d6c6ca4460800000000000000
+      internalID: 7226807109361545996
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Lilac_animations_11
+      name: Jelly_Lilac_Frame_11
       rect:
         serializedVersion: 2
-        x: 824
-        y: 750
-        width: 35
-        height: 29
+        x: 198
+        y: 397
+        width: 199
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ebda9353fd0930150800000000000000
-      internalID: 5837668830347374014
+      spriteID: 8240f9455ebd14f60800000000000000
+      internalID: 8016930589709894696
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Lilac_animations_12
+      name: Jelly_Lilac_Frame_12
       rect:
         serializedVersion: 2
-        x: 829
-        y: 542
-        width: 566
-        height: 246
+        x: 397
+        y: 397
+        width: 198
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 877f3da4ee45c6490800000000000000
-      internalID: -7751727476177111176
+      spriteID: 7f05f31753605ed60800000000000000
+      internalID: 7918742346403893495
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Lilac_animations_13
+      name: Jelly_Lilac_Frame_13
       rect:
         serializedVersion: 2
-        x: 1088
-        y: 778
-        width: 7
-        height: 12
+        x: 595
+        y: 397
+        width: 198
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bf1760f41c5b21390800000000000000
-      internalID: -7849011358694215173
+      spriteID: 905b016c3ba4d21f0800000000000000
+      internalID: -1068115400634354423
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Lilac_animations_14
+      name: Jelly_Lilac_Frame_14
       rect:
         serializedVersion: 2
-        x: 1329
-        y: 752
-        width: 54
-        height: 31
+        x: 793
+        y: 397
+        width: 199
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f40bcf8bab8c83ea0800000000000000
-      internalID: -5892739408121253809
+      spriteID: 494a9040c1ef407f0800000000000000
+      internalID: -647113050154228588
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Lilac_animations_15
+      name: Jelly_Lilac_Frame_15
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 397
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f43af26d40b581510800000000000000
+      internalID: 1520064950568985423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lilac_Frame_16
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 397
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08c3cd3dd049c1a70800000000000000
+      internalID: 8799070559085018240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lilac_Frame_17
+      rect:
+        serializedVersion: 2
+        x: 1388
+        y: 397
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fafaecf9d17bc5d90800000000000000
+      internalID: -7107604774034427985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lilac_Frame_18
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 397
+        width: 199
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e1a3c6e484e48900800000000000000
+      internalID: 685924302725554661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lilac_Frame_19
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 397
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1df228ccb8b204d0800000000000000
+      internalID: -3169768066764309221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lilac_Frame_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 198
+        width: 198
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f45de4cbaf3c39c0800000000000000
+      internalID: -3946209166507551498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lilac_Frame_21
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 198
+        width: 199
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3035522bf1d839710800000000000000
+      internalID: 1698856651721102083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lilac_Frame_22
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 198
+        width: 198
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3d80716c64627670800000000000000
+      internalID: 8534994660474522942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lilac_Frame_23
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 198
+        width: 198
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9772c608d8e40af50800000000000000
+      internalID: 6890593799528785785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lilac_Frame_24
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 198
+        width: 199
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7ae0506db39a1330800000000000000
+      internalID: 3682418086902819455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lilac_Frame_25
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 198
+        width: 198
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50ba81003df2ffa80800000000000000
+      internalID: -8430967394128057595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lilac_Frame_26
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 198
+        width: 198
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f42a53c28cb46ad40800000000000000
+      internalID: 5595242910161674831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lilac_Frame_27
+      rect:
+        serializedVersion: 2
+        x: 1388
+        y: 198
+        width: 198
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5caeef462df70a870800000000000000
+      internalID: 8692087822439344837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lilac_Frame_28
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 198
+        width: 199
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54f66549d57ddae50800000000000000
+      internalID: 6822345807456792389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lilac_Frame_29
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 198
+        width: 198
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c894e14260799bd20800000000000000
+      internalID: 3294830655029791116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lilac_Frame_30
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1391
-        height: 544
+        width: 198
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 22ff4b8e35d1da7f0800000000000000
-      internalID: -599790929146740958
+      spriteID: 9818519472d52c920800000000000000
+      internalID: 3009069924348166537
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Lilac_animations_16
+      name: Jelly_Lilac_Frame_31
       rect:
         serializedVersion: 2
-        x: 0
-        y: 295
-        width: 5
-        height: 12
+        x: 198
+        y: 0
+        width: 199
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 11a859d7bec0769f0800000000000000
-      internalID: -475397030100497903
+      spriteID: 4e34b4e9fa2fe06c0800000000000000
+      internalID: -4175132968436939804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lilac_Frame_32
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 0
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43e4f1950b23e6cf0800000000000000
+      internalID: -257212395722682828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lilac_Frame_33
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 0
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b8c0025ed48537d0800000000000000
+      internalID: -2939297091395991371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lilac_Frame_34
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 0
+        width: 199
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6c8e668f17712a40800000000000000
+      internalID: 5341681610321202282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lilac_Frame_35
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 0
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76336878fd665efd0800000000000000
+      internalID: -2313329723347422361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lilac_Frame_36
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 0
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5afe99c7d61c09d40800000000000000
+      internalID: 5589179813552844709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lilac_Frame_37
+      rect:
+        serializedVersion: 2
+        x: 1388
+        y: 0
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f02bedb33c2042d90800000000000000
+      internalID: -7123565673046953457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lilac_Frame_38
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 0
+        width: 199
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a9e5d9b7df394210800000000000000
+      internalID: 1317654561750903201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lilac_Frame_39
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 0
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dd5d25ab6b73cd70800000000000000
+      internalID: 9062222577462500822
       vertices: []
       indices: 
       edges: []
@@ -561,6 +1187,46 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      Jelly_Lilac_Frame_00: 1482952033534120451
+      Jelly_Lilac_Frame_01: -5559273359910178833
+      Jelly_Lilac_Frame_02: 2643775564576508111
+      Jelly_Lilac_Frame_03: 2938565218284325863
+      Jelly_Lilac_Frame_04: -7490691924071882514
+      Jelly_Lilac_Frame_05: -6849364770312537563
+      Jelly_Lilac_Frame_06: -7945134700385512820
+      Jelly_Lilac_Frame_07: -1770684675271021041
+      Jelly_Lilac_Frame_08: -5739123024546171316
+      Jelly_Lilac_Frame_09: 2188955544916698017
+      Jelly_Lilac_Frame_10: 7226807109361545996
+      Jelly_Lilac_Frame_11: 8016930589709894696
+      Jelly_Lilac_Frame_12: 7918742346403893495
+      Jelly_Lilac_Frame_13: -1068115400634354423
+      Jelly_Lilac_Frame_14: -647113050154228588
+      Jelly_Lilac_Frame_15: 1520064950568985423
+      Jelly_Lilac_Frame_16: 8799070559085018240
+      Jelly_Lilac_Frame_17: -7107604774034427985
+      Jelly_Lilac_Frame_18: 685924302725554661
+      Jelly_Lilac_Frame_19: -3169768066764309221
+      Jelly_Lilac_Frame_20: -3946209166507551498
+      Jelly_Lilac_Frame_21: 1698856651721102083
+      Jelly_Lilac_Frame_22: 8534994660474522942
+      Jelly_Lilac_Frame_23: 6890593799528785785
+      Jelly_Lilac_Frame_24: 3682418086902819455
+      Jelly_Lilac_Frame_25: -8430967394128057595
+      Jelly_Lilac_Frame_26: 5595242910161674831
+      Jelly_Lilac_Frame_27: 8692087822439344837
+      Jelly_Lilac_Frame_28: 6822345807456792389
+      Jelly_Lilac_Frame_29: 3294830655029791116
+      Jelly_Lilac_Frame_30: 3009069924348166537
+      Jelly_Lilac_Frame_31: -4175132968436939804
+      Jelly_Lilac_Frame_32: -257212395722682828
+      Jelly_Lilac_Frame_33: -2939297091395991371
+      Jelly_Lilac_Frame_34: 5341681610321202282
+      Jelly_Lilac_Frame_35: -2313329723347422361
+      Jelly_Lilac_Frame_36: 5589179813552844709
+      Jelly_Lilac_Frame_37: -7123565673046953457
+      Jelly_Lilac_Frame_38: 1317654561750903201
+      Jelly_Lilac_Frame_39: 9062222577462500822
       Jelly_Lilac_animations_0: 8903609344172965936
       Jelly_Lilac_animations_1: -5988440726224908862
       Jelly_Lilac_animations_10: 1452644659247366012

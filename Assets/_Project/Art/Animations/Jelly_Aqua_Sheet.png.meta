@@ -8,6 +8,126 @@ TextureImporter:
   - first:
       213: 7942463340894557544
     second: Jelly_Aqua_animations_1
+  - first:
+      213: 5479403151048816781
+    second: Jelly_Aqua_Frame_00
+  - first:
+      213: -8750005731972332387
+    second: Jelly_Aqua_Frame_01
+  - first:
+      213: 1510129905243685459
+    second: Jelly_Aqua_Frame_02
+  - first:
+      213: 6119521868907537829
+    second: Jelly_Aqua_Frame_03
+  - first:
+      213: -2389235427079092534
+    second: Jelly_Aqua_Frame_04
+  - first:
+      213: -7188463742186032023
+    second: Jelly_Aqua_Frame_05
+  - first:
+      213: -3467921893547664857
+    second: Jelly_Aqua_Frame_06
+  - first:
+      213: -762834420082868706
+    second: Jelly_Aqua_Frame_07
+  - first:
+      213: -6676184966554694824
+    second: Jelly_Aqua_Frame_08
+  - first:
+      213: -8988977295993567068
+    second: Jelly_Aqua_Frame_09
+  - first:
+      213: -6505454639068172687
+    second: Jelly_Aqua_Frame_10
+  - first:
+      213: -6291524910198237731
+    second: Jelly_Aqua_Frame_11
+  - first:
+      213: -2972037831092082903
+    second: Jelly_Aqua_Frame_12
+  - first:
+      213: 2694121786427121930
+    second: Jelly_Aqua_Frame_13
+  - first:
+      213: -4836234591861327038
+    second: Jelly_Aqua_Frame_14
+  - first:
+      213: -3318830619082681986
+    second: Jelly_Aqua_Frame_15
+  - first:
+      213: -5595681219608215351
+    second: Jelly_Aqua_Frame_16
+  - first:
+      213: -4014194762376622523
+    second: Jelly_Aqua_Frame_17
+  - first:
+      213: -705393907500223213
+    second: Jelly_Aqua_Frame_18
+  - first:
+      213: -8879363385825446168
+    second: Jelly_Aqua_Frame_19
+  - first:
+      213: -1129318409279924804
+    second: Jelly_Aqua_Frame_20
+  - first:
+      213: -8929994584276023583
+    second: Jelly_Aqua_Frame_21
+  - first:
+      213: 1721983591037153955
+    second: Jelly_Aqua_Frame_22
+  - first:
+      213: 442773043530370380
+    second: Jelly_Aqua_Frame_23
+  - first:
+      213: -8638538609169304075
+    second: Jelly_Aqua_Frame_24
+  - first:
+      213: 3172849841766494321
+    second: Jelly_Aqua_Frame_25
+  - first:
+      213: -5897176108036485210
+    second: Jelly_Aqua_Frame_26
+  - first:
+      213: 908584500391709580
+    second: Jelly_Aqua_Frame_27
+  - first:
+      213: 6615281009258495129
+    second: Jelly_Aqua_Frame_28
+  - first:
+      213: 3129570827303082814
+    second: Jelly_Aqua_Frame_29
+  - first:
+      213: 1030467545165211668
+    second: Jelly_Aqua_Frame_30
+  - first:
+      213: -3570163719808265686
+    second: Jelly_Aqua_Frame_31
+  - first:
+      213: 3129216794043223039
+    second: Jelly_Aqua_Frame_32
+  - first:
+      213: -1184457919396514871
+    second: Jelly_Aqua_Frame_33
+  - first:
+      213: 4060008762327030567
+    second: Jelly_Aqua_Frame_34
+  - first:
+      213: 3414618698950634112
+    second: Jelly_Aqua_Frame_35
+  - first:
+      213: 8286821699972243425
+    second: Jelly_Aqua_Frame_36
+  - first:
+      213: -1481721665214766496
+    second: Jelly_Aqua_Frame_37
+  - first:
+      213: -3884499220370538052
+    second: Jelly_Aqua_Frame_38
+  - first:
+      213: -8828976613398526730
+    second: Jelly_Aqua_Frame_39
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +169,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -129,45 +249,881 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jelly_Aqua_animations_0
+      name: Jelly_Aqua_Frame_00
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 1402
-        height: 1122
+        y: 595
+        width: 198
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c8d8b12229979e160800000000000000
-      internalID: 7055303959797009804
+      spriteID: d88bb6f7220ca0c40800000000000000
+      internalID: 5479403151048816781
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Aqua_animations_1
+      name: Jelly_Aqua_Frame_01
       rect:
         serializedVersion: 2
-        x: 635
-        y: 0
-        width: 67
-        height: 5
+        x: 198
+        y: 595
+        width: 199
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 865159bd35c493e60800000000000000
-      internalID: 7942463340894557544
+      spriteID: d944823752cb19680800000000000000
+      internalID: -8750005731972332387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_02
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 595
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3528eb6d52f05f410800000000000000
+      internalID: 1510129905243685459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_03
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 595
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a5e77797b8ece450800000000000000
+      internalID: 6119521868907537829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_04
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 595
+        width: 199
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac60c2ca90bb7ded0800000000000000
+      internalID: -2389235427079092534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_05
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 595
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 964f93600527d3c90800000000000000
+      internalID: -7188463742186032023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_06
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 595
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72a9a4269677fdfc0800000000000000
+      internalID: -3467921893547664857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_07
+      rect:
+        serializedVersion: 2
+        x: 1388
+        y: 595
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1ef488f22ed965f0800000000000000
+      internalID: -762834420082868706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_08
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 595
+        width: 199
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85b44b5152d6953a0800000000000000
+      internalID: -6676184966554694824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_09
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 595
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a8804266ccb04380800000000000000
+      internalID: -8988977295993567068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 397
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17eacef197bf7b5a0800000000000000
+      internalID: -6505454639068172687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_11
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 397
+        width: 199
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd5dc189d6300b8a0800000000000000
+      internalID: -6291524910198237731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_12
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 397
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 927ebb2d65331c6d0800000000000000
+      internalID: -2972037831092082903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_13
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 397
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0121ad9d71736520800000000000000
+      internalID: 2694121786427121930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_14
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 397
+        width: 199
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24b36ad134e32ecb0800000000000000
+      internalID: -4836234591861327038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_15
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 397
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7113e7c22521f1d0800000000000000
+      internalID: -3318830619082681986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_16
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 397
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c08de4f3952852b0800000000000000
+      internalID: -5595681219608215351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_17
+      rect:
+        serializedVersion: 2
+        x: 1388
+        y: 397
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54ece49b127ba48c0800000000000000
+      internalID: -4014194762376622523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_18
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 397
+        width: 199
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31579bc7affe536f0800000000000000
+      internalID: -705393907500223213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_19
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 397
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e6b344ab0a26c480800000000000000
+      internalID: -8879363385825446168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 198
+        width: 198
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb59f80e3ead350f0800000000000000
+      internalID: -1129318409279924804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_21
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 198
+        width: 199
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e6c01e1d39421480800000000000000
+      internalID: -8929994584276023583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_22
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 198
+        width: 198
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a232dcd3f6b5e710800000000000000
+      internalID: 1721983591037153955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_23
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 198
+        width: 198
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4d0fb7bcbb052600800000000000000
+      internalID: 442773043530370380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_24
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 198
+        width: 199
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f577f567eebd1880800000000000000
+      internalID: -8638538609169304075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_25
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 198
+        width: 198
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1707520ee1a380c20800000000000000
+      internalID: 3172849841766494321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_26
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 198
+        width: 198
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6af80960395092ea0800000000000000
+      internalID: -5897176108036485210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_27
+      rect:
+        serializedVersion: 2
+        x: 1388
+        y: 198
+        width: 198
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8b064a0ac0fb9c00800000000000000
+      internalID: 908584500391709580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_28
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 198
+        width: 199
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99c7d3657033ecb50800000000000000
+      internalID: 6615281009258495129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_29
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 198
+        width: 198
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3b53d416187e6b20800000000000000
+      internalID: 3129570827303082814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 418242ec5c4fc4e00800000000000000
+      internalID: 1030467545165211668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_31
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 0
+        width: 199
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2257da230b347ec0800000000000000
+      internalID: -3570163719808265686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_32
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 0
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffb022a48163d6b20800000000000000
+      internalID: 3129216794043223039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_33
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 0
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c3f8fe3cc5ff8fe0800000000000000
+      internalID: -1184457919396514871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_34
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 0
+        width: 199
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72bd97f557c085830800000000000000
+      internalID: 4060008762327030567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_35
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 0
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08aeb528d99236f20800000000000000
+      internalID: 3414618698950634112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_36
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 0
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ef18df3e64b00370800000000000000
+      internalID: 8286821699972243425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_37
+      rect:
+        serializedVersion: 2
+        x: 1388
+        y: 0
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 062afd8fefddf6be0800000000000000
+      internalID: -1481721665214766496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_38
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 0
+        width: 199
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb1488f3a8c771ac0800000000000000
+      internalID: -3884499220370538052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Aqua_Frame_39
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 0
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f4462c4c8c297580800000000000000
+      internalID: -8828976613398526730
       vertices: []
       indices: 
       edges: []
@@ -186,6 +1142,46 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      Jelly_Aqua_Frame_00: 5479403151048816781
+      Jelly_Aqua_Frame_01: -8750005731972332387
+      Jelly_Aqua_Frame_02: 1510129905243685459
+      Jelly_Aqua_Frame_03: 6119521868907537829
+      Jelly_Aqua_Frame_04: -2389235427079092534
+      Jelly_Aqua_Frame_05: -7188463742186032023
+      Jelly_Aqua_Frame_06: -3467921893547664857
+      Jelly_Aqua_Frame_07: -762834420082868706
+      Jelly_Aqua_Frame_08: -6676184966554694824
+      Jelly_Aqua_Frame_09: -8988977295993567068
+      Jelly_Aqua_Frame_10: -6505454639068172687
+      Jelly_Aqua_Frame_11: -6291524910198237731
+      Jelly_Aqua_Frame_12: -2972037831092082903
+      Jelly_Aqua_Frame_13: 2694121786427121930
+      Jelly_Aqua_Frame_14: -4836234591861327038
+      Jelly_Aqua_Frame_15: -3318830619082681986
+      Jelly_Aqua_Frame_16: -5595681219608215351
+      Jelly_Aqua_Frame_17: -4014194762376622523
+      Jelly_Aqua_Frame_18: -705393907500223213
+      Jelly_Aqua_Frame_19: -8879363385825446168
+      Jelly_Aqua_Frame_20: -1129318409279924804
+      Jelly_Aqua_Frame_21: -8929994584276023583
+      Jelly_Aqua_Frame_22: 1721983591037153955
+      Jelly_Aqua_Frame_23: 442773043530370380
+      Jelly_Aqua_Frame_24: -8638538609169304075
+      Jelly_Aqua_Frame_25: 3172849841766494321
+      Jelly_Aqua_Frame_26: -5897176108036485210
+      Jelly_Aqua_Frame_27: 908584500391709580
+      Jelly_Aqua_Frame_28: 6615281009258495129
+      Jelly_Aqua_Frame_29: 3129570827303082814
+      Jelly_Aqua_Frame_30: 1030467545165211668
+      Jelly_Aqua_Frame_31: -3570163719808265686
+      Jelly_Aqua_Frame_32: 3129216794043223039
+      Jelly_Aqua_Frame_33: -1184457919396514871
+      Jelly_Aqua_Frame_34: 4060008762327030567
+      Jelly_Aqua_Frame_35: 3414618698950634112
+      Jelly_Aqua_Frame_36: 8286821699972243425
+      Jelly_Aqua_Frame_37: -1481721665214766496
+      Jelly_Aqua_Frame_38: -3884499220370538052
+      Jelly_Aqua_Frame_39: -8828976613398526730
       Jelly_Aqua_animations_0: 7055303959797009804
       Jelly_Aqua_animations_1: 7942463340894557544
   mipmapLimitGroupName: 

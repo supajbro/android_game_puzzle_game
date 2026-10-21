@@ -28,9 +28,21 @@ namespace JellyRiot.Tests.PlayMode
             var distinctSprites = new HashSet<Sprite>();
             for (JellyColour colour = JellyColour.Coral; colour <= JellyColour.Mint; colour++)
             {
-                Sprite sprite = ui.GetJellySprite(colour);
-                Assert.That(sprite, Is.Not.Null, $"{colour} is missing its supplied sprite.");
+                Sprite sprite = ui.GetJellySettledFrame(colour);
+                Assert.That(sprite, Is.Not.Null, $"{colour} is missing its expressive settled frame.");
+                StringAssert.Contains("_Idle_", sprite.name);
                 distinctSprites.Add(sprite);
+                foreach (JellyAnimationType type in System.Enum.GetValues(typeof(JellyAnimationType)))
+                {
+                    Sprite[] frames = ui.GetJellyAnimationFrames(colour, type);
+                    Assert.That(frames, Has.Length.EqualTo(10), $"{colour} {type} must contain ten frames.");
+                    for (int frame = 0; frame < frames.Length; frame++)
+                    {
+                        Assert.That(frames[frame], Is.Not.Null);
+                        Assert.That(frames[frame].rect.size, Is.EqualTo(new Vector2(256f, 256f)));
+                        Assert.That(frames[frame].pivot, Is.EqualTo(new Vector2(128f, 128f)));
+                    }
+                }
             }
             Assert.That(distinctSprites.Count, Is.EqualTo(5));
 
@@ -48,6 +60,13 @@ namespace JellyRiot.Tests.PlayMode
             Assert.That(ui.GridPresenter, Is.Not.Null);
             Assert.That(ui.GridPresenter.HasCompleteAnimationLibrary(), Is.True);
             Assert.That(ui.GridPresenter.RenderedBoardMatchesModel(), Is.True);
+            Assert.That(Object.FindObjectsByType<AnimatedJellyView>(FindObjectsSortMode.None).Length,
+                Is.EqualTo(BoardModel.CellCount + GameSession.RackSize));
+            Assert.That(GameObject.Find("Rack Jelly 0").GetComponent<AnimatedJellyView>(), Is.Not.Null);
+            AssertCentredStableVisual("Jelly 0,0", "Cell 0,0", 82f, 0.92f);
+            AssertCentredStableVisual("Jelly 6,8", "Cell 6,8", 82f, 0.92f);
+            AssertCentredStableVisual("Rack Jelly 0", "Rack Hole 0", 165f, 0.96f);
+            AssertCentredStableVisual("Rack Jelly 2", "Rack Hole 2", 165f, 0.96f);
         }
 
         [UnityTest]
@@ -103,6 +122,36 @@ namespace JellyRiot.Tests.PlayMode
             }
 
             yield return null;
+        }
+
+        [UnityTest]
+        public IEnumerator JellyRootsRemainCentredAtSupportedPortraitResolutions()
+        {
+            int originalWidth = Screen.width;
+            int originalHeight = Screen.height;
+            var resolutions = new[]
+            {
+                new Vector2Int(360, 800), new Vector2Int(1080, 1920), new Vector2Int(1080, 2400)
+            };
+
+            SceneManager.LoadScene("Main");
+            yield return null;
+            GameObject.Find("Play Button").GetComponent<Button>().onClick.Invoke();
+            yield return null;
+
+            foreach (Vector2Int resolution in resolutions)
+            {
+                Screen.SetResolution(resolution.x, resolution.y, false);
+                yield return null;
+                Canvas.ForceUpdateCanvases();
+                AssertWorldCentresMatch("Jelly 0,0", "Cell 0,0", resolution);
+                AssertWorldCentresMatch("Jelly 3,4", "Cell 3,4", resolution);
+                AssertWorldCentresMatch("Jelly 6,8", "Cell 6,8", resolution);
+                AssertWorldCentresMatch("Rack Jelly 0", "Rack Hole 0", resolution);
+                AssertWorldCentresMatch("Rack Jelly 2", "Rack Hole 2", resolution);
+            }
+
+            Screen.SetResolution(originalWidth, originalHeight, false);
         }
 
         [UnityTest]
@@ -184,6 +233,40 @@ namespace JellyRiot.Tests.PlayMode
             }
             Assert.Fail("Expected at least one legal column.");
             return -1;
+        }
+
+        private static void AssertCentredStableVisual(string rootName, string holeName, float expectedRootSize,
+            float expectedFill)
+        {
+            GameObject rootObject = GameObject.Find(rootName);
+            GameObject holeObject = GameObject.Find(holeName);
+            Assert.That(rootObject, Is.Not.Null);
+            Assert.That(holeObject, Is.Not.Null);
+            RectTransform root = rootObject.GetComponent<RectTransform>();
+            RectTransform hole = holeObject.GetComponent<RectTransform>();
+            RectTransform artwork = root.Find("Artwork") as RectTransform;
+            Assert.That(artwork, Is.Not.Null);
+            Assert.That(root.sizeDelta, Is.EqualTo(new Vector2(expectedRootSize, expectedRootSize)));
+            Assert.That(root.anchoredPosition, Is.EqualTo(hole.anchoredPosition),
+                "The stable jelly root must share the cell or rack-hole centre exactly.");
+            Assert.That(artwork.anchoredPosition.x, Is.EqualTo(0f).Within(0.001f));
+            Assert.That(Mathf.Abs(artwork.anchoredPosition.y), Is.LessThanOrEqualTo(3f),
+                "Only the visual child may make a subtle idle movement around the centred root.");
+            Assert.That(artwork.anchorMin, Is.EqualTo(new Vector2(0.5f, 0.5f)));
+            Assert.That(artwork.anchorMax, Is.EqualTo(new Vector2(0.5f, 0.5f)));
+            Assert.That(artwork.pivot, Is.EqualTo(new Vector2(0.5f, 0.5f)));
+            Assert.That(artwork.sizeDelta.x / expectedRootSize, Is.EqualTo(expectedFill).Within(0.001f));
+            Assert.That(artwork.GetComponent<Image>().preserveAspect, Is.True);
+        }
+
+        private static void AssertWorldCentresMatch(string rootName, string holeName, Vector2Int resolution)
+        {
+            RectTransform root = GameObject.Find(rootName).GetComponent<RectTransform>();
+            RectTransform hole = GameObject.Find(holeName).GetComponent<RectTransform>();
+            Vector3 rootCentre = root.TransformPoint(root.rect.center);
+            Vector3 holeCentre = hole.TransformPoint(hole.rect.center);
+            Assert.That(Vector3.Distance(rootCentre, holeCentre), Is.LessThan(0.01f),
+                $"{rootName} shifted away from {holeName} at {resolution.x} x {resolution.y}.");
         }
     }
 }

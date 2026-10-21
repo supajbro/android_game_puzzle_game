@@ -227,3 +227,54 @@ Status: IMPLEMENTED; AUTOMATED PLAYMODE PASS; DEVICE LISTENING/HAPTICS NOT RUN
 - Next work order: do not begin Work Order 17 without owner approval. Work Order 12 remains deferred
   until after Work Order 18.
 
+## 2026-10-21 — Focused update: 10 × 4 jelly sheets and grid/rack alignment
+
+Status: COMPLETE; AUTOMATED PLAYMODE PASS; DEVICE SCREENSHOT NOT CAPTURED
+
+- Updated all five newly supplied 1983 × 793 sheets to proportional 10 × 4 slicing. Each sheet now
+  imports as exactly 40 centred slices, and the existing `JellyAnimationLibrary.asset` remains the
+  stable scene reference while containing 10 Idle, Blink, Landing and Recovery frames per colour.
+- Added the authoritative Unity preparation path for 200 cleaned 256 × 256 RGBA frames beneath
+  `Assets/_Project/Art/Animations/Frames40/`. Cleanup removes detached/edge debris by alpha geometry,
+  uses one scale across every colour/state, centres every body horizontally and registers every
+  frame to the same bottom contact line. No frame has opaque pixels on its canvas edge.
+- Replaced the five-frame animation contract with elapsed-time-based ten-frame playback. Idle loops
+  continuously; independent cosmetic timers trigger expression/blink sequences; landing flows into
+  recovery and then idle. Reduced Motion and Core random state remain unchanged.
+- Fixed the board and rack hierarchy at the underlying cause: each jelly now has a cell/slot-centred
+  stable root containing separate `Shadow` and animated `Artwork` children. Only `Artwork` moves or
+  scales. Board artwork uses a shared 92% container (settled visible width approximately 80–83% of
+  the 78 px cell hole); rack artwork uses a shared 96% container. No per-colour offsets exist.
+- Pooled views reset sprite, child position, size, scale, rotation, colour, alpha, shadow and state.
+  Falling now converts the top-row spawn point into the destination root's local space, so every
+  landing finishes at the authoritative cell root after the hierarchy change.
+- Pixel audit: 200/200 PNGs are 256 × 256, 200/200 contain transparency, zero invalid dimensions,
+  zero opaque edge pixels, body bounds 197–236 px wide and 117–225 px high. Five refreshed 10 × 4
+  checkerboard contact sheets visually confirm preserved expressions/squash and consistent baselines.
+- Exact code/config files changed: `Assets/_Project/Scripts/Visuals/JellyAnimationLibrary.cs`,
+  `Assets/_Project/Scripts/Visuals/AnimatedJellyView.cs`,
+  `Assets/_Project/Scripts/Visuals/GridViewPresenter.cs`,
+  `Assets/_Project/Scripts/UI/JellyRiotMainUI.cs`,
+  `Assets/_Project/Scripts/Editor/JellyRiotVisualSetup.cs`,
+  `Assets/_Project/Tests/PlayMode/VisualIntegrationPlayModeTests.cs`,
+  `Assets/_Project/Settings/JellyAnimationLibrary.asset`, all five
+  `Assets/_Project/Art/Animations/Jelly_*_Sheet.png.meta` files, the complete generated
+  `Assets/_Project/Art/Animations/Frames40/` tree and metadata,
+  `Tools/Art/prepare_jelly_animation_sheets.py`, `Tools/Art/README.md`,
+  `Tools/Art/animation_cleanup_report.json`, all five `Tools/Art/Previews/*_ContactSheet.png`, and
+  `Docs/PROGRESS.md`.
+- Verification actually run: `dotnet build JellyRiot.Runtime.csproj --no-restore`,
+  `dotnet build JellyRiot.Editor.csproj --no-restore`, and
+  `dotnet build JellyRiot.PlayModeTests.csproj --no-restore` each passed with 0 warnings/errors.
+  An isolated Unity 6000.3.11f1 PlayMode run passed 10/10 tests in 38.406 seconds. Coverage includes
+  all 200 library references, 256 × 256 rects and centred pivots; root/hole centre equality at
+  360 × 800, 1080 × 1920 and 1080 × 2400; 30 animated turns; pause and Reduced Motion; exact final
+  model sync; and 100 rapid moves/cancellations without stale pooled views. The existing audio tests
+  also remained green.
+- Blockers/manual evidence: the owner's live Unity project was open, so import and tests ran in an
+  isolated copy and only scoped generated assets/metadata were copied back. A gameplay screenshot,
+  subjective 30-versus-60 FPS comparison and physical Android review were not captured; the five
+  contact sheets are the available visual evidence. Let the open Editor finish its refresh, then
+  inspect one live drop and rack selection before device sign-off.
+- Next work order: unchanged; do not begin unrelated or later work without the owner's request.
+

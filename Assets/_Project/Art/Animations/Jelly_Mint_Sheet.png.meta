@@ -41,6 +41,126 @@ TextureImporter:
   - first:
       213: 3075394541899245464
     second: Jelly_Mint_animations_12
+  - first:
+      213: 6696496777794299133
+    second: Jelly_Mint_Frame_00
+  - first:
+      213: -6640606357594493670
+    second: Jelly_Mint_Frame_01
+  - first:
+      213: -428470662339617807
+    second: Jelly_Mint_Frame_02
+  - first:
+      213: 7369722416154331894
+    second: Jelly_Mint_Frame_03
+  - first:
+      213: 7305229868422335091
+    second: Jelly_Mint_Frame_04
+  - first:
+      213: -1216190244417291316
+    second: Jelly_Mint_Frame_05
+  - first:
+      213: 4698429636825846340
+    second: Jelly_Mint_Frame_06
+  - first:
+      213: -1118147250024968017
+    second: Jelly_Mint_Frame_07
+  - first:
+      213: -6810219677936010535
+    second: Jelly_Mint_Frame_08
+  - first:
+      213: 2150939272269929994
+    second: Jelly_Mint_Frame_09
+  - first:
+      213: 3354801855898196864
+    second: Jelly_Mint_Frame_10
+  - first:
+      213: -7612726349894260213
+    second: Jelly_Mint_Frame_11
+  - first:
+      213: 4457587310561178326
+    second: Jelly_Mint_Frame_12
+  - first:
+      213: 1448991920803948246
+    second: Jelly_Mint_Frame_13
+  - first:
+      213: 5736353055475000812
+    second: Jelly_Mint_Frame_14
+  - first:
+      213: 9046951852425200748
+    second: Jelly_Mint_Frame_15
+  - first:
+      213: 287707462767172839
+    second: Jelly_Mint_Frame_16
+  - first:
+      213: -2110487685846959251
+    second: Jelly_Mint_Frame_17
+  - first:
+      213: 6137760011339461395
+    second: Jelly_Mint_Frame_18
+  - first:
+      213: 1173568398039253273
+    second: Jelly_Mint_Frame_19
+  - first:
+      213: -8646472264581178876
+    second: Jelly_Mint_Frame_20
+  - first:
+      213: -8881342621871018747
+    second: Jelly_Mint_Frame_21
+  - first:
+      213: -7544863045327625729
+    second: Jelly_Mint_Frame_22
+  - first:
+      213: -3345836181645258222
+    second: Jelly_Mint_Frame_23
+  - first:
+      213: 3000273976907805815
+    second: Jelly_Mint_Frame_24
+  - first:
+      213: 1689951326924011828
+    second: Jelly_Mint_Frame_25
+  - first:
+      213: -6536410542927688610
+    second: Jelly_Mint_Frame_26
+  - first:
+      213: 8033217509452418959
+    second: Jelly_Mint_Frame_27
+  - first:
+      213: -1579476396314624777
+    second: Jelly_Mint_Frame_28
+  - first:
+      213: 8556044828297933279
+    second: Jelly_Mint_Frame_29
+  - first:
+      213: 4465210678295580483
+    second: Jelly_Mint_Frame_30
+  - first:
+      213: 2103685432561090923
+    second: Jelly_Mint_Frame_31
+  - first:
+      213: -7663749545098840048
+    second: Jelly_Mint_Frame_32
+  - first:
+      213: 3252685349894742106
+    second: Jelly_Mint_Frame_33
+  - first:
+      213: 7916076837124989380
+    second: Jelly_Mint_Frame_34
+  - first:
+      213: -7237630646398404642
+    second: Jelly_Mint_Frame_35
+  - first:
+      213: 4466637838383473298
+    second: Jelly_Mint_Frame_36
+  - first:
+      213: -2323927486456526320
+    second: Jelly_Mint_Frame_37
+  - first:
+      213: -462234276557614978
+    second: Jelly_Mint_Frame_38
+  - first:
+      213: 7631927449143306975
+    second: Jelly_Mint_Frame_39
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -82,7 +202,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -162,287 +282,881 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jelly_Mint_animations_0
+      name: Jelly_Mint_Frame_00
       rect:
         serializedVersion: 2
         x: 0
-        y: 766
-        width: 295
-        height: 334
+        y: 595
+        width: 198
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 61e11c4d8f633a780800000000000000
-      internalID: -8673028015036228074
+      spriteID: df42afff65cbeec50800000000000000
+      internalID: 6696496777794299133
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Mint_animations_1
+      name: Jelly_Mint_Frame_01
       rect:
         serializedVersion: 2
-        x: 300
-        y: 798
-        width: 273
-        height: 292
+        x: 198
+        y: 595
+        width: 199
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2e9ccac410287cba0800000000000000
-      internalID: -6068739030765483550
+      spriteID: a1d216283b3d7d3a0800000000000000
+      internalID: -6640606357594493670
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Mint_animations_2
+      name: Jelly_Mint_Frame_02
       rect:
         serializedVersion: 2
-        x: 401
-        y: 1083
-        width: 9
-        height: 8
+        x: 397
+        y: 595
+        width: 198
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3a72972adc1b9be60800000000000000
-      internalID: 7978603711615805347
+      spriteID: 1fb1296e334cd0af0800000000000000
+      internalID: -428470662339617807
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Mint_animations_3
+      name: Jelly_Mint_Frame_03
       rect:
         serializedVersion: 2
-        x: 494
-        y: 1067
-        width: 49
-        height: 33
+        x: 595
+        y: 595
+        width: 198
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a9b0bba257944e130800000000000000
-      internalID: 3595079170125400986
+      spriteID: 6facc14bd73864660800000000000000
+      internalID: 7369722416154331894
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Mint_animations_4
+      name: Jelly_Mint_Frame_04
       rect:
         serializedVersion: 2
-        x: 580
-        y: 788
-        width: 245
-        height: 332
+        x: 793
+        y: 595
+        width: 199
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1106a96047b3fe430800000000000000
-      internalID: 3814332778919125009
+      spriteID: 37a03ed4cd3616560800000000000000
+      internalID: 7305229868422335091
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Mint_animations_5
+      name: Jelly_Mint_Frame_05
       rect:
         serializedVersion: 2
-        x: 824
-        y: 782
-        width: 269
-        height: 329
+        x: 992
+        y: 595
+        width: 198
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b20908e48dac7c690800000000000000
-      internalID: -7581868417276145621
+      spriteID: ccb36369a693f1fe0800000000000000
+      internalID: -1216190244417291316
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Mint_animations_6
+      name: Jelly_Mint_Frame_06
       rect:
         serializedVersion: 2
-        x: 826
-        y: 1077
-        width: 13
-        height: 15
+        x: 1190
+        y: 595
+        width: 198
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5fd834712b8493b60800000000000000
-      internalID: 7726286565462478325
+      spriteID: 4421c218cdc243140800000000000000
+      internalID: 4698429636825846340
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Mint_animations_7
+      name: Jelly_Mint_Frame_07
       rect:
         serializedVersion: 2
-        x: 830
-        y: 1087
-        width: 13
-        height: 19
+        x: 1388
+        y: 595
+        width: 198
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0124171965711f2e0800000000000000
-      internalID: -2093866691175824880
+      spriteID: fa09ea3100b8b70f0800000000000000
+      internalID: -1118147250024968017
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Mint_animations_8
+      name: Jelly_Mint_Frame_08
       rect:
         serializedVersion: 2
-        x: 1096
-        y: 792
-        width: 291
-        height: 323
+        x: 1586
+        y: 595
+        width: 199
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6b64b2f4daa3c7e90800000000000000
-      internalID: -7026676802572826954
+      spriteID: 9dabf36f84d3d71a0800000000000000
+      internalID: -6810219677936010535
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Mint_animations_9
+      name: Jelly_Mint_Frame_09
       rect:
         serializedVersion: 2
-        x: 1102
-        y: 1058
-        width: 14
-        height: 20
+        x: 1785
+        y: 595
+        width: 198
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d3e84361c00d7a7a0800000000000000
-      internalID: -6365890797934178755
+      spriteID: a0e16193fdba9dd10800000000000000
+      internalID: 2150939272269929994
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Mint_animations_10
+      name: Jelly_Mint_Frame_10
       rect:
         serializedVersion: 2
-        x: 832
-        y: 816
-        width: 19
-        height: 26
+        x: 0
+        y: 397
+        width: 198
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1d2ac8ef30ad14ec0800000000000000
-      internalID: -3584344117719817519
+      spriteID: 08b12a07386ae8e20800000000000000
+      internalID: 3354801855898196864
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Mint_animations_11
+      name: Jelly_Mint_Frame_11
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 397
+        width: 199
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0aeb4ef7b92a5690800000000000000
+      internalID: -7612726349894260213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Mint_Frame_12
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 397
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d2b949aa088cdd30800000000000000
+      internalID: 4457587310561178326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Mint_Frame_13
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 397
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d62ee1997adb1410800000000000000
+      internalID: 1448991920803948246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Mint_Frame_14
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 397
+        width: 199
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce560d126be9b9f40800000000000000
+      internalID: 5736353055475000812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Mint_Frame_15
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 397
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c64cdd7e6ca3d8d70800000000000000
+      internalID: 9046951852425200748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Mint_Frame_16
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 397
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ec577db9642ef300800000000000000
+      internalID: 287707462767172839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Mint_Frame_17
+      rect:
+        serializedVersion: 2
+        x: 1388
+        y: 397
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6b714ea1aa06b2e0800000000000000
+      internalID: -2110487685846959251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Mint_Frame_18
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 397
+        width: 199
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3137c780634bd2550800000000000000
+      internalID: 6137760011339461395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Mint_Frame_19
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 397
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91101cc7d3a594010800000000000000
+      internalID: 1173568398039253273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Mint_Frame_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 198
+        width: 198
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40a1f5d494f810880800000000000000
+      internalID: -8646472264581178876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Mint_Frame_21
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 198
+        width: 199
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50d67d6d0f12fb480800000000000000
+      internalID: -8881342621871018747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Mint_Frame_22
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 198
+        width: 198
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff16640e8034b4790800000000000000
+      internalID: -7544863045327625729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Mint_Frame_23
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 198
+        width: 198
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 212926448b33191d0800000000000000
+      internalID: -3345836181645258222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Mint_Frame_24
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 198
+        width: 199
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 774307e294d13a920800000000000000
+      internalID: 3000273976907805815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Mint_Frame_25
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 198
+        width: 198
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 439710137c9e37710800000000000000
+      internalID: 1689951326924011828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Mint_Frame_26
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 198
+        width: 198
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5c4daa1e310a45a0800000000000000
+      internalID: -6536410542927688610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Mint_Frame_27
+      rect:
+        serializedVersion: 2
+        x: 1388
+        y: 198
+        width: 198
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8f0c5653c8bb7f60800000000000000
+      internalID: 8033217509452418959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Mint_Frame_28
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 198
+        width: 199
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fc7d820692941ae0800000000000000
+      internalID: -1579476396314624777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Mint_Frame_29
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 198
+        width: 198
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd13401807d2db670800000000000000
+      internalID: 8556044828297933279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Mint_Frame_30
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1400
-        height: 794
+        width: 198
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6f0c58c4f3ec39240800000000000000
-      internalID: 4797404799341805814
+      spriteID: 34fc617447d97fd30800000000000000
+      internalID: 4465210678295580483
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Mint_animations_12
+      name: Jelly_Mint_Frame_31
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 788
-        width: 15
-        height: 16
+        x: 198
+        y: 0
+        width: 199
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 897641eaa0ffdaa20800000000000000
-      internalID: 3075394541899245464
+      spriteID: b61c7fe41cac13d10800000000000000
+      internalID: 2103685432561090923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Mint_Frame_32
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 0
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01872dc9464e4a590800000000000000
+      internalID: -7663749545098840048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Mint_Frame_33
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 0
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a50e79e971cd32d20800000000000000
+      internalID: 3252685349894742106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Mint_Frame_34
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 0
+        width: 199
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c1688331fd8bdd60800000000000000
+      internalID: 7916076837124989380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Mint_Frame_35
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 0
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed731f11645ce8b90800000000000000
+      internalID: -7237630646398404642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Mint_Frame_36
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 0
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2926a21e27facfd30800000000000000
+      internalID: 4466637838383473298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Mint_Frame_37
+      rect:
+        serializedVersion: 2
+        x: 1388
+        y: 0
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01a0ef58340cfbfd0800000000000000
+      internalID: -2323927486456526320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Mint_Frame_38
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 0
+        width: 199
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7016cedf50d599f0800000000000000
+      internalID: -462234276557614978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Mint_Frame_39
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 0
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fda6dbd449d0ae960800000000000000
+      internalID: 7631927449143306975
       vertices: []
       indices: 
       edges: []
@@ -461,6 +1175,46 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      Jelly_Mint_Frame_00: 6696496777794299133
+      Jelly_Mint_Frame_01: -6640606357594493670
+      Jelly_Mint_Frame_02: -428470662339617807
+      Jelly_Mint_Frame_03: 7369722416154331894
+      Jelly_Mint_Frame_04: 7305229868422335091
+      Jelly_Mint_Frame_05: -1216190244417291316
+      Jelly_Mint_Frame_06: 4698429636825846340
+      Jelly_Mint_Frame_07: -1118147250024968017
+      Jelly_Mint_Frame_08: -6810219677936010535
+      Jelly_Mint_Frame_09: 2150939272269929994
+      Jelly_Mint_Frame_10: 3354801855898196864
+      Jelly_Mint_Frame_11: -7612726349894260213
+      Jelly_Mint_Frame_12: 4457587310561178326
+      Jelly_Mint_Frame_13: 1448991920803948246
+      Jelly_Mint_Frame_14: 5736353055475000812
+      Jelly_Mint_Frame_15: 9046951852425200748
+      Jelly_Mint_Frame_16: 287707462767172839
+      Jelly_Mint_Frame_17: -2110487685846959251
+      Jelly_Mint_Frame_18: 6137760011339461395
+      Jelly_Mint_Frame_19: 1173568398039253273
+      Jelly_Mint_Frame_20: -8646472264581178876
+      Jelly_Mint_Frame_21: -8881342621871018747
+      Jelly_Mint_Frame_22: -7544863045327625729
+      Jelly_Mint_Frame_23: -3345836181645258222
+      Jelly_Mint_Frame_24: 3000273976907805815
+      Jelly_Mint_Frame_25: 1689951326924011828
+      Jelly_Mint_Frame_26: -6536410542927688610
+      Jelly_Mint_Frame_27: 8033217509452418959
+      Jelly_Mint_Frame_28: -1579476396314624777
+      Jelly_Mint_Frame_29: 8556044828297933279
+      Jelly_Mint_Frame_30: 4465210678295580483
+      Jelly_Mint_Frame_31: 2103685432561090923
+      Jelly_Mint_Frame_32: -7663749545098840048
+      Jelly_Mint_Frame_33: 3252685349894742106
+      Jelly_Mint_Frame_34: 7916076837124989380
+      Jelly_Mint_Frame_35: -7237630646398404642
+      Jelly_Mint_Frame_36: 4466637838383473298
+      Jelly_Mint_Frame_37: -2323927486456526320
+      Jelly_Mint_Frame_38: -462234276557614978
+      Jelly_Mint_Frame_39: 7631927449143306975
       Jelly_Mint_animations_0: -8673028015036228074
       Jelly_Mint_animations_1: -6068739030765483550
       Jelly_Mint_animations_10: -3584344117719817519

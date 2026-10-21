@@ -11,6 +11,126 @@ TextureImporter:
   - first:
       213: 3021172510011695694
     second: Jelly_Lemon_animations_2
+  - first:
+      213: -7053899792138746793
+    second: Jelly_Lemon_Frame_00
+  - first:
+      213: 5091858372593689359
+    second: Jelly_Lemon_Frame_01
+  - first:
+      213: -7810389103500933201
+    second: Jelly_Lemon_Frame_02
+  - first:
+      213: 7564820530937152057
+    second: Jelly_Lemon_Frame_03
+  - first:
+      213: -9049394478347571235
+    second: Jelly_Lemon_Frame_04
+  - first:
+      213: 3428408242320801241
+    second: Jelly_Lemon_Frame_05
+  - first:
+      213: 7600023881361184064
+    second: Jelly_Lemon_Frame_06
+  - first:
+      213: -1308427215325973023
+    second: Jelly_Lemon_Frame_07
+  - first:
+      213: -8253464234147548839
+    second: Jelly_Lemon_Frame_08
+  - first:
+      213: 242946434032226574
+    second: Jelly_Lemon_Frame_09
+  - first:
+      213: -977420428458153572
+    second: Jelly_Lemon_Frame_10
+  - first:
+      213: -7049845712290997517
+    second: Jelly_Lemon_Frame_11
+  - first:
+      213: 6199202484532329194
+    second: Jelly_Lemon_Frame_12
+  - first:
+      213: 3195411485455717403
+    second: Jelly_Lemon_Frame_13
+  - first:
+      213: -7350068991157762656
+    second: Jelly_Lemon_Frame_14
+  - first:
+      213: 6073119017799043149
+    second: Jelly_Lemon_Frame_15
+  - first:
+      213: -7922323097000585289
+    second: Jelly_Lemon_Frame_16
+  - first:
+      213: 6736825598997561900
+    second: Jelly_Lemon_Frame_17
+  - first:
+      213: 3393020847285502080
+    second: Jelly_Lemon_Frame_18
+  - first:
+      213: 7310450130033347603
+    second: Jelly_Lemon_Frame_19
+  - first:
+      213: 10734859568010034
+    second: Jelly_Lemon_Frame_20
+  - first:
+      213: 7312055428103656924
+    second: Jelly_Lemon_Frame_21
+  - first:
+      213: 3091600387939634801
+    second: Jelly_Lemon_Frame_22
+  - first:
+      213: 440749228481353726
+    second: Jelly_Lemon_Frame_23
+  - first:
+      213: 5466880384055247024
+    second: Jelly_Lemon_Frame_24
+  - first:
+      213: 3367921855805389187
+    second: Jelly_Lemon_Frame_25
+  - first:
+      213: -238182603123823564
+    second: Jelly_Lemon_Frame_26
+  - first:
+      213: 301221731679499605
+    second: Jelly_Lemon_Frame_27
+  - first:
+      213: 2473398306854273009
+    second: Jelly_Lemon_Frame_28
+  - first:
+      213: 6561983638799515133
+    second: Jelly_Lemon_Frame_29
+  - first:
+      213: -4065586607810105747
+    second: Jelly_Lemon_Frame_30
+  - first:
+      213: -4719175187412990161
+    second: Jelly_Lemon_Frame_31
+  - first:
+      213: -8294906455779667965
+    second: Jelly_Lemon_Frame_32
+  - first:
+      213: -1651174645167485413
+    second: Jelly_Lemon_Frame_33
+  - first:
+      213: -3787379838896770179
+    second: Jelly_Lemon_Frame_34
+  - first:
+      213: 6068244569954182868
+    second: Jelly_Lemon_Frame_35
+  - first:
+      213: -3416054326928648824
+    second: Jelly_Lemon_Frame_36
+  - first:
+      213: 6521787515717999156
+    second: Jelly_Lemon_Frame_37
+  - first:
+      213: 2031896065363205457
+    second: Jelly_Lemon_Frame_38
+  - first:
+      213: -1813223406512667892
+    second: Jelly_Lemon_Frame_39
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +172,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -132,67 +252,881 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jelly_Lemon_animations_0
+      name: Jelly_Lemon_Frame_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 595
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7544e5023838b1e90800000000000000
+      internalID: -7053899792138746793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_01
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 595
+        width: 199
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f03ab09463ae9a640800000000000000
+      internalID: 5091858372593689359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_02
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 595
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa7ce38dd7ceb9390800000000000000
+      internalID: -7810389103500933201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_03
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 595
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93247185134abf860800000000000000
+      internalID: 7564820530937152057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_04
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 595
+        width: 199
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddf26bdeaa71a6280800000000000000
+      internalID: -9049394478347571235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_05
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 595
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dd7d84c127249f20800000000000000
+      internalID: 3428408242320801241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_06
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 595
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 045d4051475b87960800000000000000
+      internalID: 7600023881361184064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_07
+      rect:
+        serializedVersion: 2
+        x: 1388
+        y: 595
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e5ba08416887dde0800000000000000
+      internalID: -1308427215325973023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_08
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 595
+        width: 199
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9517e3df10ec57d80800000000000000
+      internalID: -8253464234147548839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_09
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 595
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0150fb9e7e1f5300800000000000000
+      internalID: 242946434032226574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 397
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c99aa858c418f62f0800000000000000
+      internalID: -977420428458153572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_11
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 397
+        width: 199
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fa95952daae92e90800000000000000
+      internalID: -7049845712290997517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_12
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 397
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aeab44d90ddf70650800000000000000
+      internalID: 6199202484532329194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_13
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 397
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b149ac5e0d1685c20800000000000000
+      internalID: 3195411485455717403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_14
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 397
+        width: 199
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a58d63e13f4ff990800000000000000
+      internalID: -7350068991157762656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_15
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 397
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d48c496e19d084450800000000000000
+      internalID: 6073119017799043149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_16
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 397
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b758671e114e0290800000000000000
+      internalID: -7922323097000585289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_17
+      rect:
+        serializedVersion: 2
+        x: 1388
+        y: 397
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c22020660330e7d50800000000000000
+      internalID: 6736825598997561900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_18
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 397
+        width: 199
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08082fdcb7e661f20800000000000000
+      internalID: 3393020847285502080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_19
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 397
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31c88dc29afe37560800000000000000
+      internalID: 7310450130033347603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 198
+        width: 198
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 233d3434c43262000800000000000000
+      internalID: 10734859568010034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_21
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 198
+        width: 199
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd5d512cba3a97560800000000000000
+      internalID: 7312055428103656924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_22
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 198
+        width: 198
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17e0a9e3c2297ea20800000000000000
+      internalID: 3091600387939634801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_23
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 198
+        width: 198
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef798ae861bdd1600800000000000000
+      internalID: 440749228481353726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_24
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 198
+        width: 199
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b00a299eb24edb40800000000000000
+      internalID: 5466880384055247024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_25
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 198
+        width: 198
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 389fd8675134dbe20800000000000000
+      internalID: 3367921855805389187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_26
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 198
+        width: 198
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43c60253f2ec1bcf0800000000000000
+      internalID: -238182603123823564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_27
+      rect:
+        serializedVersion: 2
+        x: 1388
+        y: 198
+        width: 198
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 555726ba1972e2400800000000000000
+      internalID: 301221731679499605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_28
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 198
+        width: 199
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fff91cc7a6435220800000000000000
+      internalID: 2473398306854273009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_29
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 198
+        width: 198
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfdf1944a59d01b50800000000000000
+      internalID: 6561983638799515133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_30
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1402
-        height: 1108
+        width: 198
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e57b3a379d44d5340800000000000000
-      internalID: 4854111674113963870
+      spriteID: d6ea4e545822497c0800000000000000
+      internalID: -4065586607810105747
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Lemon_animations_1
+      name: Jelly_Lemon_Frame_31
       rect:
         serializedVersion: 2
-        x: 830
-        y: 797
-        width: 238
-        height: 325
+        x: 198
+        y: 0
+        width: 199
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 378d895e07809e210800000000000000
-      internalID: 1362629643237644403
+      spriteID: f2749699b2f128eb0800000000000000
+      internalID: -4719175187412990161
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelly_Lemon_animations_2
+      name: Jelly_Lemon_Frame_32
       rect:
         serializedVersion: 2
-        x: 1362
-        y: 464
-        width: 23
-        height: 34
+        x: 397
+        y: 0
+        width: 198
+        height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e422c68146c5de920800000000000000
-      internalID: 3021172510011695694
+      spriteID: 300982ad68292ec80800000000000000
+      internalID: -8294906455779667965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_33
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 0
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1e09a49869d519e0800000000000000
+      internalID: -1651174645167485413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_34
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 0
+        width: 199
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d73f4195a16807bc0800000000000000
+      internalID: -3787379838896770179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_35
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 0
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d6ef42194cb63450800000000000000
+      internalID: 6068244569954182868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_36
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 0
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8855bfd40bcb790d0800000000000000
+      internalID: -3416054326928648824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_37
+      rect:
+        serializedVersion: 2
+        x: 1388
+        y: 0
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43ad2fe013b028a50800000000000000
+      internalID: 6521787515717999156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_38
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 0
+        width: 199
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15ddc7cb4beb23c10800000000000000
+      internalID: 2031896065363205457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelly_Lemon_Frame_39
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 0
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c03836c2be226d6e0800000000000000
+      internalID: -1813223406512667892
       vertices: []
       indices: 
       edges: []
@@ -211,6 +1145,46 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      Jelly_Lemon_Frame_00: -7053899792138746793
+      Jelly_Lemon_Frame_01: 5091858372593689359
+      Jelly_Lemon_Frame_02: -7810389103500933201
+      Jelly_Lemon_Frame_03: 7564820530937152057
+      Jelly_Lemon_Frame_04: -9049394478347571235
+      Jelly_Lemon_Frame_05: 3428408242320801241
+      Jelly_Lemon_Frame_06: 7600023881361184064
+      Jelly_Lemon_Frame_07: -1308427215325973023
+      Jelly_Lemon_Frame_08: -8253464234147548839
+      Jelly_Lemon_Frame_09: 242946434032226574
+      Jelly_Lemon_Frame_10: -977420428458153572
+      Jelly_Lemon_Frame_11: -7049845712290997517
+      Jelly_Lemon_Frame_12: 6199202484532329194
+      Jelly_Lemon_Frame_13: 3195411485455717403
+      Jelly_Lemon_Frame_14: -7350068991157762656
+      Jelly_Lemon_Frame_15: 6073119017799043149
+      Jelly_Lemon_Frame_16: -7922323097000585289
+      Jelly_Lemon_Frame_17: 6736825598997561900
+      Jelly_Lemon_Frame_18: 3393020847285502080
+      Jelly_Lemon_Frame_19: 7310450130033347603
+      Jelly_Lemon_Frame_20: 10734859568010034
+      Jelly_Lemon_Frame_21: 7312055428103656924
+      Jelly_Lemon_Frame_22: 3091600387939634801
+      Jelly_Lemon_Frame_23: 440749228481353726
+      Jelly_Lemon_Frame_24: 5466880384055247024
+      Jelly_Lemon_Frame_25: 3367921855805389187
+      Jelly_Lemon_Frame_26: -238182603123823564
+      Jelly_Lemon_Frame_27: 301221731679499605
+      Jelly_Lemon_Frame_28: 2473398306854273009
+      Jelly_Lemon_Frame_29: 6561983638799515133
+      Jelly_Lemon_Frame_30: -4065586607810105747
+      Jelly_Lemon_Frame_31: -4719175187412990161
+      Jelly_Lemon_Frame_32: -8294906455779667965
+      Jelly_Lemon_Frame_33: -1651174645167485413
+      Jelly_Lemon_Frame_34: -3787379838896770179
+      Jelly_Lemon_Frame_35: 6068244569954182868
+      Jelly_Lemon_Frame_36: -3416054326928648824
+      Jelly_Lemon_Frame_37: 6521787515717999156
+      Jelly_Lemon_Frame_38: 2031896065363205457
+      Jelly_Lemon_Frame_39: -1813223406512667892
       Jelly_Lemon_animations_0: 4854111674113963870
       Jelly_Lemon_animations_1: 1362629643237644403
       Jelly_Lemon_animations_2: 3021172510011695694

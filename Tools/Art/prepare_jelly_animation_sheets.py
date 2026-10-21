@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Clean and export the five Jelly Riot 5x4 animation sheets.
+"""Clean and export the five Jelly Riot 10x4 animation sheets.
 
 The source artwork is never overwritten. Grid boundaries are calculated proportionally so
 non-divisible source dimensions are handled without losing edge pixels. Cleanup operates only on
@@ -17,8 +17,8 @@ from PIL import Image, ImageDraw, ImageFilter
 
 
 COLOURS = ("Coral", "Lemon", "Aqua", "Lilac", "Mint")
-CATEGORIES = ("Falling", "Landing", "SquashStretch", "Blink")
-GRID_COLUMNS = 5
+CATEGORIES = ("Idle", "Blink", "Landing", "Recovery")
+GRID_COLUMNS = 10
 GRID_ROWS = 4
 FRAME_SIZE = 256
 
@@ -155,13 +155,20 @@ def process_sheet(source: Path, colour: str, frame_root: Path, preview_root: Pat
         for column in range(GRID_COLUMNS):
             crop_box = (x_edges[column], y_edges[row], x_edges[column + 1], y_edges[row + 1])
             cleaned, cleanup = clean_cell(sheet.crop(crop_box))
-            frame = cleaned.resize((FRAME_SIZE, FRAME_SIZE), Image.Resampling.LANCZOS)
-            output = category_root / f"Jelly_{colour}_{category}_{column + 1:02d}.png"
+            bounds = cleaned.getchannel("A").getbbox()
+            if bounds is None:
+                raise RuntimeError(f"Cleanup removed {colour} {category} frame {column}")
+            body = cleaned.crop(bounds)
+            scale = min(236 / body.width, 236 / body.height)
+            body = body.resize((round(body.width * scale), round(body.height * scale)), Image.Resampling.LANCZOS)
+            frame = Image.new("RGBA", (FRAME_SIZE, FRAME_SIZE), (0, 0, 0, 0))
+            frame.alpha_composite(body, ((FRAME_SIZE - body.width) // 2, 10))
+            output = category_root / f"Jelly_{colour}_{category}_{column:02d}.png"
             frame.save(output, format="PNG", optimize=True)
             preview.alpha_composite(frame, (column * FRAME_SIZE, row * FRAME_SIZE))
             records.append({
                 "category": category,
-                "frame": column + 1,
+                "frame": column,
                 "crop": list(crop_box),
                 "output": output.as_posix(),
                 **cleanup,
@@ -185,7 +192,7 @@ def main() -> None:
     args = parser.parse_args()
     project_root = args.project_root.resolve()
     source_root = project_root / "Assets/_Project/Art/Animations"
-    frame_root = source_root / "Frames"
+    frame_root = source_root / "Frames40"
     preview_root = project_root / "Tools/Art/Previews"
     reports = []
     for colour in COLOURS:
@@ -195,8 +202,8 @@ def main() -> None:
     report_path.write_text(json.dumps({"frame_size": [FRAME_SIZE, FRAME_SIZE], "sheets": reports}, indent=2),
                            encoding="utf-8")
     exported = sum(len(sheet["frames"]) for sheet in reports)
-    if exported != 100:
-        raise RuntimeError(f"Expected 100 frames, exported {exported}")
+    if exported != 200:
+        raise RuntimeError(f"Expected 200 frames, exported {exported}")
     print(f"Exported {exported} transparent RGBA frames and {len(reports)} contact sheets.")
     print(f"Report: {report_path}")
 
