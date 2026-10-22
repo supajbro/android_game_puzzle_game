@@ -3,7 +3,10 @@
   "rootNamespace": "JellyRiot.Editor",
   "references": [
     "JellyRiot.Core",
-    "JellyRiot.Runtime"
+    "JellyRiot.Runtime",
+    "Unity.2D.Sprite.Editor",
+    "UnityEditor.TestRunner",
+    "Unity.TextMeshPro"
   ],
   "includePlatforms": [
     "Editor"

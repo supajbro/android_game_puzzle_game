@@ -3,7 +3,8 @@
   "rootNamespace": "JellyRiot.Tests.PlayMode",
   "references": [
     "JellyRiot.Core",
-    "JellyRiot.Runtime"
+    "JellyRiot.Runtime",
+    "Unity.TextMeshPro"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],

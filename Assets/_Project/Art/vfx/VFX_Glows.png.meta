@@ -1,0 +1,715 @@
+fileFormatVersion: 2
+guid: d057bef8675c90040b5030359804080a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -36810250038762052
+    second: VFX_Glows_0
+  - first:
+      213: 6962750916523771924
+    second: VFX_Glows_1
+  - first:
+      213: -6106008725464972812
+    second: VFX_Glows_2
+  - first:
+      213: 7861757714870638963
+    second: VFX_Glows_3
+  - first:
+      213: -6977519417445565930
+    second: VFX_Glows_4
+  - first:
+      213: 4992539027263946390
+    second: VFX_Glows_5
+  - first:
+      213: 8792357508006761656
+    second: VFX_Glows_6
+  - first:
+      213: -8390989314205658760
+    second: VFX_Glows_7
+  - first:
+      213: 8118030371892849580
+    second: VFX_Glows_8
+  - first:
+      213: -6346438219620573766
+    second: VFX_Glows_9
+  - first:
+      213: -4765789680170751843
+    second: VFX_Glows_10
+  - first:
+      213: 5193659601359762128
+    second: VFX_Glows_11
+  - first:
+      213: -4669242280199910878
+    second: VFX_Glows_12
+  - first:
+      213: -6425004096563125716
+    second: VFX_Glows_13
+  - first:
+      213: 3891460663425020633
+    second: VFX_Glows_14
+  - first:
+      213: -2535076721796952522
+    second: VFX_Glows_15
+  - first:
+      213: -4813591679274214852
+    second: VFX_Glows_16
+  - first:
+      213: -318871773287359047
+    second: VFX_Glows_17
+  - first:
+      213: 8805680973077893159
+    second: VFX_Glows_18
+  - first:
+      213: 4853243609097995753
+    second: VFX_Glows_19
+  - first:
+      213: -3387681089308984220
+    second: VFX_Glows_20
+  - first:
+      213: -8316703773608485927
+    second: VFX_Glows_21
+  - first:
+      213: -133409310804920559
+    second: VFX_Glows_22
+  - first:
+      213: 6438064798765831677
+    second: VFX_Glows_23
+  - first:
+      213: -2938391958900675267
+    second: VFX_Glows_24
+  - first:
+      213: 7159061945853514457
+    second: VFX_Glows_25
+  - first:
+      213: -2804838268428222412
+    second: VFX_Glows_26
+  - first:
+      213: -5580742949133031277
+    second: VFX_Glows_27
+  - first:
+      213: 7876792427988561827
+    second: VFX_Glows_28
+  - first:
+      213: 448330130920435373
+    second: VFX_Glows_29
+  - first:
+      213: -6412363166433573695
+    second: VFX_Glows_30
+  - first:
+      213: 3902657034060670485
+    second: VFX_Glows_31
+  - first:
+      213: 1839037321653771192
+    second: VFX_Glows_32
+  - first:
+      213: -4319336720176658426
+    second: VFX_Glows_33
+  - first:
+      213: -5385644179212753248
+    second: VFX_Glows_34
+  - first:
+      213: 2535732947125019139
+    second: VFX_Glows_35
+  - first:
+      213: -1678894882006585507
+    second: VFX_Glows_36
+  - first:
+      213: -8671791155650993789
+    second: VFX_Glows_37
+  - first:
+      213: 6107535168729884913
+    second: VFX_Glows_38
+  - first:
+      213: -3049117134269748930
+    second: VFX_Glows_39
+  - first:
+      213: 1708731460658007191
+    second: VFX_Glows_40
+  - first:
+      213: -417512389332328125
+    second: VFX_Glows_41
+  - first:
+      213: -1707319650884939101
+    second: VFX_Glows_42
+  - first:
+      213: 3494364028192930452
+    second: VFX_Glows_43
+  - first:
+      213: 970527422672719934
+    second: VFX_Glows_44
+  - first:
+      213: 427839367825531718
+    second: VFX_Glows_45
+  - first:
+      213: 1009748160293804769
+    second: VFX_Glows_46
+  - first:
+      213: -6879671655265846047
+    second: VFX_Glows_47
+  - first:
+      213: -5177146062179115723
+    second: VFX_Glows_48
+  - first:
+      213: -8044591012304118913
+    second: VFX_Glows_49
+  - first:
+      213: -3318351353533465479
+    second: VFX_Glows_50
+  - first:
+      213: 8775971180607074845
+    second: VFX_Glows_51
+  - first:
+      213: -1970773895455943630
+    second: VFX_Glows_52
+  - first:
+      213: -2765546913329400497
+    second: VFX_Glows_53
+  - first:
+      213: 3284164528917143689
+    second: VFX_Glows_54
+  - first:
+      213: 3405974036941349811
+    second: VFX_Glows_55
+  - first:
+      213: 148754483235900329
+    second: VFX_Glows_56
+  - first:
+      213: -4036947126645155296
+    second: VFX_Glows_57
+  - first:
+      213: -2589532617958563122
+    second: VFX_Glows_58
+  - first:
+      213: 4982900691920559407
+    second: VFX_Glows_59
+  - first:
+      213: -321736693238475612
+    second: VFX_Glows_60
+  - first:
+      213: 4603766382459389922
+    second: VFX_Glows_61
+  - first:
+      213: 5075383498119138345
+    second: VFX_Glows_62
+  - first:
+      213: -8068489711258389737
+    second: VFX_Glows_63
+  - first:
+      213: -6043413811892430163
+    second: VFX_Glows_64
+  - first:
+      213: 7827770544923272035
+    second: VFX_Glows_65
+  - first:
+      213: -5678203126684239219
+    second: VFX_Glows_66
+  - first:
+      213: 7547790673840241590
+    second: VFX_Glows_67
+  - first:
+      213: 5403044755714186062
+    second: VFX_Glows_68
+  - first:
+      213: 5957097381618130387
+    second: VFX_Glows_69
+  - first:
+      213: 7188676006484144363
+    second: VFX_Glows_70
+  - first:
+      213: 719439522906446875
+    second: VFX_Glows_71
+  - first:
+      213: 2158010030460892383
+    second: VFX_Glows_72
+  - first:
+      213: 3133146599967472798
+    second: VFX_Glows_73
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Glow_01
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 940
+        width: 418
+        height: 314
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c48632e5dfd97b34f909ef8bf3e49bc8
+      internalID: -1356614347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glow_02
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 940
+        width: 418
+        height: 314
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9370fd2b3824f648a0c0bd66bc35564
+      internalID: -344421423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glow_03
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 940
+        width: 418
+        height: 314
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd1ed300560d5d54aaaa54db7ebbfda5
+      internalID: 202732643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glow_04
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 627
+        width: 418
+        height: 313
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6953b1a3bbd6014daf8d1e558c830c6
+      internalID: -1193643300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glow_05
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 627
+        width: 418
+        height: 313
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d8b1e0bc02df9e4798d47cc434c5b8a
+      internalID: 848265955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glow_06
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 627
+        width: 418
+        height: 313
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f66ab8ce35d397c48bfdca45f6bb5a96
+      internalID: -2110673913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glow_07
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 314
+        width: 418
+        height: 313
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1f6905863e5fc0429e0cba24d701ec6
+      internalID: -588761335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glow_08
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 314
+        width: 418
+        height: 313
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f3ad26728d060b4599b481e85e8fab1
+      internalID: 86846045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glow_09
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 314
+        width: 418
+        height: 313
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfed7bb7e79096c49bd64865409ccd89
+      internalID: -1254467618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glow_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 418
+        height: 314
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64082fb786747ed49b9006a7115029fb
+      internalID: 1640886458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glow_11
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 0
+        width: 418
+        height: 314
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f987f882d9a2adb4d883e3bb81187451
+      internalID: -256706201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glow_12
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 0
+        width: 418
+        height: 314
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bcd50f0bc506e04cb79b829f10bfbd0
+      internalID: 2016520568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: f19af8c7806d1eb4cbe639e77a1d41e9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Glow_01: -1356614347
+      Glow_02: -344421423
+      Glow_03: 202732643
+      Glow_04: -1193643300
+      Glow_05: 848265955
+      Glow_06: -2110673913
+      Glow_07: -588761335
+      Glow_08: 86846045
+      Glow_09: -1254467618
+      Glow_10: 1640886458
+      Glow_11: -256706201
+      Glow_12: 2016520568
+      VFX_Glows_0: -36810250038762052
+      VFX_Glows_1: 6962750916523771924
+      VFX_Glows_10: -4765789680170751843
+      VFX_Glows_11: 5193659601359762128
+      VFX_Glows_12: -4669242280199910878
+      VFX_Glows_13: -6425004096563125716
+      VFX_Glows_14: 3891460663425020633
+      VFX_Glows_15: -2535076721796952522
+      VFX_Glows_16: -4813591679274214852
+      VFX_Glows_17: -318871773287359047
+      VFX_Glows_18: 8805680973077893159
+      VFX_Glows_19: 4853243609097995753
+      VFX_Glows_2: -6106008725464972812
+      VFX_Glows_20: -3387681089308984220
+      VFX_Glows_21: -8316703773608485927
+      VFX_Glows_22: -133409310804920559
+      VFX_Glows_23: 6438064798765831677
+      VFX_Glows_24: -2938391958900675267
+      VFX_Glows_25: 7159061945853514457
+      VFX_Glows_26: -2804838268428222412
+      VFX_Glows_27: -5580742949133031277
+      VFX_Glows_28: 7876792427988561827
+      VFX_Glows_29: 448330130920435373
+      VFX_Glows_3: 7861757714870638963
+      VFX_Glows_30: -6412363166433573695
+      VFX_Glows_31: 3902657034060670485
+      VFX_Glows_32: 1839037321653771192
+      VFX_Glows_33: -4319336720176658426
+      VFX_Glows_34: -5385644179212753248
+      VFX_Glows_35: 2535732947125019139
+      VFX_Glows_36: -1678894882006585507
+      VFX_Glows_37: -8671791155650993789
+      VFX_Glows_38: 6107535168729884913
+      VFX_Glows_39: -3049117134269748930
+      VFX_Glows_4: -6977519417445565930
+      VFX_Glows_40: 1708731460658007191
+      VFX_Glows_41: -417512389332328125
+      VFX_Glows_42: -1707319650884939101
+      VFX_Glows_43: 3494364028192930452
+      VFX_Glows_44: 970527422672719934
+      VFX_Glows_45: 427839367825531718
+      VFX_Glows_46: 1009748160293804769
+      VFX_Glows_47: -6879671655265846047
+      VFX_Glows_48: -5177146062179115723
+      VFX_Glows_49: -8044591012304118913
+      VFX_Glows_5: 4992539027263946390
+      VFX_Glows_50: -3318351353533465479
+      VFX_Glows_51: 8775971180607074845
+      VFX_Glows_52: -1970773895455943630
+      VFX_Glows_53: -2765546913329400497
+      VFX_Glows_54: 3284164528917143689
+      VFX_Glows_55: 3405974036941349811
+      VFX_Glows_56: 148754483235900329
+      VFX_Glows_57: -4036947126645155296
+      VFX_Glows_58: -2589532617958563122
+      VFX_Glows_59: 4982900691920559407
+      VFX_Glows_6: 8792357508006761656
+      VFX_Glows_60: -321736693238475612
+      VFX_Glows_61: 4603766382459389922
+      VFX_Glows_62: 5075383498119138345
+      VFX_Glows_63: -8068489711258389737
+      VFX_Glows_64: -6043413811892430163
+      VFX_Glows_65: 7827770544923272035
+      VFX_Glows_66: -5678203126684239219
+      VFX_Glows_67: 7547790673840241590
+      VFX_Glows_68: 5403044755714186062
+      VFX_Glows_69: 5957097381618130387
+      VFX_Glows_7: -8390989314205658760
+      VFX_Glows_70: 7188676006484144363
+      VFX_Glows_71: 719439522906446875
+      VFX_Glows_72: 2158010030460892383
+      VFX_Glows_73: 3133146599967472798
+      VFX_Glows_8: 8118030371892849580
+      VFX_Glows_9: -6346438219620573766
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

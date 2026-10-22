@@ -2,6 +2,7 @@ using System;
 using JellyRiot.Audio;
 using JellyRiot.Core;
 using JellyRiot.Platform;
+using JellyRiot.VFX;
 using JellyRiot.Visuals;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -59,6 +60,7 @@ namespace JellyRiot.UI
         private readonly Image[] _rackShadows = new Image[GameSession.RackSize];
         private readonly Image[] _rackSelections = new Image[GameSession.RackSize];
         private GridViewPresenter _gridPresenter;
+        private JellyVFXManager _vfx;
         private GameSession _session;
         private GameObject _homeScreen;
         private GameObject _gameScreen;
@@ -86,6 +88,7 @@ namespace JellyRiot.UI
         public GameSession Session => _session;
         public GridViewPresenter GridPresenter => _gridPresenter;
         public AudioManager AudioManager => _audio;
+        public JellyVFXManager VFXManager => _vfx;
         public Sprite GetJellySettledFrame(JellyColour colour) => animationLibrary.GetSettledFrame(colour);
         public Sprite[] GetJellyAnimationFrames(JellyColour colour, JellyAnimationType type) =>
             animationLibrary.GetFrames(colour, type);
@@ -308,10 +311,15 @@ namespace JellyRiot.UI
             debugText.gameObject.SetActive(false);
 #endif
             _gridPresenter = gameObject.AddComponent<GridViewPresenter>();
+            RectTransform vfxOverlay = (RectTransform)CreateRect("VFX Overlay", parent).transform;
+            Stretch(vfxOverlay);
+            vfxOverlay.SetAsLastSibling();
+            _vfx = gameObject.AddComponent<JellyVFXManager>();
+            _vfx.Initialise(null, vfxOverlay, grid, _boardJellies, score.rectTransform);
             _gridPresenter.Initialise(_session, animationLibrary, _boardJellies, _boardShadows,
-                _rackJellies, _rackShadows, _rackSelections, _columnFeedback, _columnButtons, debugText);
+                _rackJellies, _rackShadows, _rackSelections, _columnFeedback, _columnButtons, debugText, _vfx);
             _gridPresenter.JellyLanded += OnJellyLanded;
-            _gridPresenter.TurnPresentationCompleted += OnTurnPresentationCompleted;
+            _gridPresenter.ResolutionPresentationStarted += OnResolutionPresentationStarted;
 #if DEVELOPMENT_BUILD || UNITY_EDITOR
             Button slowMotion = CreateLabelledButton("Animation Slow Motion", parent, "ANIM 1x",
                 new Vector2(220f, 72f), new Vector2(380f, 585f), ToggleSlowMotion);
@@ -386,12 +394,16 @@ namespace JellyRiot.UI
 
         private void StartEndless()
         {
+            _audio.SetPaused(false);
+            _vfx.SetPaused(false);
             _gridPresenter.Present(_session.StartNewRun((ulong)DateTime.UtcNow.Ticks, GameMode.Endless));
             ShowGame();
         }
 
         private void StartDaily()
         {
+            _audio.SetPaused(false);
+            _vfx.SetPaused(false);
             string key = DateTime.UtcNow.ToString("yyyy-MM-dd");
             ulong seed = DailySeed.Derive(key, 1, "jelly-riot-v1");
             _gridPresenter.Present(_session.StartNewRun(seed, GameMode.Daily, key));
@@ -440,7 +452,7 @@ namespace JellyRiot.UI
             _audio.PlayLandingOnce(placementSequence);
         }
 
-        private void OnTurnPresentationCompleted()
+        private void OnResolutionPresentationStarted()
         {
             if (_pendingAudioComplete != null) _audio.ProcessAction(_pendingAudioComplete);
             if (_pendingAudioTerminal != null)
@@ -465,6 +477,7 @@ namespace JellyRiot.UI
             if (result.Succeeded)
             {
                 _audio.SetPaused(true);
+                _vfx.SetPaused(true);
                 _pauseScreen.SetActive(true);
             }
         }
@@ -473,6 +486,7 @@ namespace JellyRiot.UI
         {
             bool needsResumeTap = _audio.IsPlaybackPaused;
             _audio.SetPaused(false);
+            _vfx.SetPaused(false);
             if (needsResumeTap) _audio.PlayUiTap();
             SessionActionResult result = _session.Resume();
             _gridPresenter.Present(result);
@@ -496,6 +510,8 @@ namespace JellyRiot.UI
         private void ReturnHome()
         {
             _audio.StopPendingGameplayAudio();
+            _audio.SetPaused(false);
+            _vfx.SetPaused(false);
             _pendingAudioComplete = null;
             _pendingAudioTerminal = null;
             _gridPresenter.CancelPendingAndSynchronise();
@@ -605,6 +621,7 @@ namespace JellyRiot.UI
                 : _session.Score.BestEndlessScore;
             _bestText.text = _session.Mode == GameMode.Daily ? $"DAILY BEST {best:N0}" : $"BEST {best:N0}";
             _pressureText.text = $"NEXT ROW IN {_session.NextRowIn}";
+            _vfx.ShowOneMoveWarning(_session.State == SessionState.Ready && _session.NextRowIn == 1);
         }
 
         private void OnApplicationFocus(bool hasFocus)

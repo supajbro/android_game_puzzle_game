@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using JellyRiot.Core;
+using JellyRiot.VFX;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -46,8 +47,10 @@ namespace JellyRiot.Visuals
         private bool _slowMotion;
         private float _fallDuration;
         private int _activePlacementSequence;
+        private JellyVFXManager _vfx;
 
         public event Action<int> JellyLanded;
+        public event Action ResolutionPresentationStarted;
         public event Action TurnPresentationCompleted;
 
         public int QueuedActionCount => _eventQueue.Count + (_activeRequest == null ? 0 : 1);
@@ -59,7 +62,8 @@ namespace JellyRiot.Visuals
 
         public void Initialise(GameSession session, JellyAnimationLibrary animationLibrary,
             Image[] boardJellies, Image[] boardShadows, Image[] rackJellies, Image[] rackShadows,
-            Image[] rackSelections, Image[] columnFeedback, Button[] columnButtons, Text debugText = null)
+            Image[] rackSelections, Image[] columnFeedback, Button[] columnButtons, Text debugText = null,
+            JellyVFXManager vfx = null)
         {
             if (session == null) throw new ArgumentNullException(nameof(session));
             if (animationLibrary == null || !animationLibrary.IsComplete())
@@ -78,6 +82,7 @@ namespace JellyRiot.Visuals
             _columnFeedback = columnFeedback;
             _columnButtons = columnButtons;
             _debugText = debugText;
+            _vfx = vfx;
             _board = new AnimatedJellyView[BoardModel.CellCount];
             _rack = new AnimatedJellyView[GameSession.RackSize];
             int seedBase = unchecked(Environment.TickCount ^ GetInstanceID());
@@ -121,6 +126,7 @@ namespace JellyRiot.Visuals
             _reducedMotion = reduced;
             if (_board != null) for (int i = 0; i < _board.Length; i++) _board[i].SetReducedMotion(reduced);
             if (_rack != null) for (int i = 0; i < _rack.Length; i++) _rack[i].SetReducedMotion(reduced);
+            _vfx?.SetReducedMotion(reduced);
         }
 
         public void ToggleSlowMotion()
@@ -159,6 +165,7 @@ namespace JellyRiot.Visuals
             _activeRequest = null;
             _activeDrop = null;
             _invalidColumn = -1;
+            _vfx?.CancelAndReset();
             SynchroniseSnapshot();
             finished?.Invoke();
         }
@@ -226,11 +233,24 @@ namespace JellyRiot.Visuals
         private void FinishDrop()
         {
             PresentationRequest completed = _activeRequest;
-            _activeRequest = null;
             _activeDrop = null;
             RecordAndReplay(completed.Begin);
-            RecordAndReplay(completed.Complete);
+            RecordEvents(completed.Complete);
+            ResolutionPresentationStarted?.Invoke();
+            if (_vfx != null)
+            {
+                _vfx.PresentAction(completed.Complete, ApplyResolutionWave, () => ApplyPressureRow(completed.Complete),
+                    () => FinishTurn(completed));
+                return;
+            }
+            ReplaySemanticChanges(completed.Complete);
+            FinishTurn(completed);
+        }
+
+        private void FinishTurn(PresentationRequest completed)
+        {
             RecordAndReplay(completed.Terminal);
+            _activeRequest = null;
             SynchroniseSnapshot();
             completed.Finished?.Invoke();
             TurnPresentationCompleted?.Invoke();
@@ -240,7 +260,13 @@ namespace JellyRiot.Visuals
         private void ProcessRequestImmediately(PresentationRequest request)
         {
             RecordAndReplay(request.Begin);
-            RecordAndReplay(request.Complete);
+            if (request.AnimateDrop && request.Complete != null)
+            {
+                RecordEvents(request.Complete);
+                ResolutionPresentationStarted?.Invoke();
+                ReplaySemanticChanges(request.Complete);
+            }
+            else RecordAndReplay(request.Complete);
             RecordAndReplay(request.Terminal);
             SynchroniseSnapshot();
             request.Finished?.Invoke();
@@ -250,13 +276,19 @@ namespace JellyRiot.Visuals
         private void RecordAndReplay(SessionActionResult action)
         {
             if (action == null) return;
+            RecordEvents(action);
+            ReplaySemanticChanges(action);
+        }
+
+        private void RecordEvents(SessionActionResult action)
+        {
+            if (action == null) return;
             for (int i = 0; i < action.Events.Count; i++)
             {
                 SessionEvent sessionEvent = action.Events[i];
                 if (sessionEvent.Type == SessionEventType.RunStarted) _lastProcessedSequence = 0;
                 if (sessionEvent.Sequence > _lastProcessedSequence) _lastProcessedSequence = sessionEvent.Sequence;
             }
-            ReplaySemanticChanges(action);
         }
 
         private void ReplaySemanticChanges(SessionActionResult action)
@@ -271,12 +303,7 @@ namespace JellyRiot.Visuals
             ReplayResolution(action.Resolution);
             if (action.PressureRow != null)
             {
-                for (int row = 0; row < BoardModel.Height - 1; row++)
-                for (int column = 0; column < BoardModel.Width; column++)
-                    SetRenderedCell((row * BoardModel.Width) + column,
-                        _renderedColours[((row + 1) * BoardModel.Width) + column]);
-                for (int column = 0; column < BoardModel.Width; column++)
-                    SetRenderedCell(((BoardModel.Height - 1) * BoardModel.Width) + column, action.PressureRow[column]);
+                ApplyPressureRow(action);
             }
             ReplayResolution(action.PressureResolution);
         }
@@ -286,23 +313,38 @@ namespace JellyRiot.Visuals
             if (resolution == null) return;
             for (int waveIndex = 0; waveIndex < resolution.Waves.Count; waveIndex++)
             {
-                ResolutionWave wave = resolution.Waves[waveIndex];
-                for (int i = 0; i < wave.Cleared.Count; i++)
-                {
-                    BoardCoordinate position = wave.Cleared[i].Position;
-                    SetRenderedCell((position.Row * BoardModel.Width) + position.Column, JellyColour.Empty);
-                }
-                for (int i = 0; i < wave.Falls.Count; i++)
-                {
-                    FallingJelly fall = wave.Falls[i];
-                    SetRenderedCell((fall.From.Row * BoardModel.Width) + fall.From.Column, JellyColour.Empty);
-                }
-                for (int i = 0; i < wave.Falls.Count; i++)
-                {
-                    FallingJelly fall = wave.Falls[i];
-                    SetRenderedCell((fall.To.Row * BoardModel.Width) + fall.To.Column, fall.Colour);
-                }
+                ApplyResolutionWave(resolution.Waves[waveIndex]);
             }
+        }
+
+        private void ApplyResolutionWave(ResolutionWave wave)
+        {
+            for (int i = 0; i < wave.Cleared.Count; i++)
+            {
+                BoardCoordinate position = wave.Cleared[i].Position;
+                SetRenderedCell((position.Row * BoardModel.Width) + position.Column, JellyColour.Empty);
+            }
+            for (int i = 0; i < wave.Falls.Count; i++)
+            {
+                FallingJelly fall = wave.Falls[i];
+                SetRenderedCell((fall.From.Row * BoardModel.Width) + fall.From.Column, JellyColour.Empty);
+            }
+            for (int i = 0; i < wave.Falls.Count; i++)
+            {
+                FallingJelly fall = wave.Falls[i];
+                SetRenderedCell((fall.To.Row * BoardModel.Width) + fall.To.Column, fall.Colour);
+            }
+        }
+
+        private void ApplyPressureRow(SessionActionResult action)
+        {
+            if (action?.PressureRow == null) return;
+            for (int row = 0; row < BoardModel.Height - 1; row++)
+                for (int column = 0; column < BoardModel.Width; column++)
+                    SetRenderedCell((row * BoardModel.Width) + column,
+                        _renderedColours[((row + 1) * BoardModel.Width) + column]);
+            for (int column = 0; column < BoardModel.Width; column++)
+                SetRenderedCell(((BoardModel.Height - 1) * BoardModel.Width) + column, action.PressureRow[column]);
         }
 
         private void HideConsumedRackSlot(SessionActionResult begin)

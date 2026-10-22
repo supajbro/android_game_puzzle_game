@@ -278,3 +278,48 @@ Status: COMPLETE; AUTOMATED PLAYMODE PASS; DEVICE SCREENSHOT NOT CAPTURED
   inspect one live drop and rack selection before device sign-off.
 - Next work order: unchanged; do not begin unrelated or later work without the owner's request.
 
+## 2026-10-22 — Work Order 14: complete VFX integration
+
+Status: IMPLEMENTED; C# COMPILE PASS; LIVE UNITY IMPORT/PLAYMODE VALIDATION PENDING
+
+- Added a central `JellyVFXManager` in the presentation assembly. It consumes authoritative
+  `ResolutionWave`, score and pressure-row results through the existing visual queue and never
+  changes Core score, cells, randomness or row timing.
+- Implemented the production sequence at 120 ms anticipation plus 140 ms pop/release per wave,
+  a 240 ms visible pressure-row insertion, 680 ms RIOT reveal, short chain labels, authoritative
+  score fly-ups and a readable one-move warning. Gravity state advances only at the pop transition.
+- Added pooled UI presentation with 48 shared sprite slots and six TextMeshPro score-label slots.
+  Each cleared group emits 6–10 moving particles (two minimal accents in Reduced Motion), with a
+  hard 48-sprite concurrent ceiling; splashes, glints, trails and labels never instantiate per pop.
+- Wave 2 displays `CHAIN x2` with a restrained board glow. Wave 3+ displays chain progression and
+  triggers RIOT once per qualifying primary or pressure chain, including the original wordmark,
+  glints/trails, non-strobe glow and board-only shake clamped to five logical pixels.
+- Reduced Motion removes shake, moving RIOT trails, large bursts and flashing while retaining
+  static TextMeshPro chain/RIOT feedback, compact score motion, warnings and all authoritative audio.
+- Re-timed the existing audio scheduler to the 120 ms release point and 260 ms wave cadence. The
+  established Work Order 16 manager remains the only sound owner, so pop variants, cascades,
+  score tick, `Riot_Stinger` and `Row_Rise` cannot double-trigger from VFX.
+- Added deliberate sprite preparation for the supplied originals: 16 `JellyPop`, 12 `Sparkle`,
+  16 `Trail`, 12 `Glow`, six irregular `Warning` rectangles and one single `RIOT` sprite. Rectangles
+  use centred pivots and fixed cell boundaries instead of automatic alpha/grid slicing; source PNG
+  pixels are preserved. `JellyVFXLibrary.asset` is the reusable Resources-backed reference adapter.
+- Added `Jelly Riot/VFX/Open Demonstration`, which drives the live production manager for normal
+  pop, 50+ cell/large pop, CHAIN x2, CHAIN x3/RIOT, score fly-up, one-move warning and row rise.
+- Cancellation now clears all pooled sprites, labels, transforms and delayed callbacks on restart,
+  home, focus loss and advertisement interruption. Pause freezes VFX and resume continues it.
+- Exact code/config files changed or added: `Assets/_Project/Scripts/VFX/{JellyVFXLibrary.cs,
+  JellyVFXManager.cs}`; `Assets/_Project/Scripts/Editor/JellyRiotVFXSetup.cs`;
+  `Assets/_Project/Scripts/{JellyRiot.Runtime.asmdef,Visuals/GridViewPresenter.cs,
+  UI/JellyRiotMainUI.cs,Audio/AudioManager.cs}`; `Assets/_Project/Resources/JellyVFXLibrary.asset`;
+  `Assets/_Project/Tests/PlayMode/{JellyRiot.PlayModeTests.asmdef,VFXIntegrationPlayModeTests.cs}`;
+  associated `.meta` files; the six VFX texture `.meta` files after Unity preparation; this record.
+- Verification actually run: generated-project `dotnet build` for `JellyRiot.Runtime`,
+  `JellyRiot.Editor` and `JellyRiot.PlayModeTests` passed sequentially with zero warnings/errors.
+  The focused tests compile and cover the exact timings, TextMeshPro use, library category counts,
+  fixed pools, 50+ cell demonstration ceiling, cancellation and Reduced Motion RIOT path.
+- Pending evidence: the owner's Unity Editor was open with deferred asset refresh. A standard refresh
+  was started and the new scripts/sheets entered Unity's import queue, but import and domain reload
+  had not completed when this entry was written. Therefore the PlayMode suite, profiler/device run,
+  10-second chain capture, 30/60 FPS perceptual check and Android midrange profiling are not claimed.
+- Next work order: do not begin Work Order 15 or any unrelated work without owner approval.
+

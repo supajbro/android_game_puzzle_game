@@ -1,0 +1,505 @@
+fileFormatVersion: 2
+guid: c2cfc8349e081d94e8ea749e1fb33a0e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5549278813691413795
+    second: VFX_Warnings_0
+  - first:
+      213: -8904497431806754168
+    second: VFX_Warnings_1
+  - first:
+      213: -94989552917508854
+    second: VFX_Warnings_2
+  - first:
+      213: 2394603617802340898
+    second: VFX_Warnings_3
+  - first:
+      213: -5520707885558753692
+    second: VFX_Warnings_4
+  - first:
+      213: 5283144958917559754
+    second: VFX_Warnings_5
+  - first:
+      213: -1385065676308824193
+    second: VFX_Warnings_6
+  - first:
+      213: -278370904287468158
+    second: VFX_Warnings_7
+  - first:
+      213: 5351128805921514936
+    second: VFX_Warnings_8
+  - first:
+      213: 4040149568043437880
+    second: VFX_Warnings_9
+  - first:
+      213: -7012167168237012878
+    second: VFX_Warnings_10
+  - first:
+      213: 5489898026593437055
+    second: VFX_Warnings_11
+  - first:
+      213: 8338554982505923168
+    second: VFX_Warnings_12
+  - first:
+      213: 7309785330406241242
+    second: VFX_Warnings_13
+  - first:
+      213: -8489699654698174793
+    second: VFX_Warnings_14
+  - first:
+      213: -9039061779874875034
+    second: VFX_Warnings_15
+  - first:
+      213: -6892414165338095354
+    second: VFX_Warnings_16
+  - first:
+      213: -7414549531104813879
+    second: VFX_Warnings_17
+  - first:
+      213: 7883513607633110299
+    second: VFX_Warnings_18
+  - first:
+      213: -7300139057463709585
+    second: VFX_Warnings_19
+  - first:
+      213: 2887578950221066190
+    second: VFX_Warnings_20
+  - first:
+      213: 1561214840504166421
+    second: VFX_Warnings_21
+  - first:
+      213: 8979167490966322281
+    second: VFX_Warnings_22
+  - first:
+      213: 5437660107209291521
+    second: VFX_Warnings_23
+  - first:
+      213: -8785138014702017208
+    second: VFX_Warnings_24
+  - first:
+      213: 2658421931398469036
+    second: VFX_Warnings_25
+  - first:
+      213: 8840416687208613147
+    second: VFX_Warnings_26
+  - first:
+      213: 3710539274708511279
+    second: VFX_Warnings_27
+  - first:
+      213: 1804711393064305859
+    second: VFX_Warnings_28
+  - first:
+      213: 2246107132799254966
+    second: VFX_Warnings_29
+  - first:
+      213: 1317120441530395591
+    second: VFX_Warnings_30
+  - first:
+      213: 5166842445697355485
+    second: VFX_Warnings_31
+  - first:
+      213: 3035496080493062640
+    second: VFX_Warnings_32
+  - first:
+      213: -1312042783425977506
+    second: VFX_Warnings_33
+  - first:
+      213: -6935403241056841334
+    second: VFX_Warnings_34
+  - first:
+      213: -3988626346833557771
+    second: VFX_Warnings_35
+  - first:
+      213: 8342228361252756361
+    second: VFX_Warnings_36
+  - first:
+      213: -2771027236831280052
+    second: VFX_Warnings_37
+  - first:
+      213: 5248036069912875980
+    second: VFX_Warnings_38
+  - first:
+      213: 7574269203654370125
+    second: VFX_Warnings_39
+  - first:
+      213: -3972365041804594681
+    second: VFX_Warnings_40
+  - first:
+      213: -1993816358145215764
+    second: VFX_Warnings_41
+  - first:
+      213: -2719451454278737796
+    second: VFX_Warnings_42
+  - first:
+      213: -4918731616560388975
+    second: VFX_Warnings_43
+  - first:
+      213: 1039539411205271603
+    second: VFX_Warnings_44
+  - first:
+      213: -5409360391897714
+    second: VFX_Warnings_45
+  - first:
+      213: 636426289159261664
+    second: VFX_Warnings_46
+  - first:
+      213: 6359541068174183837
+    second: VFX_Warnings_47
+  - first:
+      213: -8624435985211353263
+    second: VFX_Warnings_48
+  - first:
+      213: -1068002957240487212
+    second: VFX_Warnings_49
+  - first:
+      213: 8808084001533501813
+    second: VFX_Warnings_50
+  - first:
+      213: 1834800644284613054
+    second: VFX_Warnings_51
+  - first:
+      213: -3203159505898631539
+    second: VFX_Warnings_52
+  - first:
+      213: 3678023781546039496
+    second: VFX_Warnings_53
+  - first:
+      213: 4673148675305689919
+    second: VFX_Warnings_54
+  - first:
+      213: -2356489181090561040
+    second: VFX_Warnings_55
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Warning_OneMove
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 627
+        width: 627
+        height: 627
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80f6d82dae707d6488880be15bc7a498
+      internalID: 2123914335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warning_RowRise
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 627
+        width: 627
+        height: 627
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c5f9a10a61f7cb45ac1bf576a571e42
+      internalID: 205658596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warning_AlertBubble
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 313
+        height: 627
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3a81871a2a102149a9d3d4a8ba85901
+      internalID: 2122212003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warning_Countdown
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 0
+        width: 314
+        height: 627
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbfb0e54712e5994898338976bb0b576
+      internalID: 662403885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warning_Arrow
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 0
+        width: 313
+        height: 627
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c989d05adddbd045accb49fd064a619
+      internalID: -17546912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warning_Alert
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 0
+        width: 314
+        height: 627
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cde2d01c1fe075a4e9d38d62f71a9346
+      internalID: -714924284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 164808d7a6a5f6849968cc4cbe47d7f9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      VFX_Warnings_0: 5549278813691413795
+      VFX_Warnings_1: -8904497431806754168
+      VFX_Warnings_10: -7012167168237012878
+      VFX_Warnings_11: 5489898026593437055
+      VFX_Warnings_12: 8338554982505923168
+      VFX_Warnings_13: 7309785330406241242
+      VFX_Warnings_14: -8489699654698174793
+      VFX_Warnings_15: -9039061779874875034
+      VFX_Warnings_16: -6892414165338095354
+      VFX_Warnings_17: -7414549531104813879
+      VFX_Warnings_18: 7883513607633110299
+      VFX_Warnings_19: -7300139057463709585
+      VFX_Warnings_2: -94989552917508854
+      VFX_Warnings_20: 2887578950221066190
+      VFX_Warnings_21: 1561214840504166421
+      VFX_Warnings_22: 8979167490966322281
+      VFX_Warnings_23: 5437660107209291521
+      VFX_Warnings_24: -8785138014702017208
+      VFX_Warnings_25: 2658421931398469036
+      VFX_Warnings_26: 8840416687208613147
+      VFX_Warnings_27: 3710539274708511279
+      VFX_Warnings_28: 1804711393064305859
+      VFX_Warnings_29: 2246107132799254966
+      VFX_Warnings_3: 2394603617802340898
+      VFX_Warnings_30: 1317120441530395591
+      VFX_Warnings_31: 5166842445697355485
+      VFX_Warnings_32: 3035496080493062640
+      VFX_Warnings_33: -1312042783425977506
+      VFX_Warnings_34: -6935403241056841334
+      VFX_Warnings_35: -3988626346833557771
+      VFX_Warnings_36: 8342228361252756361
+      VFX_Warnings_37: -2771027236831280052
+      VFX_Warnings_38: 5248036069912875980
+      VFX_Warnings_39: 7574269203654370125
+      VFX_Warnings_4: -5520707885558753692
+      VFX_Warnings_40: -3972365041804594681
+      VFX_Warnings_41: -1993816358145215764
+      VFX_Warnings_42: -2719451454278737796
+      VFX_Warnings_43: -4918731616560388975
+      VFX_Warnings_44: 1039539411205271603
+      VFX_Warnings_45: -5409360391897714
+      VFX_Warnings_46: 636426289159261664
+      VFX_Warnings_47: 6359541068174183837
+      VFX_Warnings_48: -8624435985211353263
+      VFX_Warnings_49: -1068002957240487212
+      VFX_Warnings_5: 5283144958917559754
+      VFX_Warnings_50: 8808084001533501813
+      VFX_Warnings_51: 1834800644284613054
+      VFX_Warnings_52: -3203159505898631539
+      VFX_Warnings_53: 3678023781546039496
+      VFX_Warnings_54: 4673148675305689919
+      VFX_Warnings_55: -2356489181090561040
+      VFX_Warnings_6: -1385065676308824193
+      VFX_Warnings_7: -278370904287468158
+      VFX_Warnings_8: 5351128805921514936
+      VFX_Warnings_9: 4040149568043437880
+      Warning_Alert: -714924284
+      Warning_AlertBubble: 2122212003
+      Warning_Arrow: -17546912
+      Warning_Countdown: 662403885
+      Warning_OneMove: 2123914335
+      Warning_RowRise: 205658596
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

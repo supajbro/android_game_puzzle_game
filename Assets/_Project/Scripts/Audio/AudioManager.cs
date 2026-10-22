@@ -18,7 +18,8 @@ namespace JellyRiot.Audio
         private const string SfxKey = "JellyRiot.Settings.SfxVolume";
         private const string MusicKey = "JellyRiot.Settings.MusicVolume";
         private const float ScoreTickInterval = 0.075f;
-        private const float WaveInterval = 0.105f;
+        private const float PopAnticipation = 0.12f;
+        private const float WaveInterval = 0.26f;
 
         private struct ScheduledSound
         {
@@ -128,7 +129,7 @@ namespace JellyRiot.Audio
         public void ProcessAction(SessionActionResult action)
         {
             if (action == null || settings == null) return;
-            float delay = 0f;
+            float delay = PopAnticipation;
             bool riotPlayed = false;
             int waveEventOrdinal = 0;
             for (int i = 0; i < action.Events.Count; i++)
@@ -148,10 +149,12 @@ namespace JellyRiot.Audio
                         PlayVariant(settings.Drops, settings.DropVolume);
                         break;
                     case SessionEventType.WaveResolved:
+                        if (sessionEvent.WaveIndex == 0 && waveEventOrdinal > 0) riotPlayed = false;
+                        float waveStart = delay;
                         ScheduleWave(action, waveEventOrdinal++, sessionEvent.WaveIndex, ref delay);
                         if (sessionEvent.WaveIndex >= 2 && !riotPlayed)
                         {
-                            Schedule(settings.RiotStinger, settings.RiotVolume, 1f, delay, true);
+                            Schedule(settings.RiotStinger, settings.RiotVolume, 1f, waveStart, true);
                             _haptics.Play(HapticCue.Riot);
                             riotPlayed = true;
                             delay += 0.08f;
